@@ -49,7 +49,7 @@ namespace cryptoUI
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
             this.Name = "ChartsForm";
-            this.Text = "ChartsForm";
+            this.Text = "Charts";
             this.ResumeLayout(false);
             this.PerformLayout();
 
