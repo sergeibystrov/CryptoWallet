@@ -30,17 +30,17 @@ namespace cryptoUI
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.settingsButton = new FontAwesome.Sharp.IconButton();
             this.chartButton = new FontAwesome.Sharp.IconButton();
             this.tradingButton = new FontAwesome.Sharp.IconButton();
             this.walletButton = new FontAwesome.Sharp.IconButton();
             this.dashboardButton = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.buttonHome = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.titleChildForm = new System.Windows.Forms.Label();
+            this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.childFormPanel = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -60,26 +60,10 @@ namespace cryptoUI
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 645);
+            this.panelMenu.Size = new System.Drawing.Size(165, 524);
             this.panelMenu.TabIndex = 0;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Controls.Add(this.buttonHome);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.panelLogo.Size = new System.Drawing.Size(220, 140);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(692, 337);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(8, 8);
-            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // settingsButton
             // 
@@ -92,10 +76,11 @@ namespace cryptoUI
             this.settingsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.settingsButton.IconSize = 32;
             this.settingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsButton.Location = new System.Drawing.Point(0, 380);
+            this.settingsButton.Location = new System.Drawing.Point(0, 310);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.settingsButton.Size = new System.Drawing.Size(220, 60);
+            this.settingsButton.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.settingsButton.Size = new System.Drawing.Size(165, 49);
             this.settingsButton.TabIndex = 5;
             this.settingsButton.Text = "Settings";
             this.settingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -114,10 +99,11 @@ namespace cryptoUI
             this.chartButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.chartButton.IconSize = 32;
             this.chartButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.chartButton.Location = new System.Drawing.Point(0, 320);
+            this.chartButton.Location = new System.Drawing.Point(0, 261);
+            this.chartButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chartButton.Name = "chartButton";
-            this.chartButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.chartButton.Size = new System.Drawing.Size(220, 60);
+            this.chartButton.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.chartButton.Size = new System.Drawing.Size(165, 49);
             this.chartButton.TabIndex = 4;
             this.chartButton.Text = "Charts";
             this.chartButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,10 +122,11 @@ namespace cryptoUI
             this.tradingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.tradingButton.IconSize = 32;
             this.tradingButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tradingButton.Location = new System.Drawing.Point(0, 260);
+            this.tradingButton.Location = new System.Drawing.Point(0, 212);
+            this.tradingButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tradingButton.Name = "tradingButton";
-            this.tradingButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.tradingButton.Size = new System.Drawing.Size(220, 60);
+            this.tradingButton.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.tradingButton.Size = new System.Drawing.Size(165, 49);
             this.tradingButton.TabIndex = 3;
             this.tradingButton.Text = "Trading";
             this.tradingButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -158,10 +145,11 @@ namespace cryptoUI
             this.walletButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.walletButton.IconSize = 32;
             this.walletButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.walletButton.Location = new System.Drawing.Point(0, 200);
+            this.walletButton.Location = new System.Drawing.Point(0, 163);
+            this.walletButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.walletButton.Name = "walletButton";
-            this.walletButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.walletButton.Size = new System.Drawing.Size(220, 60);
+            this.walletButton.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.walletButton.Size = new System.Drawing.Size(165, 49);
             this.walletButton.TabIndex = 2;
             this.walletButton.Text = "Wallet";
             this.walletButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,10 +168,11 @@ namespace cryptoUI
             this.dashboardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dashboardButton.IconSize = 32;
             this.dashboardButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.dashboardButton.Location = new System.Drawing.Point(0, 140);
+            this.dashboardButton.Location = new System.Drawing.Point(0, 114);
+            this.dashboardButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dashboardButton.Name = "dashboardButton";
-            this.dashboardButton.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.dashboardButton.Size = new System.Drawing.Size(220, 60);
+            this.dashboardButton.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.dashboardButton.Size = new System.Drawing.Size(165, 49);
             this.dashboardButton.TabIndex = 1;
             this.dashboardButton.Text = "Dashboard";
             this.dashboardButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,16 +180,36 @@ namespace cryptoUI
             this.dashboardButton.UseVisualStyleBackColor = true;
             this.dashboardButton.Click += new System.EventHandler(this.dashboardButton_Click);
             // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.buttonHome);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
+            this.panelLogo.Size = new System.Drawing.Size(165, 114);
+            this.panelLogo.TabIndex = 0;
+            // 
             // buttonHome
             // 
             this.buttonHome.Image = global::cryptoUI.Properties.Resources.pngegg;
             this.buttonHome.Location = new System.Drawing.Point(0, 0);
+            this.buttonHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonHome.Name = "buttonHome";
-            this.buttonHome.Size = new System.Drawing.Size(220, 140);
+            this.buttonHome.Size = new System.Drawing.Size(165, 114);
             this.buttonHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.buttonHome.TabIndex = 0;
             this.buttonHome.TabStop = false;
             this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(519, 274);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(6, 6);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel1
             // 
@@ -208,11 +217,24 @@ namespace cryptoUI
             this.panel1.Controls.Add(this.titleChildForm);
             this.panel1.Controls.Add(this.iconCurrentChildForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(220, 0);
+            this.panel1.Location = new System.Drawing.Point(165, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(762, 80);
+            this.panel1.Size = new System.Drawing.Size(571, 65);
             this.panel1.TabIndex = 2;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // titleChildForm
+            // 
+            this.titleChildForm.AutoSize = true;
+            this.titleChildForm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleChildForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
+            this.titleChildForm.Location = new System.Drawing.Point(47, 24);
+            this.titleChildForm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.titleChildForm.Name = "titleChildForm";
+            this.titleChildForm.Size = new System.Drawing.Size(54, 18);
+            this.titleChildForm.TabIndex = 1;
+            this.titleChildForm.Text = "Home";
             // 
             // iconCurrentChildForm
             // 
@@ -221,42 +243,34 @@ namespace cryptoUI
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.IconSize = 40;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(6, 21);
+            this.iconCurrentChildForm.IconSize = 37;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(4, 17);
+            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(51, 46);
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(38, 37);
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
-            // 
-            // titleChildForm
-            // 
-            this.titleChildForm.AutoSize = true;
-            this.titleChildForm.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleChildForm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(194)))), ((int)(((byte)(0)))));
-            this.titleChildForm.Location = new System.Drawing.Point(63, 30);
-            this.titleChildForm.Name = "titleChildForm";
-            this.titleChildForm.Size = new System.Drawing.Size(67, 23);
-            this.titleChildForm.TabIndex = 1;
-            this.titleChildForm.Text = "Home";
             // 
             // childFormPanel
             // 
             this.childFormPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.childFormPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.childFormPanel.Location = new System.Drawing.Point(220, 80);
+            this.childFormPanel.Location = new System.Drawing.Point(165, 65);
+            this.childFormPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(762, 565);
+            this.childFormPanel.Size = new System.Drawing.Size(571, 459);
             this.childFormPanel.TabIndex = 3;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 645);
+            this.ClientSize = new System.Drawing.Size(736, 524);
             this.Controls.Add(this.childFormPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);

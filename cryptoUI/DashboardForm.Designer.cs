@@ -64,11 +64,13 @@ namespace cryptoUI
             buttonUpdate.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             buttonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonUpdate.IconSize = 35;
-            buttonUpdate.Location = new System.Drawing.Point(331, 0);
+            buttonUpdate.Location = new System.Drawing.Point(248, 0);
+            buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new System.Drawing.Size(58, 51);
+            buttonUpdate.Size = new System.Drawing.Size(44, 41);
             buttonUpdate.TabIndex = 12;
             buttonUpdate.UseVisualStyleBackColor = false;
+            buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // panelDashBoard
             // 
@@ -87,8 +89,9 @@ namespace cryptoUI
             this.panelDashBoard.Controls.Add(this.DashboardCurrencyIcon);
             this.panelDashBoard.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelDashBoard.Location = new System.Drawing.Point(0, 0);
+            this.panelDashBoard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelDashBoard.Name = "panelDashBoard";
-            this.panelDashBoard.Size = new System.Drawing.Size(389, 519);
+            this.panelDashBoard.Size = new System.Drawing.Size(292, 422);
             this.panelDashBoard.TabIndex = 0;
             // 
             // VolumeAmount
@@ -96,9 +99,10 @@ namespace cryptoUI
             this.VolumeAmount.AutoSize = true;
             this.VolumeAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.VolumeAmount.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.VolumeAmount.Location = new System.Drawing.Point(110, 415);
+            this.VolumeAmount.Location = new System.Drawing.Point(82, 337);
+            this.VolumeAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.VolumeAmount.Name = "VolumeAmount";
-            this.VolumeAmount.Size = new System.Drawing.Size(135, 32);
+            this.VolumeAmount.Size = new System.Drawing.Size(102, 26);
             this.VolumeAmount.TabIndex = 11;
             this.VolumeAmount.Text = "40000.00";
             // 
@@ -107,9 +111,10 @@ namespace cryptoUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(115, 372);
+            this.label1.Location = new System.Drawing.Point(86, 302);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 32);
+            this.label1.Size = new System.Drawing.Size(93, 26);
             this.label1.TabIndex = 10;
             this.label1.Text = "Volume:";
             // 
@@ -118,9 +123,10 @@ namespace cryptoUI
             this.LowestPrice.AutoSize = true;
             this.LowestPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.LowestPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.LowestPrice.Location = new System.Drawing.Point(222, 313);
+            this.LowestPrice.Location = new System.Drawing.Point(166, 254);
+            this.LowestPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.LowestPrice.Name = "LowestPrice";
-            this.LowestPrice.Size = new System.Drawing.Size(94, 25);
+            this.LowestPrice.Size = new System.Drawing.Size(76, 20);
             this.LowestPrice.TabIndex = 9;
             this.LowestPrice.Text = "59000.00";
             // 
@@ -129,9 +135,10 @@ namespace cryptoUI
             this.labelLow.AutoSize = true;
             this.labelLow.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelLow.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelLow.Location = new System.Drawing.Point(236, 273);
+            this.labelLow.Location = new System.Drawing.Point(177, 222);
+            this.labelLow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLow.Name = "labelLow";
-            this.labelLow.Size = new System.Drawing.Size(54, 25);
+            this.labelLow.Size = new System.Drawing.Size(42, 20);
             this.labelLow.TabIndex = 8;
             this.labelLow.Text = "Low:";
             // 
@@ -140,9 +147,10 @@ namespace cryptoUI
             this.HighestPrice.AutoSize = true;
             this.HighestPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.HighestPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.HighestPrice.Location = new System.Drawing.Point(39, 313);
+            this.HighestPrice.Location = new System.Drawing.Point(29, 254);
+            this.HighestPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.HighestPrice.Name = "HighestPrice";
-            this.HighestPrice.Size = new System.Drawing.Size(94, 25);
+            this.HighestPrice.Size = new System.Drawing.Size(76, 20);
             this.HighestPrice.TabIndex = 7;
             this.HighestPrice.Text = "61000.00";
             // 
@@ -151,9 +159,10 @@ namespace cryptoUI
             this.labelHigh.AutoSize = true;
             this.labelHigh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelHigh.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelHigh.Location = new System.Drawing.Point(64, 273);
+            this.labelHigh.Location = new System.Drawing.Point(48, 222);
+            this.labelHigh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHigh.Name = "labelHigh";
-            this.labelHigh.Size = new System.Drawing.Size(58, 25);
+            this.labelHigh.Size = new System.Drawing.Size(46, 20);
             this.labelHigh.TabIndex = 6;
             this.labelHigh.Text = "High:";
             // 
@@ -162,9 +171,10 @@ namespace cryptoUI
             this.labelNameOfCurrency.AutoSize = true;
             this.labelNameOfCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelNameOfCurrency.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelNameOfCurrency.Location = new System.Drawing.Point(245, 199);
+            this.labelNameOfCurrency.Location = new System.Drawing.Point(184, 162);
+            this.labelNameOfCurrency.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNameOfCurrency.Name = "labelNameOfCurrency";
-            this.labelNameOfCurrency.Size = new System.Drawing.Size(71, 32);
+            this.labelNameOfCurrency.Size = new System.Drawing.Size(55, 26);
             this.labelNameOfCurrency.TabIndex = 5;
             this.labelNameOfCurrency.Text = "BTC";
             // 
@@ -173,20 +183,22 @@ namespace cryptoUI
             this.labelDollar.AutoSize = true;
             this.labelDollar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelDollar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelDollar.Location = new System.Drawing.Point(173, 199);
+            this.labelDollar.Location = new System.Drawing.Point(130, 162);
+            this.labelDollar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelDollar.Name = "labelDollar";
-            this.labelDollar.Size = new System.Drawing.Size(77, 32);
+            this.labelDollar.Size = new System.Drawing.Size(49, 26);
             this.labelDollar.TabIndex = 4;
-            this.labelDollar.Text = "$ = 1";
+            this.labelDollar.Text = " = 1";
             // 
             // labelCurrentPrice
             // 
             this.labelCurrentPrice.AutoSize = true;
             this.labelCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCurrentPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelCurrentPrice.Location = new System.Drawing.Point(47, 199);
+            this.labelCurrentPrice.Location = new System.Drawing.Point(24, 162);
+            this.labelCurrentPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCurrentPrice.Name = "labelCurrentPrice";
-            this.labelCurrentPrice.Size = new System.Drawing.Size(135, 32);
+            this.labelCurrentPrice.Size = new System.Drawing.Size(102, 26);
             this.labelCurrentPrice.TabIndex = 3;
             this.labelCurrentPrice.Text = "60000.00";
             // 
@@ -195,18 +207,20 @@ namespace cryptoUI
             this.DashboardCurrencyPair.AutoSize = true;
             this.DashboardCurrencyPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DashboardCurrencyPair.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DashboardCurrencyPair.Location = new System.Drawing.Point(112, 138);
+            this.DashboardCurrencyPair.Location = new System.Drawing.Point(84, 112);
+            this.DashboardCurrencyPair.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DashboardCurrencyPair.Name = "DashboardCurrencyPair";
-            this.DashboardCurrencyPair.Size = new System.Drawing.Size(138, 32);
+            this.DashboardCurrencyPair.Size = new System.Drawing.Size(108, 26);
             this.DashboardCurrencyPair.TabIndex = 2;
             this.DashboardCurrencyPair.Text = "BTC/USD";
             // 
             // DashboardCurrencyIcon
             // 
             this.DashboardCurrencyIcon.Image = ((System.Drawing.Image)(resources.GetObject("DashboardCurrencyIcon.Image")));
-            this.DashboardCurrencyIcon.Location = new System.Drawing.Point(116, 3);
+            this.DashboardCurrencyIcon.Location = new System.Drawing.Point(87, 2);
+            this.DashboardCurrencyIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DashboardCurrencyIcon.Name = "DashboardCurrencyIcon";
-            this.DashboardCurrencyIcon.Size = new System.Drawing.Size(134, 132);
+            this.DashboardCurrencyIcon.Size = new System.Drawing.Size(100, 107);
             this.DashboardCurrencyIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.DashboardCurrencyIcon.TabIndex = 0;
             this.DashboardCurrencyIcon.TabStop = false;
@@ -220,9 +234,10 @@ namespace cryptoUI
             this.panelChooseCrypto.Controls.Add(this.pictureBox1);
             this.panelChooseCrypto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChooseCrypto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.panelChooseCrypto.Location = new System.Drawing.Point(389, 0);
+            this.panelChooseCrypto.Location = new System.Drawing.Point(292, 0);
+            this.panelChooseCrypto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelChooseCrypto.Name = "panelChooseCrypto";
-            this.panelChooseCrypto.Size = new System.Drawing.Size(441, 519);
+            this.panelChooseCrypto.Size = new System.Drawing.Size(330, 422);
             this.panelChooseCrypto.TabIndex = 1;
             // 
             // label2
@@ -230,9 +245,10 @@ namespace cryptoUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(91, 94);
+            this.label2.Location = new System.Drawing.Point(68, 76);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(218, 27);
+            this.label2.Size = new System.Drawing.Size(173, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Select cryptocurrency";
             // 
@@ -240,9 +256,10 @@ namespace cryptoUI
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(237, 138);
+            this.pictureBox3.Location = new System.Drawing.Point(178, 112);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(87, 83);
+            this.pictureBox3.Size = new System.Drawing.Size(66, 68);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -251,9 +268,10 @@ namespace cryptoUI
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(144, 138);
+            this.pictureBox2.Location = new System.Drawing.Point(108, 112);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(87, 83);
+            this.pictureBox2.Size = new System.Drawing.Size(66, 68);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -262,23 +280,26 @@ namespace cryptoUI
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(51, 138);
+            this.pictureBox1.Location = new System.Drawing.Point(38, 112);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(87, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(66, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // DashboardForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(830, 519);
+            this.ClientSize = new System.Drawing.Size(622, 422);
             this.Controls.Add(this.panelChooseCrypto);
             this.Controls.Add(this.panelDashBoard);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "DashboardForm";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.DashboardForm_Load);
             this.panelDashBoard.ResumeLayout(false);
             this.panelDashBoard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DashboardCurrencyIcon)).EndInit();

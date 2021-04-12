@@ -36,6 +36,9 @@
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,6 +58,13 @@
     <Compile Include="ChartsForm.Designer.cs">
       <DependentUpon>ChartsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Coins\BINANCE.cs" />
+    <Compile Include="Coins\BTCUSDT.cs" />
+    <Compile Include="Coins\Coins.cs" />
+    <Compile Include="Coins\data.cs" />
+    <Compile Include="Coins\ETHUSDT.cs" />
+    <Compile Include="Coins\LTCUSDT.cs" />
+    <Compile Include="Coins\pairs.cs" />
     <Compile Include="DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
