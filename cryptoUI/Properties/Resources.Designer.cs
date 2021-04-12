@@ -63,9 +63,9 @@ namespace cryptoUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap c2a7686e_a832_4f09_9e31_29ffafcf9b75_20_45_Crypto_wallet_Blog {
+        internal static System.Drawing.Bitmap bitcoin {
             get {
-                object obj = ResourceManager.GetObject("c2a7686e-a832-4f09-9e31-29ffafcf9b75_20-45_Crypto-wallet_Blog", resourceCulture);
+                object obj = ResourceManager.GetObject("bitcoin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,10 +73,9 @@ namespace cryptoUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap house_symbol_bitcoin_cryptocurrency_wallet_zwolle_apeldoorn_computer_software_ant_altcoins_png_clipart {
+        internal static System.Drawing.Bitmap etf {
             get {
-                object obj = ResourceManager.GetObject("house-symbol-bitcoin-cryptocurrency-wallet-zwolle-apeldoorn-computer-software-ant" +
-                        "-altcoins-png-clipart", resourceCulture);
+                object obj = ResourceManager.GetObject("etf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -84,19 +83,9 @@ namespace cryptoUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap picture1527313607455 {
+        internal static System.Drawing.Bitmap litecoin {
             get {
-                object obj = ResourceManager.GetObject("picture1527313607455", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap png_clipart_cryptocurrency_wallet_bitcoin_cash_bitcoin_text_sign {
-            get {
-                object obj = ResourceManager.GetObject("png-clipart-cryptocurrency-wallet-bitcoin-cash-bitcoin-text-sign", resourceCulture);
+                object obj = ResourceManager.GetObject("litecoin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -107,16 +96,6 @@ namespace cryptoUI.Properties {
         internal static System.Drawing.Bitmap pngegg {
             get {
                 object obj = ResourceManager.GetObject("pngegg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Снимок {
-            get {
-                object obj = ResourceManager.GetObject("Снимок", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

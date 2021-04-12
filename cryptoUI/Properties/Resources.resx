@@ -118,22 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="png-clipart-cryptocurrency-wallet-bitcoin-cash-bitcoin-text-sign" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\png-clipart-cryptocurrency-wallet-bitcoin-cash-bitcoin-text-sign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="c2a7686e-a832-4f09-9e31-29ffafcf9b75_20-45_Crypto-wallet_Blog" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\c2a7686e-a832-4f09-9e31-29ffafcf9b75_20-45_Crypto-wallet_Blog.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Снимок" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Снимок.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="picture1527313607455" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\picture1527313607455.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="house-symbol-bitcoin-cryptocurrency-wallet-zwolle-apeldoorn-computer-software-ant-altcoins-png-clipart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\house-symbol-bitcoin-cryptocurrency-wallet-zwolle-apeldoorn-computer-software-ant-altcoins-png-clipart.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="pngegg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bitcoin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bitcoin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="etf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\etf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="litecoin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\litecoin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

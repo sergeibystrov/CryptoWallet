@@ -65,7 +65,7 @@ namespace cryptoUI
             buttonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonUpdate.IconSize = 35;
             buttonUpdate.Location = new System.Drawing.Point(248, 0);
-            buttonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new System.Drawing.Size(44, 41);
             buttonUpdate.TabIndex = 12;
@@ -89,7 +89,7 @@ namespace cryptoUI
             this.panelDashBoard.Controls.Add(this.DashboardCurrencyIcon);
             this.panelDashBoard.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelDashBoard.Location = new System.Drawing.Point(0, 0);
-            this.panelDashBoard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelDashBoard.Margin = new System.Windows.Forms.Padding(2);
             this.panelDashBoard.Name = "panelDashBoard";
             this.panelDashBoard.Size = new System.Drawing.Size(292, 422);
             this.panelDashBoard.TabIndex = 0;
@@ -218,7 +218,7 @@ namespace cryptoUI
             // 
             this.DashboardCurrencyIcon.Image = ((System.Drawing.Image)(resources.GetObject("DashboardCurrencyIcon.Image")));
             this.DashboardCurrencyIcon.Location = new System.Drawing.Point(87, 2);
-            this.DashboardCurrencyIcon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DashboardCurrencyIcon.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardCurrencyIcon.Name = "DashboardCurrencyIcon";
             this.DashboardCurrencyIcon.Size = new System.Drawing.Size(100, 107);
             this.DashboardCurrencyIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,7 +235,7 @@ namespace cryptoUI
             this.panelChooseCrypto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChooseCrypto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.panelChooseCrypto.Location = new System.Drawing.Point(292, 0);
-            this.panelChooseCrypto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelChooseCrypto.Margin = new System.Windows.Forms.Padding(2);
             this.panelChooseCrypto.Name = "panelChooseCrypto";
             this.panelChooseCrypto.Size = new System.Drawing.Size(330, 422);
             this.panelChooseCrypto.TabIndex = 1;
@@ -257,36 +257,39 @@ namespace cryptoUI
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(178, 112);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(66, 68);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(108, 112);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(66, 68);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(38, 112);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(66, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // DashboardForm
             // 
@@ -296,7 +299,7 @@ namespace cryptoUI
             this.ClientSize = new System.Drawing.Size(622, 422);
             this.Controls.Add(this.panelChooseCrypto);
             this.Controls.Add(this.panelDashBoard);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DashboardForm";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.DashboardForm_Load);
