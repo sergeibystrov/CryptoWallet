@@ -51,3 +51,11 @@ C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csproj.Core
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csproj.CopyComplete
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.exe
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.pdb
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\EntityFramework.dll
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\System.Data.SQLite.dll
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\EntityFramework.xml
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\System.Data.SQLite.xml

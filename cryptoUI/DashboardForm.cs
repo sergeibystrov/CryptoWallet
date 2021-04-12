@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 using System.Net;
+using System.Data.SQLite;
 
 namespace cryptoUI
 {
     public partial class DashboardForm : Form
     {
+        private SQLiteConnection DB;
+
         public async void UpdateDashboard()
         {
             WebRequest request = WebRequest.Create("https://api.bitaps.com/market/v1/tickers/BINANCE");
@@ -41,21 +44,32 @@ namespace cryptoUI
                 labelCurrentPrice.Text = coins.data.BINANCE.pairs.ETHUSDT.last.ToString() + "$";
                 HighestPrice.Text = coins.data.BINANCE.pairs.ETHUSDT.high.ToString() + "$";
                 LowestPrice.Text = coins.data.BINANCE.pairs.ETHUSDT.low.ToString() + "$";
-                VolumeAmount.Text = coins.data.BINANCE.pairs.ETHUSDT.volume.ToString() + "$";
+                VolumeAmount.Text = coins.data.BINANCE.pairs.ETHUSDT.volume.ToString() + " ETH";
             }
             else if (labelNameOfCurrency.Text == "BTC")
             {
                 labelCurrentPrice.Text = coins.data.BINANCE.pairs.BTCUSDT.last.ToString() + "$";
                 HighestPrice.Text = coins.data.BINANCE.pairs.BTCUSDT.high.ToString() + "$";
                 LowestPrice.Text = coins.data.BINANCE.pairs.BTCUSDT.low.ToString() + "$";
-                VolumeAmount.Text = coins.data.BINANCE.pairs.BTCUSDT.volume.ToString() + "$";
+                VolumeAmount.Text = coins.data.BINANCE.pairs.BTCUSDT.volume.ToString() + " BTC";
             }
             else if (labelNameOfCurrency.Text == "LTC")
             {
                 labelCurrentPrice.Text = coins.data.BINANCE.pairs.LTCUSDT.last.ToString() + "$";
                 HighestPrice.Text = coins.data.BINANCE.pairs.LTCUSDT.high.ToString() + "$";
                 LowestPrice.Text = coins.data.BINANCE.pairs.LTCUSDT.low.ToString() + "$";
-                VolumeAmount.Text = coins.data.BINANCE.pairs.LTCUSDT.volume.ToString() + "$";
+                VolumeAmount.Text = coins.data.BINANCE.pairs.LTCUSDT.volume.ToString() + " LTC";
+            }
+            
+            DB = new SQLiteConnection("Data Source=CoinDB.db; Version=3");
+            DB.Open();
+
+            if (labelCurrentPrice.Text != "")
+            {
+                SQLiteCommand CMD = DB.CreateCommand();
+                CMD.CommandText = "insert into Prices(price) values(@price)";
+                CMD.Parameters.Add("@price", System.Data.DbType.Double).Value = coins.data.BINANCE.pairs.BTCUSDT.last;
+                CMD.ExecuteNonQuery();
             }
         }
         
@@ -96,6 +110,11 @@ namespace cryptoUI
             DashboardCurrencyPair.Text = "LTC/USD";
             labelNameOfCurrency.Text = "LTC";
             UpdateDashboard();
+        }
+
+        private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DB.Close();
         }
     }
 }

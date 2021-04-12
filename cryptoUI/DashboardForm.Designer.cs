@@ -302,6 +302,7 @@ namespace cryptoUI
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DashboardForm";
             this.Text = "Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DashboardForm_FormClosing);
             this.Load += new System.EventHandler(this.DashboardForm_Load);
             this.panelDashBoard.ResumeLayout(false);
             this.panelDashBoard.PerformLayout();
