@@ -10,14 +10,11 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.IO;
 using System.Net;
-using System.Data.SQLite;
 
 namespace cryptoUI
 {
     public partial class DashboardForm : Form
     {
-        private SQLiteConnection DB;
-
         public async void UpdateDashboard()
         {
             WebRequest request = WebRequest.Create("https://api.bitaps.com/market/v1/tickers/BINANCE");
@@ -60,17 +57,6 @@ namespace cryptoUI
                 LowestPrice.Text = coins.data.BINANCE.pairs.LTCUSDT.low.ToString() + "$";
                 VolumeAmount.Text = coins.data.BINANCE.pairs.LTCUSDT.volume.ToString() + " LTC";
             }
-            
-            DB = new SQLiteConnection("Data Source=CoinDB.db; Version=3");
-            DB.Open();
-
-            if (labelCurrentPrice.Text != "")
-            {
-                SQLiteCommand CMD = DB.CreateCommand();
-                CMD.CommandText = "insert into Prices(price) values(@price)";
-                CMD.Parameters.Add("@price", System.Data.DbType.Double).Value = coins.data.BINANCE.pairs.BTCUSDT.last;
-                CMD.ExecuteNonQuery();
-            }
         }
         
         public DashboardForm()
@@ -112,9 +98,6 @@ namespace cryptoUI
             UpdateDashboard();
         }
 
-        private void DashboardForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DB.Close();
-        }
+       
     }
 }

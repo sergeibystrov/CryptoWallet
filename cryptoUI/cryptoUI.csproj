@@ -51,6 +51,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net46\System.Data.SQLite.dll</HintPath>
     </Reference>
@@ -71,6 +72,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bazadanych.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bazadanych.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ChartsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,14 @@
     <EmbeddedResource Include="WalletForm.resx">
       <DependentUpon>WalletForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bazadanych.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>bazadanych.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bazadanych.dbml.layout">
+      <DependentUpon>bazadanych.dbml</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -188,6 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\litecoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
