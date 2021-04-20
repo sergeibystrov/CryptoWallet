@@ -15,9 +15,10 @@ namespace cryptoUI
 {
     public partial class DashboardForm : Form
     {
+        bazadanychDataContext bazadanych = new bazadanychDataContext();
         public async void UpdateDashboard()
         {
-            WebRequest request = WebRequest.Create("https://api.bitaps.com/market/v1/tickers/BINANCE");
+            WebRequest request = WebRequest.Create("https://min-api.cryptocompare.com/data/all/coinlist?api_key=007eae4491b499a6771a2f18f4350a8759cf946d02a4b65d62a185ee3dc14341");
 
             WebResponse response = await request.GetResponseAsync();
 
@@ -35,28 +36,16 @@ namespace cryptoUI
 
             Coins.Coins coins = JsonConvert.DeserializeObject<Coins.Coins>(answer);
 
-            
-            if (labelNameOfCurrency.Text == "ETH")
+            /* push all names of currencies to database
+            foreach (var i in coins.Data)
             {
-                labelCurrentPrice.Text = coins.data.BINANCE.pairs.ETHUSDT.last.ToString() + "$";
-                HighestPrice.Text = coins.data.BINANCE.pairs.ETHUSDT.high.ToString() + "$";
-                LowestPrice.Text = coins.data.BINANCE.pairs.ETHUSDT.low.ToString() + "$";
-                VolumeAmount.Text = coins.data.BINANCE.pairs.ETHUSDT.volume.ToString() + " ETH";
+                Currency newCurrency = new Currency();
+                newCurrency.Name = i.Key;
+                bazadanych.Currencies.InsertOnSubmit(newCurrency);
+                bazadanych.SubmitChanges();
             }
-            else if (labelNameOfCurrency.Text == "BTC")
-            {
-                labelCurrentPrice.Text = coins.data.BINANCE.pairs.BTCUSDT.last.ToString() + "$";
-                HighestPrice.Text = coins.data.BINANCE.pairs.BTCUSDT.high.ToString() + "$";
-                LowestPrice.Text = coins.data.BINANCE.pairs.BTCUSDT.low.ToString() + "$";
-                VolumeAmount.Text = coins.data.BINANCE.pairs.BTCUSDT.volume.ToString() + " BTC";
-            }
-            else if (labelNameOfCurrency.Text == "LTC")
-            {
-                labelCurrentPrice.Text = coins.data.BINANCE.pairs.LTCUSDT.last.ToString() + "$";
-                HighestPrice.Text = coins.data.BINANCE.pairs.LTCUSDT.high.ToString() + "$";
-                LowestPrice.Text = coins.data.BINANCE.pairs.LTCUSDT.low.ToString() + "$";
-                VolumeAmount.Text = coins.data.BINANCE.pairs.LTCUSDT.volume.ToString() + " LTC";
-            }
+            */
+
         }
         
         public DashboardForm()

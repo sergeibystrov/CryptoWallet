@@ -30,16 +30,16 @@ namespace cryptoUI
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCurrency(Currency instance);
-    partial void UpdateCurrency(Currency instance);
-    partial void DeleteCurrency(Currency instance);
     partial void InsertPrice(Price instance);
     partial void UpdatePrice(Price instance);
     partial void DeletePrice(Price instance);
+    partial void InsertCurrency(Currency instance);
+    partial void UpdateCurrency(Currency instance);
+    partial void DeleteCurrency(Currency instance);
     #endregion
 		
 		public bazadanychDataContext() : 
-				base(global::cryptoUI.Properties.Settings.Default.bazadanychConnectionString, mappingSource)
+				base(global::cryptoUI.Properties.Settings.Default.bazadanychConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -68,14 +68,6 @@ namespace cryptoUI
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Currency> Currencies
-		{
-			get
-			{
-				return this.GetTable<Currency>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Price> Prices
 		{
 			get
@@ -83,143 +75,13 @@ namespace cryptoUI
 				return this.GetTable<Price>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Currency")]
-	public partial class Currency : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _Name;
-		
-		private string _Abbreviation;
-		
-		private EntitySet<Price> _Prices;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnAbbreviationChanging(string value);
-    partial void OnAbbreviationChanged();
-    #endregion
-		
-		public Currency()
-		{
-			this._Prices = new EntitySet<Price>(new Action<Price>(this.attach_Prices), new Action<Price>(this.detach_Prices));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		public System.Data.Linq.Table<Currency> Currencies
 		{
 			get
 			{
-				return this._Id;
+				return this.GetTable<Currency>();
 			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string Name
-		{
-			get
-			{
-				return this._Name;
-			}
-			set
-			{
-				if ((this._Name != value))
-				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Abbreviation", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string Abbreviation
-		{
-			get
-			{
-				return this._Abbreviation;
-			}
-			set
-			{
-				if ((this._Abbreviation != value))
-				{
-					this.OnAbbreviationChanging(value);
-					this.SendPropertyChanging();
-					this._Abbreviation = value;
-					this.SendPropertyChanged("Abbreviation");
-					this.OnAbbreviationChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Price", Storage="_Prices", ThisKey="Id", OtherKey="CurrencyId")]
-		public EntitySet<Price> Prices
-		{
-			get
-			{
-				return this._Prices;
-			}
-			set
-			{
-				this._Prices.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Prices(Price entity)
-		{
-			this.SendPropertyChanging();
-			entity.Currency = this;
-		}
-		
-		private void detach_Prices(Price entity)
-		{
-			this.SendPropertyChanging();
-			entity.Currency = null;
 		}
 	}
 	
@@ -231,9 +93,9 @@ namespace cryptoUI
 		
 		private int _Id;
 		
-		private System.DateTime _time;
+		private System.DateTime _Time;
 		
-		private float _price1;
+		private float _Price1;
 		
 		private int _CurrencyId;
 		
@@ -245,10 +107,10 @@ namespace cryptoUI
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OntimeChanging(System.DateTime value);
-    partial void OntimeChanged();
-    partial void Onprice1Changing(float value);
-    partial void Onprice1Changed();
+    partial void OnTimeChanging(System.DateTime value);
+    partial void OnTimeChanged();
+    partial void OnPrice1Changing(float value);
+    partial void OnPrice1Changed();
     partial void OnCurrencyIdChanging(int value);
     partial void OnCurrencyIdChanged();
     #endregion
@@ -279,42 +141,42 @@ namespace cryptoUI
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time", DbType="DateTime NOT NULL")]
-		public System.DateTime time
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Time", DbType="DateTime NOT NULL")]
+		public System.DateTime Time
 		{
 			get
 			{
-				return this._time;
+				return this._Time;
 			}
 			set
 			{
-				if ((this._time != value))
+				if ((this._Time != value))
 				{
-					this.OntimeChanging(value);
+					this.OnTimeChanging(value);
 					this.SendPropertyChanging();
-					this._time = value;
-					this.SendPropertyChanged("time");
-					this.OntimeChanged();
+					this._Time = value;
+					this.SendPropertyChanged("Time");
+					this.OnTimeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="price", Storage="_price1", DbType="Real NOT NULL")]
-		public float price1
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Price", Storage="_Price1", DbType="Real NOT NULL")]
+		public float Price1
 		{
 			get
 			{
-				return this._price1;
+				return this._Price1;
 			}
 			set
 			{
-				if ((this._price1 != value))
+				if ((this._Price1 != value))
 				{
-					this.Onprice1Changing(value);
+					this.OnPrice1Changing(value);
 					this.SendPropertyChanging();
-					this._price1 = value;
-					this.SendPropertyChanged("price1");
-					this.Onprice1Changed();
+					this._Price1 = value;
+					this.SendPropertyChanged("Price1");
+					this.OnPrice1Changed();
 				}
 			}
 		}
@@ -395,6 +257,120 @@ namespace cryptoUI
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Currency")]
+	public partial class Currency : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private EntitySet<Price> _Prices;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public Currency()
+		{
+			this._Prices = new EntitySet<Price>(new Action<Price>(this.attach_Prices), new Action<Price>(this.detach_Prices));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Price", Storage="_Prices", ThisKey="Id", OtherKey="CurrencyId")]
+		public EntitySet<Price> Prices
+		{
+			get
+			{
+				return this._Prices;
+			}
+			set
+			{
+				this._Prices.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Prices(Price entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = this;
+		}
+		
+		private void detach_Prices(Price entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = null;
 		}
 	}
 }

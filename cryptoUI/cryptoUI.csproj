@@ -83,13 +83,8 @@
     <Compile Include="ChartsForm.Designer.cs">
       <DependentUpon>ChartsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Coins\BINANCE.cs" />
-    <Compile Include="Coins\BTCUSDT.cs" />
     <Compile Include="Coins\Coins.cs" />
-    <Compile Include="Coins\data.cs" />
-    <Compile Include="Coins\ETHUSDT.cs" />
-    <Compile Include="Coins\LTCUSDT.cs" />
-    <Compile Include="Coins\pairs.cs" />
+    <Compile Include="Currency.cs" />
     <Compile Include="DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,26 +168,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\CoinDB.db" />
-    <None Include="Resources\picture1527313607455.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Снимок.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\house-symbol-bitcoin-cryptocurrency-wallet-zwolle-apeldoorn-computer-software-ant-altcoins-png-clipart.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\c2a7686e-a832-4f09-9e31-29ffafcf9b75_20-45_Crypto-wallet_Blog.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\png-clipart-cryptocurrency-wallet-bitcoin-cash-bitcoin-text-sign.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pngegg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Image1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bitcoin.png" />

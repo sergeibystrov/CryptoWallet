@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cryptoUI.Coins
+namespace cryptoUI
 {
-    class BINANCE
+    partial class Currency
     {
-        public pairs pairs;
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

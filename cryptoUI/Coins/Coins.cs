@@ -9,6 +9,6 @@ namespace cryptoUI.Coins
 {
     class Coins
     {
-        public data data;
+        public Dictionary<string, object> Data;
     }
 }
