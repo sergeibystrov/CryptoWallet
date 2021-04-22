@@ -11,4 +11,8 @@ namespace cryptoUI.Coins
     {
         public Dictionary<string, object> Data;
     }
+    class Price
+    {
+        public double USD;
+    }
 }
