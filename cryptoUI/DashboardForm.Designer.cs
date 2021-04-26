@@ -32,15 +32,17 @@ namespace cryptoUI
             FontAwesome.Sharp.IconButton buttonUpdate;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardForm));
             this.panelDashBoard = new System.Windows.Forms.Panel();
-            this.labelNameOfCurrency = new System.Windows.Forms.Label();
-            this.labelDollar = new System.Windows.Forms.Label();
-            this.labelCurrentPrice = new System.Windows.Forms.Label();
-            this.DashboardCurrencyPair = new System.Windows.Forms.Label();
+            this.labelPriceInPLN = new System.Windows.Forms.Label();
+            this.labelPriceInEUR = new System.Windows.Forms.Label();
+            this.textBoxPriceInPLN = new System.Windows.Forms.Label();
+            this.textBoxPriceInEUR = new System.Windows.Forms.Label();
+            this.labelPriceInUSD = new System.Windows.Forms.Label();
+            this.textBoxPriceInUSD = new System.Windows.Forms.Label();
             this.DashboardCurrencyIcon = new System.Windows.Forms.PictureBox();
             this.panelChooseCrypto = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             buttonUpdate = new FontAwesome.Sharp.IconButton();
             this.panelDashBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DashboardCurrencyIcon)).BeginInit();
@@ -65,11 +67,13 @@ namespace cryptoUI
             // panelDashBoard
             // 
             this.panelDashBoard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(54)))), ((int)(((byte)(78)))));
+            this.panelDashBoard.Controls.Add(this.labelPriceInPLN);
+            this.panelDashBoard.Controls.Add(this.labelPriceInEUR);
+            this.panelDashBoard.Controls.Add(this.textBoxPriceInPLN);
+            this.panelDashBoard.Controls.Add(this.textBoxPriceInEUR);
             this.panelDashBoard.Controls.Add(buttonUpdate);
-            this.panelDashBoard.Controls.Add(this.labelNameOfCurrency);
-            this.panelDashBoard.Controls.Add(this.labelDollar);
-            this.panelDashBoard.Controls.Add(this.labelCurrentPrice);
-            this.panelDashBoard.Controls.Add(this.DashboardCurrencyPair);
+            this.panelDashBoard.Controls.Add(this.labelPriceInUSD);
+            this.panelDashBoard.Controls.Add(this.textBoxPriceInUSD);
             this.panelDashBoard.Controls.Add(this.DashboardCurrencyIcon);
             this.panelDashBoard.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelDashBoard.Location = new System.Drawing.Point(0, 0);
@@ -78,53 +82,77 @@ namespace cryptoUI
             this.panelDashBoard.Size = new System.Drawing.Size(292, 422);
             this.panelDashBoard.TabIndex = 0;
             // 
-            // labelNameOfCurrency
+            // labelPriceInPLN
             // 
-            this.labelNameOfCurrency.AutoSize = true;
-            this.labelNameOfCurrency.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNameOfCurrency.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelNameOfCurrency.Location = new System.Drawing.Point(184, 162);
-            this.labelNameOfCurrency.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelNameOfCurrency.Name = "labelNameOfCurrency";
-            this.labelNameOfCurrency.Size = new System.Drawing.Size(55, 26);
-            this.labelNameOfCurrency.TabIndex = 5;
-            this.labelNameOfCurrency.Text = "BTC";
+            this.labelPriceInPLN.AutoSize = true;
+            this.labelPriceInPLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPriceInPLN.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelPriceInPLN.Location = new System.Drawing.Point(123, 217);
+            this.labelPriceInPLN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPriceInPLN.Name = "labelPriceInPLN";
+            this.labelPriceInPLN.Size = new System.Drawing.Size(102, 26);
+            this.labelPriceInPLN.TabIndex = 16;
+            this.labelPriceInPLN.Text = "60000.00";
             // 
-            // labelDollar
+            // labelPriceInEUR
             // 
-            this.labelDollar.AutoSize = true;
-            this.labelDollar.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelDollar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelDollar.Location = new System.Drawing.Point(130, 162);
-            this.labelDollar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelDollar.Name = "labelDollar";
-            this.labelDollar.Size = new System.Drawing.Size(49, 26);
-            this.labelDollar.TabIndex = 4;
-            this.labelDollar.Text = " = 1";
+            this.labelPriceInEUR.AutoSize = true;
+            this.labelPriceInEUR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPriceInEUR.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelPriceInEUR.Location = new System.Drawing.Point(123, 170);
+            this.labelPriceInEUR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPriceInEUR.Name = "labelPriceInEUR";
+            this.labelPriceInEUR.Size = new System.Drawing.Size(102, 26);
+            this.labelPriceInEUR.TabIndex = 15;
+            this.labelPriceInEUR.Text = "60000.00";
             // 
-            // labelCurrentPrice
+            // textBoxPriceInPLN
             // 
-            this.labelCurrentPrice.AutoSize = true;
-            this.labelCurrentPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelCurrentPrice.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelCurrentPrice.Location = new System.Drawing.Point(24, 162);
-            this.labelCurrentPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCurrentPrice.Name = "labelCurrentPrice";
-            this.labelCurrentPrice.Size = new System.Drawing.Size(102, 26);
-            this.labelCurrentPrice.TabIndex = 3;
-            this.labelCurrentPrice.Text = "60000.00";
+            this.textBoxPriceInPLN.AutoSize = true;
+            this.textBoxPriceInPLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPriceInPLN.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxPriceInPLN.Location = new System.Drawing.Point(11, 217);
+            this.textBoxPriceInPLN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.textBoxPriceInPLN.Name = "textBoxPriceInPLN";
+            this.textBoxPriceInPLN.Size = new System.Drawing.Size(104, 26);
+            this.textBoxPriceInPLN.TabIndex = 14;
+            this.textBoxPriceInPLN.Text = "BTC/PLN";
             // 
-            // DashboardCurrencyPair
+            // textBoxPriceInEUR
             // 
-            this.DashboardCurrencyPair.AutoSize = true;
-            this.DashboardCurrencyPair.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.DashboardCurrencyPair.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.DashboardCurrencyPair.Location = new System.Drawing.Point(84, 112);
-            this.DashboardCurrencyPair.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.DashboardCurrencyPair.Name = "DashboardCurrencyPair";
-            this.DashboardCurrencyPair.Size = new System.Drawing.Size(108, 26);
-            this.DashboardCurrencyPair.TabIndex = 2;
-            this.DashboardCurrencyPair.Text = "BTC/USD";
+            this.textBoxPriceInEUR.AutoSize = true;
+            this.textBoxPriceInEUR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPriceInEUR.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxPriceInEUR.Location = new System.Drawing.Point(11, 170);
+            this.textBoxPriceInEUR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.textBoxPriceInEUR.Name = "textBoxPriceInEUR";
+            this.textBoxPriceInEUR.Size = new System.Drawing.Size(108, 26);
+            this.textBoxPriceInEUR.TabIndex = 13;
+            this.textBoxPriceInEUR.Text = "BTC/EUR";
+            // 
+            // labelPriceInUSD
+            // 
+            this.labelPriceInUSD.AutoSize = true;
+            this.labelPriceInUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPriceInUSD.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelPriceInUSD.Location = new System.Drawing.Point(123, 128);
+            this.labelPriceInUSD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPriceInUSD.Name = "labelPriceInUSD";
+            this.labelPriceInUSD.Size = new System.Drawing.Size(102, 26);
+            this.labelPriceInUSD.TabIndex = 3;
+            this.labelPriceInUSD.Text = "60000.00";
+            // 
+            // textBoxPriceInUSD
+            // 
+            this.textBoxPriceInUSD.AutoSize = true;
+            this.textBoxPriceInUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxPriceInUSD.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.textBoxPriceInUSD.Location = new System.Drawing.Point(11, 128);
+            this.textBoxPriceInUSD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.textBoxPriceInUSD.Name = "textBoxPriceInUSD";
+            this.textBoxPriceInUSD.Size = new System.Drawing.Size(108, 26);
+            this.textBoxPriceInUSD.TabIndex = 2;
+            this.textBoxPriceInUSD.Text = "BTC/USD";
             // 
             // DashboardCurrencyIcon
             // 
@@ -151,34 +179,36 @@ namespace cryptoUI
             this.panelChooseCrypto.Size = new System.Drawing.Size(330, 422);
             this.panelChooseCrypto.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 170);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 26);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Check price";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBox1.Location = new System.Drawing.Point(22, 114);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(167, 20);
+            this.textBox1.TabIndex = 4;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(68, 76);
+            this.label2.Location = new System.Drawing.Point(18, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Insert cryptocurrency";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(72, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
-            this.textBox1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(72, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Check price";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // DashboardForm
             // 
@@ -205,13 +235,15 @@ namespace cryptoUI
 
         private System.Windows.Forms.Panel panelDashBoard;
         private System.Windows.Forms.PictureBox DashboardCurrencyIcon;
-        private System.Windows.Forms.Label labelDollar;
-        private System.Windows.Forms.Label labelCurrentPrice;
-        private System.Windows.Forms.Label DashboardCurrencyPair;
-        private System.Windows.Forms.Label labelNameOfCurrency;
+        private System.Windows.Forms.Label labelPriceInUSD;
+        private System.Windows.Forms.Label textBoxPriceInUSD;
         private System.Windows.Forms.Panel panelChooseCrypto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label textBoxPriceInPLN;
+        private System.Windows.Forms.Label textBoxPriceInEUR;
+        private System.Windows.Forms.Label labelPriceInPLN;
+        private System.Windows.Forms.Label labelPriceInEUR;
     }
 }

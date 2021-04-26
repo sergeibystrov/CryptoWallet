@@ -111,7 +111,7 @@ namespace cryptoUI
         private async void DashboardForm_Load(object sender, EventArgs e)
         {
             UpdateDashboard();
-            WebRequest request2 = WebRequest.Create("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD");
+            WebRequest request2 = WebRequest.Create("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,PLN");
 
             WebResponse response2 = await request2.GetResponseAsync();
 
@@ -127,11 +127,21 @@ namespace cryptoUI
 
             response2.Close();
 
-            Coins.Price usd = JsonConvert.DeserializeObject<Coins.Price>(answer);
+            Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-            labelCurrentPrice.Text = usd.USD.ToString() + "$";
+            labelPriceInUSD.Text = price.USD.ToString() + "$";
+            labelPriceInEUR.Text = price.EUR.ToString() + "€";
+            labelPriceInPLN.Text = price.PLN.ToString() + "PLN";
+
+            AutoCompleteStringCollection myCollection = new AutoCompleteStringCollection();
+            
+            foreach (Currency o in bazadanych.Currencies)
+            {
+                myCollection.Add(o.Name);
+            }
+
+            textBox1.AutoCompleteCustomSource = myCollection;
         }
-
         private async void buttonUpdate_Click(object sender, EventArgs e)
         {
             UpdateDashboard();
@@ -149,11 +159,12 @@ namespace cryptoUI
                 {
                     DashboardCurrencyIcon.Image = Bitmap.FromStream(stream);
                 }
-                DashboardCurrencyPair.Text = o.Name+"/USD";
-                labelNameOfCurrency.Text = o.Name;
+                textBoxPriceInUSD.Text = o.Name+"/USD";
+                textBoxPriceInEUR.Text = o.Name + "/EUR";
+                textBoxPriceInPLN.Text = o.Name + "/PLN";
                 
-                string price = "https://min-api.cryptocompare.com/data/price?fsym="+o.Name+"&tsyms=USD";
-                WebRequest request2 = WebRequest.Create(price);
+                string priceAPI = "https://min-api.cryptocompare.com/data/price?fsym="+o.Name+"&tsyms=USD,EUR,PLN";
+                WebRequest request2 = WebRequest.Create(priceAPI);
 
                 WebResponse response2 = await request2.GetResponseAsync();
 
@@ -169,14 +180,12 @@ namespace cryptoUI
 
                 response2.Close();
 
-                Coins.Price usd = JsonConvert.DeserializeObject<Coins.Price>(answer);
+                Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-                labelCurrentPrice.Text = usd.USD.ToString()+"$";      
+                labelPriceInUSD.Text = price.USD.ToString()+"$";
+                labelPriceInEUR.Text = price.EUR.ToString() + "€";
+                labelPriceInPLN.Text = price.PLN.ToString() + "PLN";
             }
-        }
-        public class Price
-        {
-            public string USD { get; set; }
         }
     }
 }

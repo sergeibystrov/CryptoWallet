@@ -14,5 +14,7 @@ namespace cryptoUI.Coins
     class Price
     {
         public double USD;
+        public double EUR;
+        public double PLN;
     }
 }
