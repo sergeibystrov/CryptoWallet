@@ -123,12 +123,12 @@ namespace cryptoUI
             // 
             // buttonSingUp
             // 
-            this.buttonSingUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSingUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSingUp.Location = new System.Drawing.Point(17, 183);
             this.buttonSingUp.Name = "buttonSingUp";
             this.buttonSingUp.Size = new System.Drawing.Size(497, 53);
             this.buttonSingUp.TabIndex = 14;
-            this.buttonSingUp.Text = "Sing up ДЛЯ ДЕБИЛОВ";
+            this.buttonSingUp.Text = "Sing up";
             this.buttonSingUp.UseVisualStyleBackColor = true;
             this.buttonSingUp.Click += new System.EventHandler(this.buttonSingUp_Click);
             // 

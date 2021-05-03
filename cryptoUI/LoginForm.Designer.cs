@@ -36,6 +36,7 @@ namespace cryptoUI
             this.buttonSignIn = new System.Windows.Forms.Button();
             this.buttonEye = new System.Windows.Forms.Button();
             this.buttonSingUp = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxLogin
@@ -101,20 +102,31 @@ namespace cryptoUI
             // 
             // buttonSingUp
             // 
-            this.buttonSingUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSingUp.Location = new System.Drawing.Point(-53, 173);
+            this.buttonSingUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSingUp.Location = new System.Drawing.Point(256, 171);
             this.buttonSingUp.Name = "buttonSingUp";
-            this.buttonSingUp.Size = new System.Drawing.Size(548, 53);
+            this.buttonSingUp.Size = new System.Drawing.Size(185, 34);
             this.buttonSingUp.TabIndex = 6;
-            this.buttonSingUp.Text = "Sing up ДЛЯ ДЕБИЛОВ";
+            this.buttonSingUp.Text = "Sing up";
             this.buttonSingUp.UseVisualStyleBackColor = true;
             this.buttonSingUp.Click += new System.EventHandler(this.buttonSingUp_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 176);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(238, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Don\'t have an account?";
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 238);
+            this.ClientSize = new System.Drawing.Size(455, 221);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSingUp);
             this.Controls.Add(this.buttonEye);
             this.Controls.Add(this.buttonSignIn);
@@ -141,5 +153,6 @@ namespace cryptoUI
         private System.Windows.Forms.Button buttonSignIn;
         private System.Windows.Forms.Button buttonEye;
         private System.Windows.Forms.Button buttonSingUp;
+        private System.Windows.Forms.Label label1;
     }
 }
