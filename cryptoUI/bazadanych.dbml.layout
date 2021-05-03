@@ -2,24 +2,30 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="bazadanych">
   <DataContextMoniker Name="/bazadanychDataContext" />
   <nestedChildShapes>
-    <classShape Id="5dbc966e-c04c-48b4-8006-b87207147f64" absoluteBounds="1.125, 2.25, 2, 1.5785953776041666">
+    <classShape Id="67797539-a8c9-4fd2-87cf-4c9f665188af" absoluteBounds="6.75, 2, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/bazadanychDataContext/Price" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b7614be-9bb3-42f0-8036-c6ebc16c6082" absoluteBounds="6.7650000000000006, 2.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e0c7b25-b9db-4418-9a95-774334debd8c" absoluteBounds="3.5, 1.875, 2, 1.5785953776041666">
       <DataClassMoniker Name="/bazadanychDataContext/Currency" />
       <nestedChildShapes>
-        <elementListCompartment Id="8798063a-96b0-4296-ab49-09be17b60d8c" absoluteBounds="1.1399999999999997, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="92b146e3-8efe-4a9e-a92d-6fa0e89c9a4d" absoluteBounds="3.5149999999999997, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4e50abaf-e766-4ff4-8421-8de4b116a8e3" absoluteBounds="4.875, 2.25, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/bazadanychDataContext/Table" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b5d0dd94-b400-4b20-8a66-03d4a2af5a2d" absoluteBounds="4.89, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(3.125 : 3.03929768880208); (4.875 : 3.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/bazadanychDataContext/Currency/Currency_Table" />
+    <associationConnector edgePoints="[(5.5 : 2.72679768880208); (6.75 : 2.72679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/bazadanychDataContext/Currency/Currency_Price" />
       <nodes>
-        <classShapeMoniker Id="5dbc966e-c04c-48b4-8006-b87207147f64" />
-        <classShapeMoniker Id="4e50abaf-e766-4ff4-8421-8de4b116a8e3" />
+        <classShapeMoniker Id="6e0c7b25-b9db-4418-9a95-774334debd8c" />
+        <classShapeMoniker Id="67797539-a8c9-4fd2-87cf-4c9f665188af" />
       </nodes>
     </associationConnector>
+    <classShape Id="03051a68-9b65-4ec2-ad54-9f0070b9ee17" absoluteBounds="0.75, 2, 2, 1.3862939453125">
+      <DataClassMoniker Name="/bazadanychDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b798606d-1f14-4841-8029-43fe98d4eec5" absoluteBounds="0.76500000000000012, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -56,7 +56,7 @@ namespace cryptoUI
             buttonUpdate.IconColor = System.Drawing.SystemColors.ActiveCaptionText;
             buttonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             buttonUpdate.IconSize = 35;
-            buttonUpdate.Location = new System.Drawing.Point(248, 0);
+            buttonUpdate.Location = new System.Drawing.Point(283, 0);
             buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             buttonUpdate.Name = "buttonUpdate";
             buttonUpdate.Size = new System.Drawing.Size(44, 41);
@@ -70,16 +70,16 @@ namespace cryptoUI
             this.panelDashBoard.Controls.Add(this.labelPriceInPLN);
             this.panelDashBoard.Controls.Add(this.labelPriceInEUR);
             this.panelDashBoard.Controls.Add(this.textBoxPriceInPLN);
+            this.panelDashBoard.Controls.Add(this.labelPriceInUSD);
             this.panelDashBoard.Controls.Add(this.textBoxPriceInEUR);
             this.panelDashBoard.Controls.Add(buttonUpdate);
-            this.panelDashBoard.Controls.Add(this.labelPriceInUSD);
             this.panelDashBoard.Controls.Add(this.textBoxPriceInUSD);
             this.panelDashBoard.Controls.Add(this.DashboardCurrencyIcon);
             this.panelDashBoard.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelDashBoard.Location = new System.Drawing.Point(0, 0);
             this.panelDashBoard.Margin = new System.Windows.Forms.Padding(2);
             this.panelDashBoard.Name = "panelDashBoard";
-            this.panelDashBoard.Size = new System.Drawing.Size(292, 422);
+            this.panelDashBoard.Size = new System.Drawing.Size(331, 422);
             this.panelDashBoard.TabIndex = 0;
             // 
             // labelPriceInPLN
@@ -87,31 +87,34 @@ namespace cryptoUI
             this.labelPriceInPLN.AutoSize = true;
             this.labelPriceInPLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelPriceInPLN.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPriceInPLN.Location = new System.Drawing.Point(123, 217);
+            this.labelPriceInPLN.Location = new System.Drawing.Point(145, 266);
             this.labelPriceInPLN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPriceInPLN.Name = "labelPriceInPLN";
+            this.labelPriceInPLN.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelPriceInPLN.Size = new System.Drawing.Size(102, 26);
             this.labelPriceInPLN.TabIndex = 16;
             this.labelPriceInPLN.Text = "60000.00";
+            this.labelPriceInPLN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelPriceInEUR
             // 
             this.labelPriceInEUR.AutoSize = true;
             this.labelPriceInEUR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelPriceInEUR.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPriceInEUR.Location = new System.Drawing.Point(123, 170);
+            this.labelPriceInEUR.Location = new System.Drawing.Point(145, 205);
             this.labelPriceInEUR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPriceInEUR.Name = "labelPriceInEUR";
             this.labelPriceInEUR.Size = new System.Drawing.Size(102, 26);
             this.labelPriceInEUR.TabIndex = 15;
             this.labelPriceInEUR.Text = "60000.00";
+            this.labelPriceInEUR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBoxPriceInPLN
             // 
             this.textBoxPriceInPLN.AutoSize = true;
             this.textBoxPriceInPLN.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxPriceInPLN.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxPriceInPLN.Location = new System.Drawing.Point(11, 217);
+            this.textBoxPriceInPLN.Location = new System.Drawing.Point(2, 266);
             this.textBoxPriceInPLN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.textBoxPriceInPLN.Name = "textBoxPriceInPLN";
             this.textBoxPriceInPLN.Size = new System.Drawing.Size(104, 26);
@@ -123,7 +126,7 @@ namespace cryptoUI
             this.textBoxPriceInEUR.AutoSize = true;
             this.textBoxPriceInEUR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxPriceInEUR.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxPriceInEUR.Location = new System.Drawing.Point(11, 170);
+            this.textBoxPriceInEUR.Location = new System.Drawing.Point(2, 205);
             this.textBoxPriceInEUR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.textBoxPriceInEUR.Name = "textBoxPriceInEUR";
             this.textBoxPriceInEUR.Size = new System.Drawing.Size(108, 26);
@@ -135,19 +138,21 @@ namespace cryptoUI
             this.labelPriceInUSD.AutoSize = true;
             this.labelPriceInUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelPriceInUSD.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPriceInUSD.Location = new System.Drawing.Point(123, 128);
+            this.labelPriceInUSD.Location = new System.Drawing.Point(145, 144);
             this.labelPriceInUSD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPriceInUSD.Name = "labelPriceInUSD";
+            this.labelPriceInUSD.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelPriceInUSD.Size = new System.Drawing.Size(102, 26);
             this.labelPriceInUSD.TabIndex = 3;
             this.labelPriceInUSD.Text = "60000.00";
+            this.labelPriceInUSD.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // textBoxPriceInUSD
             // 
             this.textBoxPriceInUSD.AutoSize = true;
             this.textBoxPriceInUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.textBoxPriceInUSD.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxPriceInUSD.Location = new System.Drawing.Point(11, 128);
+            this.textBoxPriceInUSD.Location = new System.Drawing.Point(2, 144);
             this.textBoxPriceInUSD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.textBoxPriceInUSD.Name = "textBoxPriceInUSD";
             this.textBoxPriceInUSD.Size = new System.Drawing.Size(108, 26);
@@ -157,7 +162,7 @@ namespace cryptoUI
             // DashboardCurrencyIcon
             // 
             this.DashboardCurrencyIcon.Image = ((System.Drawing.Image)(resources.GetObject("DashboardCurrencyIcon.Image")));
-            this.DashboardCurrencyIcon.Location = new System.Drawing.Point(87, 2);
+            this.DashboardCurrencyIcon.Location = new System.Drawing.Point(101, 11);
             this.DashboardCurrencyIcon.Margin = new System.Windows.Forms.Padding(2);
             this.DashboardCurrencyIcon.Name = "DashboardCurrencyIcon";
             this.DashboardCurrencyIcon.Size = new System.Drawing.Size(100, 107);
@@ -173,17 +178,17 @@ namespace cryptoUI
             this.panelChooseCrypto.Controls.Add(this.label2);
             this.panelChooseCrypto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChooseCrypto.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.panelChooseCrypto.Location = new System.Drawing.Point(292, 0);
+            this.panelChooseCrypto.Location = new System.Drawing.Point(331, 0);
             this.panelChooseCrypto.Margin = new System.Windows.Forms.Padding(2);
             this.panelChooseCrypto.Name = "panelChooseCrypto";
-            this.panelChooseCrypto.Size = new System.Drawing.Size(330, 422);
+            this.panelChooseCrypto.Size = new System.Drawing.Size(291, 422);
             this.panelChooseCrypto.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(22, 170);
+            this.button1.Location = new System.Drawing.Point(32, 147);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 26);
+            this.button1.Size = new System.Drawing.Size(167, 26);
             this.button1.TabIndex = 5;
             this.button1.Text = "Check price";
             this.button1.UseVisualStyleBackColor = true;
@@ -193,7 +198,7 @@ namespace cryptoUI
             // 
             this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.Location = new System.Drawing.Point(22, 114);
+            this.textBox1.Location = new System.Drawing.Point(32, 113);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(167, 20);
             this.textBox1.TabIndex = 4;
@@ -203,7 +208,7 @@ namespace cryptoUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(18, 78);
+            this.label2.Location = new System.Drawing.Point(28, 77);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 21);

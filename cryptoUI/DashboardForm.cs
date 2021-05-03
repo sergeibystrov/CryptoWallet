@@ -182,9 +182,9 @@ namespace cryptoUI
 
                 Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-                labelPriceInUSD.Text = price.USD.ToString()+"$";
-                labelPriceInEUR.Text = price.EUR.ToString() + "€";
-                labelPriceInPLN.Text = price.PLN.ToString() + "PLN";
+                labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString() + "$"; ; //price.USD.ToString()+"$";
+                labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString()+"€"; ; //price.EUR.ToString() + "€";
+                labelPriceInPLN.Text = Decimal.Parse(price.PLN.ToString(), System.Globalization.NumberStyles.Any).ToString()+"PLN"; ; //price.PLN.ToString() + "PLN";
             }
         }
     }

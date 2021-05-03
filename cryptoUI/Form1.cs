@@ -21,7 +21,6 @@ namespace cryptoUI
         private Panel leftBorderButton;
         private Form currentChildForm;
 
-
         public Form1()
         {
             InitializeComponent();
@@ -30,9 +29,19 @@ namespace cryptoUI
             panelMenu.Controls.Add(leftBorderButton);
             //Form
             this.Text = string.Empty;
-         
-        }
 
+        }
+        public string UsernameText
+        {
+            get
+            {
+                return this.label1.Text;
+            }
+            set
+            {
+                this.label1.Text = value;
+            }
+        }
         //Structures
 
         private struct RGDBCollors
@@ -161,6 +170,11 @@ namespace cryptoUI
         {
             RealeaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
