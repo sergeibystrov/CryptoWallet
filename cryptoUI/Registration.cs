@@ -63,5 +63,12 @@ namespace cryptoUI
         {
             textBoxRepeatPassword.UseSystemPasswordChar = !textBoxRepeatPassword.UseSystemPasswordChar;
         }
+
+        private void Registration_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form LoginForm = new LoginForm();
+            LoginForm.Show();
+            this.Hide();
+        }
     }
 }
