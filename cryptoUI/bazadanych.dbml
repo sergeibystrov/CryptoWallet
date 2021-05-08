@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bazadanych" Class="bazadanychDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gameo\source\repos\BD_here\bazadanych.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="cryptoUI.Properties.Settings" SettingsPropertyName="bazadanychConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Дмитрий\source\repos\bazadanych.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="cryptoUI.Properties.Settings" SettingsPropertyName="bazadanychConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Prices" Member="Prices">
     <Type Name="Price">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

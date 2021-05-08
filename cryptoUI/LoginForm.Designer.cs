@@ -37,12 +37,13 @@ namespace cryptoUI
             this.buttonEye = new System.Windows.Forms.Button();
             this.buttonSingUp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelLogCom = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxLogin
             // 
             this.textBoxLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLogin.Location = new System.Drawing.Point(124, 26);
+            this.textBoxLogin.Location = new System.Drawing.Point(124, 12);
             this.textBoxLogin.MaxLength = 16;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(317, 31);
@@ -52,7 +53,7 @@ namespace cryptoUI
             // 
             this.labelLogin.AutoSize = true;
             this.labelLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLogin.Location = new System.Drawing.Point(12, 32);
+            this.labelLogin.Location = new System.Drawing.Point(12, 15);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(65, 25);
             this.labelLogin.TabIndex = 1;
@@ -62,7 +63,7 @@ namespace cryptoUI
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(12, 83);
+            this.labelPassword.Location = new System.Drawing.Point(12, 63);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(106, 25);
             this.labelPassword.TabIndex = 3;
@@ -71,7 +72,7 @@ namespace cryptoUI
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(124, 80);
+            this.textBoxPassword.Location = new System.Drawing.Point(124, 60);
             this.textBoxPassword.MaxLength = 16;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(276, 31);
@@ -92,7 +93,7 @@ namespace cryptoUI
             // buttonEye
             // 
             this.buttonEye.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEye.Location = new System.Drawing.Point(406, 80);
+            this.buttonEye.Location = new System.Drawing.Point(406, 60);
             this.buttonEye.Name = "buttonEye";
             this.buttonEye.Size = new System.Drawing.Size(35, 31);
             this.buttonEye.TabIndex = 5;
@@ -121,11 +122,22 @@ namespace cryptoUI
             this.label1.TabIndex = 7;
             this.label1.Text = "Don\'t have an account?";
             // 
+            // labelLogCom
+            // 
+            this.labelLogCom.AutoSize = true;
+            this.labelLogCom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLogCom.Location = new System.Drawing.Point(129, 103);
+            this.labelLogCom.Name = "labelLogCom";
+            this.labelLogCom.Size = new System.Drawing.Size(73, 25);
+            this.labelLogCom.TabIndex = 8;
+            this.labelLogCom.Text = "Status";
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 221);
+            this.Controls.Add(this.labelLogCom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSingUp);
             this.Controls.Add(this.buttonEye);
@@ -154,5 +166,6 @@ namespace cryptoUI
         private System.Windows.Forms.Button buttonEye;
         private System.Windows.Forms.Button buttonSingUp;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelLogCom;
     }
 }

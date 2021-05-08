@@ -88,3 +88,5 @@ C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\bin\Debug\System.Data
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csproj.CopyComplete
 C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.LoginForm.resources
 C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Registration.resources
+C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.LoginForm.resources
+C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Registration.resources

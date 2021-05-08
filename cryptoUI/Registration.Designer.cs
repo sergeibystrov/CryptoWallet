@@ -38,12 +38,13 @@ namespace cryptoUI
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxRepeatPassword = new System.Windows.Forms.TextBox();
             this.buttonSingUp = new System.Windows.Forms.Button();
+            this.labelReg = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonEye1
             // 
             this.buttonEye1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEye1.Location = new System.Drawing.Point(479, 76);
+            this.buttonEye1.Location = new System.Drawing.Point(479, 69);
             this.buttonEye1.Name = "buttonEye1";
             this.buttonEye1.Size = new System.Drawing.Size(35, 31);
             this.buttonEye1.TabIndex = 10;
@@ -55,7 +56,7 @@ namespace cryptoUI
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPassword.Location = new System.Drawing.Point(12, 79);
+            this.labelPassword.Location = new System.Drawing.Point(12, 72);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(106, 25);
             this.labelPassword.TabIndex = 9;
@@ -64,7 +65,7 @@ namespace cryptoUI
             // textBoxPassword
             // 
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(197, 76);
+            this.textBoxPassword.Location = new System.Drawing.Point(197, 69);
             this.textBoxPassword.MaxLength = 16;
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(276, 31);
@@ -93,7 +94,7 @@ namespace cryptoUI
             // buttonEye2
             // 
             this.buttonEye2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEye2.Location = new System.Drawing.Point(479, 133);
+            this.buttonEye2.Location = new System.Drawing.Point(479, 114);
             this.buttonEye2.Name = "buttonEye2";
             this.buttonEye2.Size = new System.Drawing.Size(35, 31);
             this.buttonEye2.TabIndex = 13;
@@ -105,7 +106,7 @@ namespace cryptoUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 136);
+            this.label1.Location = new System.Drawing.Point(12, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 25);
             this.label1.TabIndex = 12;
@@ -114,7 +115,7 @@ namespace cryptoUI
             // textBoxRepeatPassword
             // 
             this.textBoxRepeatPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRepeatPassword.Location = new System.Drawing.Point(197, 133);
+            this.textBoxRepeatPassword.Location = new System.Drawing.Point(197, 114);
             this.textBoxRepeatPassword.MaxLength = 16;
             this.textBoxRepeatPassword.Name = "textBoxRepeatPassword";
             this.textBoxRepeatPassword.Size = new System.Drawing.Size(276, 31);
@@ -132,11 +133,22 @@ namespace cryptoUI
             this.buttonSingUp.UseVisualStyleBackColor = true;
             this.buttonSingUp.Click += new System.EventHandler(this.buttonSingUp_Click);
             // 
+            // labelReg
+            // 
+            this.labelReg.AutoSize = true;
+            this.labelReg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelReg.Location = new System.Drawing.Point(201, 155);
+            this.labelReg.Name = "labelReg";
+            this.labelReg.Size = new System.Drawing.Size(73, 25);
+            this.labelReg.TabIndex = 15;
+            this.labelReg.Text = "Status";
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 248);
+            this.Controls.Add(this.labelReg);
             this.Controls.Add(this.buttonSingUp);
             this.Controls.Add(this.buttonEye2);
             this.Controls.Add(this.label1);
@@ -166,5 +178,6 @@ namespace cryptoUI
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxRepeatPassword;
         private System.Windows.Forms.Button buttonSingUp;
+        private System.Windows.Forms.Label labelReg;
     }
 }
