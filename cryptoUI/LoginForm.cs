@@ -18,11 +18,7 @@ namespace cryptoUI
         {
             InitializeComponent();
             labelLogCom.Hide();
-        }
-
-        private void buttonEye_Click(object sender, EventArgs e)
-        {
-            textBoxPassword.UseSystemPasswordChar = !textBoxPassword.UseSystemPasswordChar;
+            buttonOpenEyes.Hide();
         }
 
         private void buttonSignIn_Click(object sender, EventArgs e)
@@ -84,6 +80,25 @@ namespace cryptoUI
             var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
 
             return Convert.ToBase64String(hash);
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonOpenEyes_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.UseSystemPasswordChar = !textBoxPassword.UseSystemPasswordChar;
+            buttonOpenEyes.Hide();
+            buttonEye.Show();
+        }
+
+        private void buttonEye_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.UseSystemPasswordChar = !textBoxPassword.UseSystemPasswordChar;
+            buttonEye.Hide();
+            buttonOpenEyes.Show();
         }
     }
 

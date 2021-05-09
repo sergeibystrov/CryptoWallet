@@ -18,6 +18,8 @@ namespace cryptoUI
         {
             InitializeComponent();
             labelReg.Hide();
+            buttonOpenEyes1.Hide();
+            buttonOpenEyes2.Hide();
         }
 
         private void buttonSingUp_Click(object sender, EventArgs e)
@@ -69,16 +71,6 @@ namespace cryptoUI
             this.Hide();
         }
 
-        private void buttonEye1_Click(object sender, EventArgs e)
-        {
-            textBoxPassword.UseSystemPasswordChar = !textBoxPassword.UseSystemPasswordChar;
-        }
-
-        private void buttonEye2_Click(object sender, EventArgs e)
-        {
-            textBoxRepeatPassword.UseSystemPasswordChar = !textBoxRepeatPassword.UseSystemPasswordChar;
-        }
-
         private string GetHash(string input)
         {
             var md5 = MD5.Create();
@@ -92,6 +84,34 @@ namespace cryptoUI
             Form LoginForm = new LoginForm();
             LoginForm.Show();
             this.Hide();
+        }
+
+        private void buttonOpenEyes2_Click(object sender, EventArgs e)
+        {
+            textBoxRepeatPassword.UseSystemPasswordChar = !textBoxRepeatPassword.UseSystemPasswordChar;
+            buttonOpenEyes2.Hide();
+            buttonEye2.Show();
+        }
+
+        private void buttonOpenEyes1_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.UseSystemPasswordChar = !textBoxPassword.UseSystemPasswordChar;
+            buttonOpenEyes1.Hide();
+            buttonEye1.Show();
+        }
+
+        private void buttonEye1_Click(object sender, EventArgs e)
+        {
+            textBoxPassword.UseSystemPasswordChar = !textBoxPassword.UseSystemPasswordChar;
+            buttonEye1.Hide();
+            buttonOpenEyes1.Show();
+        }
+
+        private void buttonEye2_Click(object sender, EventArgs e)
+        {
+            textBoxRepeatPassword.UseSystemPasswordChar = !textBoxRepeatPassword.UseSystemPasswordChar;
+            buttonEye2.Hide();
+            buttonOpenEyes2.Show();
         }
     }
 }

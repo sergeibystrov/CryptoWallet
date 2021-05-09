@@ -29,28 +29,19 @@ namespace cryptoUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonEye1 = new System.Windows.Forms.Button();
             this.labelPassword = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.buttonEye2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxRepeatPassword = new System.Windows.Forms.TextBox();
             this.buttonSingUp = new System.Windows.Forms.Button();
             this.labelReg = new System.Windows.Forms.Label();
+            this.buttonEye1 = new System.Windows.Forms.Button();
+            this.buttonEye2 = new System.Windows.Forms.Button();
+            this.buttonOpenEyes1 = new System.Windows.Forms.Button();
+            this.buttonOpenEyes2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonEye1
-            // 
-            this.buttonEye1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEye1.Location = new System.Drawing.Point(479, 69);
-            this.buttonEye1.Name = "buttonEye1";
-            this.buttonEye1.Size = new System.Drawing.Size(35, 31);
-            this.buttonEye1.TabIndex = 10;
-            this.buttonEye1.Text = "👀";
-            this.buttonEye1.UseVisualStyleBackColor = true;
-            this.buttonEye1.Click += new System.EventHandler(this.buttonEye1_Click);
             // 
             // labelPassword
             // 
@@ -90,17 +81,6 @@ namespace cryptoUI
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(317, 31);
             this.textBoxLogin.TabIndex = 6;
-            // 
-            // buttonEye2
-            // 
-            this.buttonEye2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEye2.Location = new System.Drawing.Point(479, 114);
-            this.buttonEye2.Name = "buttonEye2";
-            this.buttonEye2.Size = new System.Drawing.Size(35, 31);
-            this.buttonEye2.TabIndex = 13;
-            this.buttonEye2.Text = "👀";
-            this.buttonEye2.UseVisualStyleBackColor = true;
-            this.buttonEye2.Click += new System.EventHandler(this.buttonEye2_Click);
             // 
             // label1
             // 
@@ -143,17 +123,63 @@ namespace cryptoUI
             this.labelReg.TabIndex = 15;
             this.labelReg.Text = "Status";
             // 
+            // buttonEye1
+            // 
+            this.buttonEye1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEye1.Location = new System.Drawing.Point(479, 69);
+            this.buttonEye1.Name = "buttonEye1";
+            this.buttonEye1.Size = new System.Drawing.Size(35, 31);
+            this.buttonEye1.TabIndex = 18;
+            this.buttonEye1.Text = "🙈";
+            this.buttonEye1.UseVisualStyleBackColor = true;
+            this.buttonEye1.Click += new System.EventHandler(this.buttonEye1_Click);
+            // 
+            // buttonEye2
+            // 
+            this.buttonEye2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEye2.Location = new System.Drawing.Point(479, 114);
+            this.buttonEye2.Name = "buttonEye2";
+            this.buttonEye2.Size = new System.Drawing.Size(35, 31);
+            this.buttonEye2.TabIndex = 19;
+            this.buttonEye2.Text = "🙈";
+            this.buttonEye2.UseVisualStyleBackColor = true;
+            this.buttonEye2.Click += new System.EventHandler(this.buttonEye2_Click);
+            // 
+            // buttonOpenEyes1
+            // 
+            this.buttonOpenEyes1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpenEyes1.Location = new System.Drawing.Point(479, 69);
+            this.buttonOpenEyes1.Name = "buttonOpenEyes1";
+            this.buttonOpenEyes1.Size = new System.Drawing.Size(35, 31);
+            this.buttonOpenEyes1.TabIndex = 20;
+            this.buttonOpenEyes1.Text = "🙉";
+            this.buttonOpenEyes1.UseVisualStyleBackColor = true;
+            this.buttonOpenEyes1.Click += new System.EventHandler(this.buttonOpenEyes1_Click);
+            // 
+            // buttonOpenEyes2
+            // 
+            this.buttonOpenEyes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOpenEyes2.Location = new System.Drawing.Point(479, 114);
+            this.buttonOpenEyes2.Name = "buttonOpenEyes2";
+            this.buttonOpenEyes2.Size = new System.Drawing.Size(35, 31);
+            this.buttonOpenEyes2.TabIndex = 21;
+            this.buttonOpenEyes2.Text = "🙉";
+            this.buttonOpenEyes2.UseVisualStyleBackColor = true;
+            this.buttonOpenEyes2.Click += new System.EventHandler(this.buttonOpenEyes2_Click);
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 248);
+            this.Controls.Add(this.buttonOpenEyes2);
+            this.Controls.Add(this.buttonOpenEyes1);
+            this.Controls.Add(this.buttonEye2);
+            this.Controls.Add(this.buttonEye1);
             this.Controls.Add(this.labelReg);
             this.Controls.Add(this.buttonSingUp);
-            this.Controls.Add(this.buttonEye2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxRepeatPassword);
-            this.Controls.Add(this.buttonEye1);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.labelLogin);
@@ -168,16 +194,17 @@ namespace cryptoUI
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonEye1;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label labelLogin;
         private System.Windows.Forms.TextBox textBoxLogin;
-        private System.Windows.Forms.Button buttonEye2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxRepeatPassword;
         private System.Windows.Forms.Button buttonSingUp;
         private System.Windows.Forms.Label labelReg;
+        private System.Windows.Forms.Button buttonEye1;
+        private System.Windows.Forms.Button buttonEye2;
+        private System.Windows.Forms.Button buttonOpenEyes1;
+        private System.Windows.Forms.Button buttonOpenEyes2;
     }
 }
