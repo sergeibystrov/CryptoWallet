@@ -187,5 +187,10 @@ namespace cryptoUI
                 labelPriceInPLN.Text = Decimal.Parse(price.PLN.ToString(), System.Globalization.NumberStyles.Any).ToString()+"PLN"; ; //price.PLN.ToString() + "PLN";
             }
         }
+
+        private void labelPriceInUSD_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
