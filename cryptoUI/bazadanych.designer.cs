@@ -30,19 +30,28 @@ namespace cryptoUI
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertPrice(Price instance);
-    partial void UpdatePrice(Price instance);
-    partial void DeletePrice(Price instance);
     partial void InsertCurrency(Currency instance);
     partial void UpdateCurrency(Currency instance);
     partial void DeleteCurrency(Currency instance);
+    partial void InsertPayment(Payment instance);
+    partial void UpdatePayment(Payment instance);
+    partial void DeletePayment(Payment instance);
     partial void InsertUser(User instance);
     partial void UpdateUser(User instance);
     partial void DeleteUser(User instance);
+    partial void InsertWallet(Wallet instance);
+    partial void UpdateWallet(Wallet instance);
+    partial void DeleteWallet(Wallet instance);
+    partial void InsertPrice(Price instance);
+    partial void UpdatePrice(Price instance);
+    partial void DeletePrice(Price instance);
+    partial void InsertPossession(Possession instance);
+    partial void UpdatePossession(Possession instance);
+    partial void DeletePossession(Possession instance);
     #endregion
 		
 		public bazadanychDataContext() : 
-				base(global::cryptoUI.Properties.Settings.Default.bazadanychConnectionString1, mappingSource)
+				base(global::cryptoUI.Properties.Settings.Default.bazadanychConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -71,19 +80,19 @@ namespace cryptoUI
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Price> Prices
-		{
-			get
-			{
-				return this.GetTable<Price>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Currency> Currencies
 		{
 			get
 			{
 				return this.GetTable<Currency>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Payment> Payments
+		{
+			get
+			{
+				return this.GetTable<Payment>();
 			}
 		}
 		
@@ -93,6 +102,881 @@ namespace cryptoUI
 			{
 				return this.GetTable<User>();
 			}
+		}
+		
+		public System.Data.Linq.Table<Wallet> Wallets
+		{
+			get
+			{
+				return this.GetTable<Wallet>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Price> Prices
+		{
+			get
+			{
+				return this.GetTable<Price>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Possession> Possessions
+		{
+			get
+			{
+				return this.GetTable<Possession>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Currencies")]
+	public partial class Currency : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _API_Id;
+		
+		private string _Name;
+		
+		private string _ImageUrl;
+		
+		private EntitySet<Payment> _Payments;
+		
+		private EntitySet<Price> _Prices;
+		
+		private EntitySet<Possession> _Possessions;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnAPI_IdChanging(int value);
+    partial void OnAPI_IdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnImageUrlChanging(string value);
+    partial void OnImageUrlChanged();
+    #endregion
+		
+		public Currency()
+		{
+			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
+			this._Prices = new EntitySet<Price>(new Action<Price>(this.attach_Prices), new Action<Price>(this.detach_Prices));
+			this._Possessions = new EntitySet<Possession>(new Action<Possession>(this.attach_Possessions), new Action<Possession>(this.detach_Possessions));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_API_Id", DbType="Int NOT NULL")]
+		public int API_Id
+		{
+			get
+			{
+				return this._API_Id;
+			}
+			set
+			{
+				if ((this._API_Id != value))
+				{
+					this.OnAPI_IdChanging(value);
+					this.SendPropertyChanging();
+					this._API_Id = value;
+					this.SendPropertyChanged("API_Id");
+					this.OnAPI_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageUrl", DbType="NVarChar(200)")]
+		public string ImageUrl
+		{
+			get
+			{
+				return this._ImageUrl;
+			}
+			set
+			{
+				if ((this._ImageUrl != value))
+				{
+					this.OnImageUrlChanging(value);
+					this.SendPropertyChanging();
+					this._ImageUrl = value;
+					this.SendPropertyChanged("ImageUrl");
+					this.OnImageUrlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Payment", Storage="_Payments", ThisKey="Id", OtherKey="id_currency")]
+		public EntitySet<Payment> Payments
+		{
+			get
+			{
+				return this._Payments;
+			}
+			set
+			{
+				this._Payments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Price", Storage="_Prices", ThisKey="Id", OtherKey="Id_Currency")]
+		public EntitySet<Price> Prices
+		{
+			get
+			{
+				return this._Prices;
+			}
+			set
+			{
+				this._Prices.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Possession", Storage="_Possessions", ThisKey="Id", OtherKey="id_currency")]
+		public EntitySet<Possession> Possessions
+		{
+			get
+			{
+				return this._Possessions;
+			}
+			set
+			{
+				this._Possessions.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = this;
+		}
+		
+		private void detach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = null;
+		}
+		
+		private void attach_Prices(Price entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = this;
+		}
+		
+		private void detach_Prices(Price entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = null;
+		}
+		
+		private void attach_Possessions(Possession entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = this;
+		}
+		
+		private void detach_Possessions(Possession entity)
+		{
+			this.SendPropertyChanging();
+			entity.Currency = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Payments")]
+	public partial class Payment : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_payment;
+		
+		private int _id_wallet;
+		
+		private int _id_currency;
+		
+		private float _amount;
+		
+		private float _price;
+		
+		private System.DateTime _time;
+		
+		private EntityRef<Currency> _Currency;
+		
+		private EntityRef<Wallet> _Wallet;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_paymentChanging(int value);
+    partial void Onid_paymentChanged();
+    partial void Onid_walletChanging(int value);
+    partial void Onid_walletChanged();
+    partial void Onid_currencyChanging(int value);
+    partial void Onid_currencyChanged();
+    partial void OnamountChanging(float value);
+    partial void OnamountChanged();
+    partial void OnpriceChanging(float value);
+    partial void OnpriceChanged();
+    partial void OntimeChanging(System.DateTime value);
+    partial void OntimeChanged();
+    #endregion
+		
+		public Payment()
+		{
+			this._Currency = default(EntityRef<Currency>);
+			this._Wallet = default(EntityRef<Wallet>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_payment", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_payment
+		{
+			get
+			{
+				return this._id_payment;
+			}
+			set
+			{
+				if ((this._id_payment != value))
+				{
+					this.Onid_paymentChanging(value);
+					this.SendPropertyChanging();
+					this._id_payment = value;
+					this.SendPropertyChanged("id_payment");
+					this.Onid_paymentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_wallet", DbType="Int NOT NULL")]
+		public int id_wallet
+		{
+			get
+			{
+				return this._id_wallet;
+			}
+			set
+			{
+				if ((this._id_wallet != value))
+				{
+					if (this._Wallet.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_walletChanging(value);
+					this.SendPropertyChanging();
+					this._id_wallet = value;
+					this.SendPropertyChanged("id_wallet");
+					this.Onid_walletChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_currency", DbType="Int NOT NULL")]
+		public int id_currency
+		{
+			get
+			{
+				return this._id_currency;
+			}
+			set
+			{
+				if ((this._id_currency != value))
+				{
+					if (this._Currency.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_currencyChanging(value);
+					this.SendPropertyChanging();
+					this._id_currency = value;
+					this.SendPropertyChanged("id_currency");
+					this.Onid_currencyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Real NOT NULL")]
+		public float amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this.OnamountChanging(value);
+					this.SendPropertyChanging();
+					this._amount = value;
+					this.SendPropertyChanged("amount");
+					this.OnamountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_price", DbType="Real NOT NULL")]
+		public float price
+		{
+			get
+			{
+				return this._price;
+			}
+			set
+			{
+				if ((this._price != value))
+				{
+					this.OnpriceChanging(value);
+					this.SendPropertyChanging();
+					this._price = value;
+					this.SendPropertyChanged("price");
+					this.OnpriceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time", DbType="DateTime NOT NULL")]
+		public System.DateTime time
+		{
+			get
+			{
+				return this._time;
+			}
+			set
+			{
+				if ((this._time != value))
+				{
+					this.OntimeChanging(value);
+					this.SendPropertyChanging();
+					this._time = value;
+					this.SendPropertyChanged("time");
+					this.OntimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Payment", Storage="_Currency", ThisKey="id_currency", OtherKey="Id", IsForeignKey=true)]
+		public Currency Currency
+		{
+			get
+			{
+				return this._Currency.Entity;
+			}
+			set
+			{
+				Currency previousValue = this._Currency.Entity;
+				if (((previousValue != value) 
+							|| (this._Currency.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Currency.Entity = null;
+						previousValue.Payments.Remove(this);
+					}
+					this._Currency.Entity = value;
+					if ((value != null))
+					{
+						value.Payments.Add(this);
+						this._id_currency = value.Id;
+					}
+					else
+					{
+						this._id_currency = default(int);
+					}
+					this.SendPropertyChanged("Currency");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wallet_Payment", Storage="_Wallet", ThisKey="id_wallet", OtherKey="id_wallet", IsForeignKey=true)]
+		public Wallet Wallet
+		{
+			get
+			{
+				return this._Wallet.Entity;
+			}
+			set
+			{
+				Wallet previousValue = this._Wallet.Entity;
+				if (((previousValue != value) 
+							|| (this._Wallet.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Wallet.Entity = null;
+						previousValue.Payments.Remove(this);
+					}
+					this._Wallet.Entity = value;
+					if ((value != null))
+					{
+						value.Payments.Add(this);
+						this._id_wallet = value.id_wallet;
+					}
+					else
+					{
+						this._id_wallet = default(int);
+					}
+					this.SendPropertyChanged("Wallet");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_user;
+		
+		private string _username;
+		
+		private string _password;
+		
+		private float _balance;
+		
+		private EntitySet<Wallet> _Wallets;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_userChanging(int value);
+    partial void Onid_userChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnbalanceChanging(float value);
+    partial void OnbalanceChanged();
+    #endregion
+		
+		public User()
+		{
+			this._Wallets = new EntitySet<Wallet>(new Action<Wallet>(this.attach_Wallets), new Action<Wallet>(this.detach_Wallets));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_user", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_user
+		{
+			get
+			{
+				return this._id_user;
+			}
+			set
+			{
+				if ((this._id_user != value))
+				{
+					this.Onid_userChanging(value);
+					this.SendPropertyChanging();
+					this._id_user = value;
+					this.SendPropertyChanged("id_user");
+					this.Onid_userChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(16) NOT NULL", CanBeNull=false)]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_balance", DbType="Real NOT NULL")]
+		public float balance
+		{
+			get
+			{
+				return this._balance;
+			}
+			set
+			{
+				if ((this._balance != value))
+				{
+					this.OnbalanceChanging(value);
+					this.SendPropertyChanging();
+					this._balance = value;
+					this.SendPropertyChanged("balance");
+					this.OnbalanceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Wallet", Storage="_Wallets", ThisKey="id_user", OtherKey="id_user")]
+		public EntitySet<Wallet> Wallets
+		{
+			get
+			{
+				return this._Wallets;
+			}
+			set
+			{
+				this._Wallets.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Wallets(Wallet entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = this;
+		}
+		
+		private void detach_Wallets(Wallet entity)
+		{
+			this.SendPropertyChanging();
+			entity.User = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Wallets")]
+	public partial class Wallet : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_wallet;
+		
+		private int _id_user;
+		
+		private string _adress;
+		
+		private EntitySet<Payment> _Payments;
+		
+		private EntitySet<Possession> _Possessions;
+		
+		private EntityRef<User> _User;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_walletChanging(int value);
+    partial void Onid_walletChanged();
+    partial void Onid_userChanging(int value);
+    partial void Onid_userChanged();
+    partial void OnadressChanging(string value);
+    partial void OnadressChanged();
+    #endregion
+		
+		public Wallet()
+		{
+			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
+			this._Possessions = new EntitySet<Possession>(new Action<Possession>(this.attach_Possessions), new Action<Possession>(this.detach_Possessions));
+			this._User = default(EntityRef<User>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_wallet", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_wallet
+		{
+			get
+			{
+				return this._id_wallet;
+			}
+			set
+			{
+				if ((this._id_wallet != value))
+				{
+					this.Onid_walletChanging(value);
+					this.SendPropertyChanging();
+					this._id_wallet = value;
+					this.SendPropertyChanged("id_wallet");
+					this.Onid_walletChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_user", DbType="Int NOT NULL")]
+		public int id_user
+		{
+			get
+			{
+				return this._id_user;
+			}
+			set
+			{
+				if ((this._id_user != value))
+				{
+					if (this._User.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_userChanging(value);
+					this.SendPropertyChanging();
+					this._id_user = value;
+					this.SendPropertyChanged("id_user");
+					this.Onid_userChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_adress", DbType="NVarChar(32) NOT NULL", CanBeNull=false)]
+		public string adress
+		{
+			get
+			{
+				return this._adress;
+			}
+			set
+			{
+				if ((this._adress != value))
+				{
+					this.OnadressChanging(value);
+					this.SendPropertyChanging();
+					this._adress = value;
+					this.SendPropertyChanged("adress");
+					this.OnadressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wallet_Payment", Storage="_Payments", ThisKey="id_wallet", OtherKey="id_wallet")]
+		public EntitySet<Payment> Payments
+		{
+			get
+			{
+				return this._Payments;
+			}
+			set
+			{
+				this._Payments.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wallet_Possession", Storage="_Possessions", ThisKey="id_wallet", OtherKey="id_wallet")]
+		public EntitySet<Possession> Possessions
+		{
+			get
+			{
+				return this._Possessions;
+			}
+			set
+			{
+				this._Possessions.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Wallet", Storage="_User", ThisKey="id_user", OtherKey="id_user", IsForeignKey=true)]
+		public User User
+		{
+			get
+			{
+				return this._User.Entity;
+			}
+			set
+			{
+				User previousValue = this._User.Entity;
+				if (((previousValue != value) 
+							|| (this._User.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._User.Entity = null;
+						previousValue.Wallets.Remove(this);
+					}
+					this._User.Entity = value;
+					if ((value != null))
+					{
+						value.Wallets.Add(this);
+						this._id_user = value.id_user;
+					}
+					else
+					{
+						this._id_user = default(int);
+					}
+					this.SendPropertyChanged("User");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Wallet = this;
+		}
+		
+		private void detach_Payments(Payment entity)
+		{
+			this.SendPropertyChanging();
+			entity.Wallet = null;
+		}
+		
+		private void attach_Possessions(Possession entity)
+		{
+			this.SendPropertyChanging();
+			entity.Wallet = this;
+		}
+		
+		private void detach_Possessions(Possession entity)
+		{
+			this.SendPropertyChanging();
+			entity.Wallet = null;
 		}
 	}
 	
@@ -271,253 +1155,197 @@ namespace cryptoUI
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Currencies")]
-	public partial class Currency : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Possessions")]
+	public partial class Possession : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _Id;
+		private int _id_possession;
 		
-		private int _API_Id;
+		private int _id_wallet;
 		
-		private string _Name;
+		private int _id_currency;
 		
-		private string _ImageUrl;
+		private float _amount;
 		
-		private EntitySet<Price> _Prices;
+		private EntityRef<Currency> _Currency;
+		
+		private EntityRef<Wallet> _Wallet;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnAPI_IdChanging(int value);
-    partial void OnAPI_IdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
-    partial void OnImageUrlChanging(string value);
-    partial void OnImageUrlChanged();
+    partial void Onid_possessionChanging(int value);
+    partial void Onid_possessionChanged();
+    partial void Onid_walletChanging(int value);
+    partial void Onid_walletChanged();
+    partial void Onid_currencyChanging(int value);
+    partial void Onid_currencyChanged();
+    partial void OnamountChanging(float value);
+    partial void OnamountChanged();
     #endregion
 		
-		public Currency()
+		public Possession()
 		{
-			this._Prices = new EntitySet<Price>(new Action<Price>(this.attach_Prices), new Action<Price>(this.detach_Prices));
+			this._Currency = default(EntityRef<Currency>);
+			this._Wallet = default(EntityRef<Wallet>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_possession", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_possession
 		{
 			get
 			{
-				return this._Id;
+				return this._id_possession;
 			}
 			set
 			{
-				if ((this._Id != value))
+				if ((this._id_possession != value))
 				{
-					this.OnIdChanging(value);
+					this.Onid_possessionChanging(value);
 					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
+					this._id_possession = value;
+					this.SendPropertyChanged("id_possession");
+					this.Onid_possessionChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_API_Id", DbType="Int NOT NULL")]
-		public int API_Id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_wallet", DbType="Int NOT NULL")]
+		public int id_wallet
 		{
 			get
 			{
-				return this._API_Id;
+				return this._id_wallet;
 			}
 			set
 			{
-				if ((this._API_Id != value))
+				if ((this._id_wallet != value))
 				{
-					this.OnAPI_IdChanging(value);
+					if (this._Wallet.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_walletChanging(value);
 					this.SendPropertyChanging();
-					this._API_Id = value;
-					this.SendPropertyChanged("API_Id");
-					this.OnAPI_IdChanged();
+					this._id_wallet = value;
+					this.SendPropertyChanged("id_wallet");
+					this.Onid_walletChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_currency", DbType="Int NOT NULL")]
+		public int id_currency
 		{
 			get
 			{
-				return this._Name;
+				return this._id_currency;
 			}
 			set
 			{
-				if ((this._Name != value))
+				if ((this._id_currency != value))
 				{
-					this.OnNameChanging(value);
+					if (this._Currency.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_currencyChanging(value);
 					this.SendPropertyChanging();
-					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
+					this._id_currency = value;
+					this.SendPropertyChanged("id_currency");
+					this.Onid_currencyChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImageUrl", DbType="NVarChar(200)")]
-		public string ImageUrl
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Real NOT NULL")]
+		public float amount
 		{
 			get
 			{
-				return this._ImageUrl;
+				return this._amount;
 			}
 			set
 			{
-				if ((this._ImageUrl != value))
+				if ((this._amount != value))
 				{
-					this.OnImageUrlChanging(value);
+					this.OnamountChanging(value);
 					this.SendPropertyChanging();
-					this._ImageUrl = value;
-					this.SendPropertyChanged("ImageUrl");
-					this.OnImageUrlChanged();
+					this._amount = value;
+					this.SendPropertyChanged("amount");
+					this.OnamountChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Price", Storage="_Prices", ThisKey="Id", OtherKey="Id_Currency")]
-		public EntitySet<Price> Prices
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Currency_Possession", Storage="_Currency", ThisKey="id_currency", OtherKey="Id", IsForeignKey=true)]
+		public Currency Currency
 		{
 			get
 			{
-				return this._Prices;
+				return this._Currency.Entity;
 			}
 			set
 			{
-				this._Prices.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Prices(Price entity)
-		{
-			this.SendPropertyChanging();
-			entity.Currency = this;
-		}
-		
-		private void detach_Prices(Price entity)
-		{
-			this.SendPropertyChanging();
-			entity.Currency = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Users")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_user;
-		
-		private string _username;
-		
-		private string _password;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_userChanging(int value);
-    partial void Onid_userChanged();
-    partial void OnusernameChanging(string value);
-    partial void OnusernameChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
-    #endregion
-		
-		public User()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_user", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_user
-		{
-			get
-			{
-				return this._id_user;
-			}
-			set
-			{
-				if ((this._id_user != value))
+				Currency previousValue = this._Currency.Entity;
+				if (((previousValue != value) 
+							|| (this._Currency.HasLoadedOrAssignedValue == false)))
 				{
-					this.Onid_userChanging(value);
 					this.SendPropertyChanging();
-					this._id_user = value;
-					this.SendPropertyChanged("id_user");
-					this.Onid_userChanged();
+					if ((previousValue != null))
+					{
+						this._Currency.Entity = null;
+						previousValue.Possessions.Remove(this);
+					}
+					this._Currency.Entity = value;
+					if ((value != null))
+					{
+						value.Possessions.Add(this);
+						this._id_currency = value.Id;
+					}
+					else
+					{
+						this._id_currency = default(int);
+					}
+					this.SendPropertyChanged("Currency");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(16) NOT NULL", CanBeNull=false)]
-		public string username
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Wallet_Possession", Storage="_Wallet", ThisKey="id_wallet", OtherKey="id_wallet", IsForeignKey=true)]
+		public Wallet Wallet
 		{
 			get
 			{
-				return this._username;
+				return this._Wallet.Entity;
 			}
 			set
 			{
-				if ((this._username != value))
+				Wallet previousValue = this._Wallet.Entity;
+				if (((previousValue != value) 
+							|| (this._Wallet.HasLoadedOrAssignedValue == false)))
 				{
-					this.OnusernameChanging(value);
 					this.SendPropertyChanging();
-					this._username = value;
-					this.SendPropertyChanged("username");
-					this.OnusernameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(16) NOT NULL", CanBeNull=false)]
-		public string password
-		{
-			get
-			{
-				return this._password;
-			}
-			set
-			{
-				if ((this._password != value))
-				{
-					this.OnpasswordChanging(value);
-					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
+					if ((previousValue != null))
+					{
+						this._Wallet.Entity = null;
+						previousValue.Possessions.Remove(this);
+					}
+					this._Wallet.Entity = value;
+					if ((value != null))
+					{
+						value.Possessions.Add(this);
+						this._id_wallet = value.id_wallet;
+					}
+					else
+					{
+						this._id_wallet = default(int);
+					}
+					this.SendPropertyChanged("Wallet");
 				}
 			}
 		}

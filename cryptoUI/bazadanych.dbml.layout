@@ -1,31 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="bazadanych">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.875, 8.5" name="bazadanych">
   <DataContextMoniker Name="/bazadanychDataContext" />
   <nestedChildShapes>
-    <classShape Id="67797539-a8c9-4fd2-87cf-4c9f665188af" absoluteBounds="6.75, 2, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/bazadanychDataContext/Price" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9b7614be-9bb3-42f0-8036-c6ebc16c6082" absoluteBounds="6.7650000000000006, 2.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6e0c7b25-b9db-4418-9a95-774334debd8c" absoluteBounds="3.5, 1.875, 2, 1.5785953776041666">
+    <classShape Id="4bfcccde-12b2-4382-a625-e753fe56ae39" absoluteBounds="6.875, 2.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/bazadanychDataContext/Currency" />
       <nestedChildShapes>
-        <elementListCompartment Id="92b146e3-8efe-4a9e-a92d-6fa0e89c9a4d" absoluteBounds="3.5149999999999997, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="40f3b5eb-120c-4a34-a00b-17a9755b85f9" absoluteBounds="6.89, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 2.72679768880208); (6.75 : 2.72679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/bazadanychDataContext/Currency/Currency_Price" />
+    <classShape Id="6ac66524-922a-40d0-85b9-b2e3b25ab5bd" absoluteBounds="4, 0.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/bazadanychDataContext/Payment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="84f3789b-3292-4645-93b9-fac7926f3fa8" absoluteBounds="4.015, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.875 : 2.48159912109375); (6 : 2.48159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazadanychDataContext/Currency/Currency_Payment" />
       <nodes>
-        <classShapeMoniker Id="6e0c7b25-b9db-4418-9a95-774334debd8c" />
-        <classShapeMoniker Id="67797539-a8c9-4fd2-87cf-4c9f665188af" />
+        <classShapeMoniker Id="4bfcccde-12b2-4382-a625-e753fe56ae39" />
+        <classShapeMoniker Id="6ac66524-922a-40d0-85b9-b2e3b25ab5bd" />
       </nodes>
     </associationConnector>
-    <classShape Id="03051a68-9b65-4ec2-ad54-9f0070b9ee17" absoluteBounds="0.75, 2, 2, 1.3862939453125">
+    <classShape Id="07e2c79a-d968-445d-bd97-97fd914f1f83" absoluteBounds="0.5, 4.125, 2, 1.5785953776041666">
       <DataClassMoniker Name="/bazadanychDataContext/User" />
       <nestedChildShapes>
-        <elementListCompartment Id="b798606d-1f14-4841-8029-43fe98d4eec5" absoluteBounds="0.76500000000000012, 2.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="76b151cf-a5c6-4ef5-a354-a6826f128b80" absoluteBounds="0.51500000000000012, 4.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="7229f7ea-0c7a-4fa3-b7f4-c78319880efc" absoluteBounds="3.875, 4.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/bazadanychDataContext/Wallet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e5d5eb4-92d5-4df5-a445-17dfea0e36cf" absoluteBounds="3.8899999999999997, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.9375 : 4.125); (4.9375 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazadanychDataContext/Wallet/Wallet_Payment" />
+      <nodes>
+        <classShapeMoniker Id="7229f7ea-0c7a-4fa3-b7f4-c78319880efc" />
+        <classShapeMoniker Id="6ac66524-922a-40d0-85b9-b2e3b25ab5bd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.81814697265625); (3.875 : 4.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazadanychDataContext/User/User_Wallet" />
+      <nodes>
+        <classShapeMoniker Id="07e2c79a-d968-445d-bd97-97fd914f1f83" />
+        <classShapeMoniker Id="7229f7ea-0c7a-4fa3-b7f4-c78319880efc" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="6a6e704f-ca6a-4be8-bd51-c8377b81859d" absoluteBounds="9.625, 1.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/bazadanychDataContext/Price" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4f3336a7-ae1b-445b-997c-78a291ff7c66" absoluteBounds="9.64, 2.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.875 : 2.78929768880208); (9.625 : 2.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazadanychDataContext/Currency/Currency_Price" />
+      <nodes>
+        <classShapeMoniker Id="4bfcccde-12b2-4382-a625-e753fe56ae39" />
+        <classShapeMoniker Id="6a6e704f-ca6a-4be8-bd51-c8377b81859d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="07c6f206-f76e-4563-9607-7d890562ac77" absoluteBounds="6.875, 4.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/bazadanychDataContext/Possession" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca7b8b76-1cc7-4a11-a708-2c45ff7cad34" absoluteBounds="6.89, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 3.70359537760417); (7.875 : 4.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazadanychDataContext/Currency/Currency_Possession" />
+      <nodes>
+        <classShapeMoniker Id="4bfcccde-12b2-4382-a625-e753fe56ae39" />
+        <classShapeMoniker Id="07c6f206-f76e-4563-9607-7d890562ac77" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.875 : 5.06814697265625); (6.875 : 5.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazadanychDataContext/Wallet/Wallet_Possession" />
+      <nodes>
+        <classShapeMoniker Id="7229f7ea-0c7a-4fa3-b7f4-c78319880efc" />
+        <classShapeMoniker Id="07c6f206-f76e-4563-9607-7d890562ac77" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

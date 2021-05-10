@@ -1,5 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bazadanych" Class="bazadanychDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Дмитрий\source\repos\bazadanych.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="cryptoUI.Properties.Settings" SettingsPropertyName="bazadanychConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gameo\source\repos\BD_here\bazadanych.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="cryptoUI.Properties.Settings" SettingsPropertyName="bazadanychConnectionString2" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Currencies" Member="Currencies">
+    <Type Name="Currency">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="API_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ImageUrl" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Association Name="Currency_Payment" Member="Payments" ThisKey="Id" OtherKey="id_currency" Type="Payment" />
+      <Association Name="Currency_Price" Member="Prices" ThisKey="Id" OtherKey="Id_Currency" Type="Price" />
+      <Association Name="Currency_Possession" Member="Possessions" ThisKey="Id" OtherKey="id_currency" Type="Possession" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Payments" Member="Payments">
+    <Type Name="Payment">
+      <Column Name="id_payment" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_wallet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_currency" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="price" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Currency_Payment" Member="Currency" ThisKey="id_currency" OtherKey="Id" Type="Currency" IsForeignKey="true" />
+      <Association Name="Wallet_Payment" Member="Wallet" ThisKey="id_wallet" OtherKey="id_wallet" Type="Wallet" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="balance" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="User_Wallet" Member="Wallets" ThisKey="id_user" OtherKey="id_user" Type="Wallet" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wallets" Member="Wallets">
+    <Type Name="Wallet">
+      <Column Name="id_wallet" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="adress" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
+      <Association Name="Wallet_Payment" Member="Payments" ThisKey="id_wallet" OtherKey="id_wallet" Type="Payment" />
+      <Association Name="Wallet_Possession" Member="Possessions" ThisKey="id_wallet" OtherKey="id_wallet" Type="Possession" />
+      <Association Name="User_Wallet" Member="User" ThisKey="id_user" OtherKey="id_user" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Prices" Member="Prices">
     <Type Name="Price">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -9,20 +51,14 @@
       <Association Name="Currency_Price" Member="Currency" ThisKey="Id_Currency" OtherKey="Id" Type="Currency" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Currencies" Member="Currencies">
-    <Type Name="Currency">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="API_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ImageUrl" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-      <Association Name="Currency_Price" Member="Prices" ThisKey="Id" OtherKey="Id_Currency" Type="Price" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Users" Member="Users">
-    <Type Name="User">
-      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="username" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="NVarChar(16) NOT NULL" CanBeNull="false" />
+  <Table Name="dbo.Possessions" Member="Possessions">
+    <Type Name="Possession">
+      <Column Name="id_possession" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_wallet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_currency" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="amount" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Association Name="Currency_Possession" Member="Currency" ThisKey="id_currency" OtherKey="Id" Type="Currency" IsForeignKey="true" />
+      <Association Name="Wallet_Possession" Member="Wallet" ThisKey="id_wallet" OtherKey="id_wallet" Type="Wallet" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

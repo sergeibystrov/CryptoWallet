@@ -10,7 +10,7 @@ namespace cryptoUI
     {
         public override string ToString()
         {
-            return username+password;
+            return username+password+balance;
         }
     }
 }

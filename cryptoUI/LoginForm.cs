@@ -20,15 +20,15 @@ namespace cryptoUI
             labelLogCom.Hide();
             buttonOpenEyes.Hide();
         }
-
+        public string textetex { get; set; }
         private void buttonSignIn_Click(object sender, EventArgs e)
         {
-
             if (IfMatchLogin())
             {
                 if (IfMatchPassword())
                 {
                     Form1 form1 = new Form1();
+                    textetex = this.textBoxLogin.Text;
                     form1.Show();
                     form1.UsernameText = this.textBoxLogin.Text;
                     this.Hide();

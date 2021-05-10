@@ -29,7 +29,6 @@ namespace cryptoUI
             panelMenu.Controls.Add(leftBorderButton);
             //Form
             this.Text = string.Empty;
-
         }
         public string UsernameText
         {
@@ -115,8 +114,7 @@ namespace cryptoUI
         private void dashboardButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGDBCollors.color1);
-            OpenChildForm(new DashboardForm());
-
+            OpenChildForm(new DashboardForm() { UsernameText = label1.Text });
         }
 
         private void walletButton_Click(object sender, EventArgs e)

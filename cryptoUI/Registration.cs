@@ -63,6 +63,7 @@ namespace cryptoUI
             User newUser = new User();
             newUser.username = textBoxLogin.Text.ToString();
             newUser.password = GetHash(textBoxPassword.Text).ToString();
+            newUser.balance = 300;
             bazadanych.Users.InsertOnSubmit(newUser);
             bazadanych.SubmitChanges();
             MessageBox.Show("Account created");
