@@ -48,8 +48,8 @@ namespace cryptoUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gameo\\source\\repos\\B" +
-            "D_here\\bazadanych.mdf;Integrated Security=True;Connect Timeout=30")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Дмитрий\\source\\repos" +
+            "\\bazadanych.mdf;Integrated Security=True;Connect Timeout=30")]
         public string bazadanychConnectionString2 {
             get {
                 return ((string)(this["bazadanychConnectionString2"]));

@@ -116,14 +116,20 @@ namespace cryptoUI
 
             Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-            labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString() + "$"; ; //price.USD.ToString()+"$";
-            labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString() + "€"; ; //price.EUR.ToString() + "€";
+            labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString();  //price.USD.ToString()+"$";
+            labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString();  //price.EUR.ToString() + "€";
             response3.Close();
 
             foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
             {
                 id_currency = c.Id;
             }
+            foreach (User o in bazadanych.Users.Where(x => x.username == UsernameText))
+            {
+                usdBalance.Text = "USD balance: " + o.balance.ToString() + "$";
+            }
+            amountOfCurrency();
+            tokenBalance.Text = "Token balance: " + amount.ToString();
         }
         /*public class Currencies
         {
@@ -157,8 +163,8 @@ namespace cryptoUI
 
             Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-            labelPriceInUSD.Text = price.USD.ToString() + "$";
-            labelPriceInEUR.Text = price.EUR.ToString() + "€";
+            labelPriceInUSD.Text = price.USD.ToString();
+            labelPriceInEUR.Text = price.EUR.ToString();
 
             AutoCompleteStringCollection myCollection = new AutoCompleteStringCollection();
             
@@ -231,8 +237,8 @@ namespace cryptoUI
 
                 Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-                labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString() + "$"; ; //price.USD.ToString()+"$";
-                labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString()+"€"; ; //price.EUR.ToString() + "€";
+                labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString(); ; //price.USD.ToString()+"$";
+                labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString(); ; //price.EUR.ToString() + "€";
                 CurrentCurrency = o.Name;
 
                 foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
@@ -258,8 +264,8 @@ namespace cryptoUI
             {
                 //double value OK
                 UpdateDashboard();
-                double amount = Double.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
-                double price = Double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+                float amount = float.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
+                float price = float.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
                 usdPaid.Text = (amount * price).ToString();
             }
         }
@@ -305,6 +311,9 @@ namespace cryptoUI
                     u.Payments.Add(newPayment);
                     newPayment.id_price = newPrice.Id;
                     newPayment.amount = float.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
+                    UpdateDashboard();
+                    tokenToBuy.Text = "";
+                    usdPaid.Text = "";
                     //messege: payment done
                 }
                 else
@@ -393,6 +402,9 @@ namespace cryptoUI
                     u.Payments.Add(newPayment);
                     newPayment.id_price = newPrice.Id;
                     newPayment.amount = -float.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
+                    UpdateDashboard();
+                    tokenToSell.Text = "";
+                    usdEarn.Text = "";
                     //messege: payment done
                 }
                 else
@@ -415,8 +427,8 @@ namespace cryptoUI
             {
                 //double value OK
                 UpdateDashboard();
-                double amount = Double.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
-                double price = Double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+                double amount = double.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
+                double price = double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
                 usdEarn.Text = (amount * price).ToString();
             }
         }
