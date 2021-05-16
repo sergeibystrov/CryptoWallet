@@ -18,6 +18,8 @@ namespace cryptoUI
     {
         bazadanychDataContext bazadanych = new bazadanychDataContext();
         string CurrentCurrency;
+        int id_currency;
+        float amount;
         public async void UpdateDashboard()
         {
             /*
@@ -117,6 +119,11 @@ namespace cryptoUI
             labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString() + "$"; ; //price.USD.ToString()+"$";
             labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString() + "€"; ; //price.EUR.ToString() + "€";
             response3.Close();
+
+            foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
+            {
+                id_currency = c.Id;
+            }
         }
         /*public class Currencies
         {
@@ -168,7 +175,11 @@ namespace cryptoUI
             {
                 usdBalance.Text += o.balance.ToString() + "$";
             }
-            
+
+            foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
+            {
+                id_currency = c.Id;
+            }
         }
         public string Nickname;
         public string UsernameText
@@ -223,6 +234,15 @@ namespace cryptoUI
                 labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString() + "$"; ; //price.USD.ToString()+"$";
                 labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString()+"€"; ; //price.EUR.ToString() + "€";
                 CurrentCurrency = o.Name;
+
+                foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
+                {
+                    id_currency = c.Id;
+                }
+
+                amountOfCurrency();
+
+                tokenBalance.Text += amount.ToString();
             }
         }
 
@@ -263,19 +283,38 @@ namespace cryptoUI
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-                foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
+        {     
+            foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
+            {
+                id_currency = c.Id;
+            }
+            Price newPrice = new Price();
+            newPrice.Id_Currency = id_currency;
+            UpdateDashboard();
+            newPrice.Price1 = float.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+            newPrice.DataTime = DateTime.Now;
+            bazadanych.Prices.InsertOnSubmit(newPrice);
+            bazadanych.SubmitChanges();
+
+            foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
+            {
+                if (u.balance >= float.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any))
                 {
-                    Wallet newWallet = new Wallet();
-                    newWallet.id_user = u.id_user;
-                    newWallet.adress = "adasdsa123dsd";
-                    bazadanych.Wallets.InsertOnSubmit(newWallet);
-                    bazadanych.SubmitChanges();
+                    u.balance -= float.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any);
+                    Payment newPayment = new Payment();
+                    u.Payments.Add(newPayment);
+                    newPayment.id_price = newPrice.Id;
+                    newPayment.amount = float.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
+                    //messege: payment done
                 }
+                else
+                {
+                    //messege: to low balance
+                }
+            }
+            bazadanych.SubmitChanges();
 
 
-
-            
             /*foreach (User o in bazadanych.Users.Where(x => x.username == UsernameText))
             {
                 if (o.balance >= float.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any))
@@ -309,6 +348,95 @@ namespace cryptoUI
                     }
                 }
             }*/
+        }
+
+        private void amountOfCurrency()
+        {
+            amount = 0;
+            foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
+            {
+                foreach (Payment p in bazadanych.Payments.Where(x => x.id_user == u.id_user))
+                {
+                    foreach (Price pr in bazadanych.Prices.Where(x => x.Id == p.id_price))
+                    {
+                        if (pr.Id_Currency == id_currency)
+                        {
+                            amount += p.amount;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
+            {
+                id_currency = c.Id;
+            }
+            Price newPrice = new Price();
+            newPrice.Id_Currency = id_currency;
+            UpdateDashboard();
+            newPrice.Price1 = float.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+            newPrice.DataTime = DateTime.Now;
+            bazadanych.Prices.InsertOnSubmit(newPrice);
+            bazadanych.SubmitChanges();
+
+            amountOfCurrency();
+
+            foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
+            {
+                if (amount >= float.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any))
+                {
+                    u.balance += float.Parse(usdEarn.Text, System.Globalization.NumberStyles.Any);
+                    Payment newPayment = new Payment();
+                    u.Payments.Add(newPayment);
+                    newPayment.id_price = newPrice.Id;
+                    newPayment.amount = -float.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
+                    //messege: payment done
+                }
+                else
+                {
+                    //messege: to low amount of currency on your balance
+                }
+            }
+            bazadanych.SubmitChanges();
+        }
+
+        private void tokenToSell_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tBox = (TextBox)sender;
+            double tstDbl;
+            if (!double.TryParse(tBox.Text, out tstDbl))
+            {
+                //handle bad input
+            }
+            else
+            {
+                //double value OK
+                UpdateDashboard();
+                double amount = Double.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
+                double price = Double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+                usdEarn.Text = (amount * price).ToString();
+            }
+        }
+
+        private void usdEarn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            TextBox tBox = (TextBox)sender;
+            double tstDbl;
+            if (!double.TryParse(tBox.Text, out tstDbl))
+            {
+                //handle bad input
+            }
+            else
+            {
+                //double value OK
+                UpdateDashboard();
+                double priceToEarn = Double.Parse(usdEarn.Text, System.Globalization.NumberStyles.Any);
+                double price = Double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+                tokenToSell.Text = (priceToEarn / price).ToString();
+            }
         }
     }
 }

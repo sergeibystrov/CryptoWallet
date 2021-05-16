@@ -108,6 +108,7 @@ namespace cryptoUI
             this.button3.TabIndex = 26;
             this.button3.Text = "SELL";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // usdEarn
             // 
@@ -117,6 +118,7 @@ namespace cryptoUI
             this.usdEarn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.usdEarn.Size = new System.Drawing.Size(160, 20);
             this.usdEarn.TabIndex = 25;
+            this.usdEarn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usdEarn_KeyPress);
             // 
             // tokenToSell
             // 
@@ -126,6 +128,7 @@ namespace cryptoUI
             this.tokenToSell.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tokenToSell.Size = new System.Drawing.Size(160, 20);
             this.tokenToSell.TabIndex = 24;
+            this.tokenToSell.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tokenToSell_KeyPress);
             // 
             // tokenBalance
             // 
@@ -136,9 +139,9 @@ namespace cryptoUI
             this.tokenBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tokenBalance.Name = "tokenBalance";
             this.tokenBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tokenBalance.Size = new System.Drawing.Size(132, 15);
+            this.tokenBalance.Size = new System.Drawing.Size(90, 15);
             this.tokenBalance.TabIndex = 23;
-            this.tokenBalance.Text = "$token balance: 00000";
+            this.tokenBalance.Text = "token balance: ";
             // 
             // label6
             // 
