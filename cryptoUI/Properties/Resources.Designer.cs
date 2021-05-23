@@ -73,9 +73,29 @@ namespace cryptoUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap decrease {
+            get {
+                object obj = ResourceManager.GetObject("decrease", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap etf {
             get {
                 object obj = ResourceManager.GetObject("etf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap increase {
+            get {
+                object obj = ResourceManager.GetObject("increase", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

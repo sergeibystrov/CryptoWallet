@@ -16,6 +16,9 @@ namespace cryptoUI
 {
     public partial class DashboardForm : Form
     {
+        double CurrentPrice;
+        double CurrentBalance;
+        double CurrentAmount;
         bazadanychDataContext bazadanych = new bazadanychDataContext();
         string CurrentCurrency;
         int id_currency;
@@ -98,7 +101,7 @@ namespace cryptoUI
                     DashboardCurrencyIcon.Image = Bitmap.FromStream(stream);
                 }
             }*/
-            string priceAPI = "https://min-api.cryptocompare.com/data/price?fsym=" + CurrentCurrency + "&tsyms=USD,EUR";
+            string priceAPI = "https://min-api.cryptocompare.com/data/price?fsym=" + CurrentCurrency + "&tsyms=USD";
             WebRequest request3 = WebRequest.Create(priceAPI);
 
             WebResponse response3 = await request3.GetResponseAsync();
@@ -115,9 +118,8 @@ namespace cryptoUI
 
 
             Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
-
-            labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString();  //price.USD.ToString()+"$";
-            labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString();  //price.EUR.ToString() + "€";
+            CurrentPrice = price.USD;
+            labelPriceInUSD.Text = CurrentPrice.ToString() + "$";
             response3.Close();
 
             foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
@@ -126,7 +128,8 @@ namespace cryptoUI
             }
             foreach (User o in bazadanych.Users.Where(x => x.username == UsernameText))
             {
-                usdBalance.Text = "USD balance: " + o.balance.ToString() + "$";
+                CurrentBalance = o.balance;
+                usdBalance.Text = "USD balance: " + CurrentBalance.ToString() + "$";
             }
             amountOfCurrency();
             tokenBalance.Text = "Token balance: " + amount.ToString();
@@ -145,7 +148,7 @@ namespace cryptoUI
         private async void DashboardForm_Load(object sender, EventArgs e)
         {
             //UpdateDashboard();
-            WebRequest request2 = WebRequest.Create("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,EUR,PLN");
+            WebRequest request2 = WebRequest.Create("https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD");
 
             WebResponse response2 = await request2.GetResponseAsync();
 
@@ -163,8 +166,8 @@ namespace cryptoUI
 
             Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-            labelPriceInUSD.Text = price.USD.ToString();
-            labelPriceInEUR.Text = price.EUR.ToString();
+            CurrentPrice = price.USD;
+            labelPriceInUSD.Text = CurrentPrice.ToString() + "$";
 
             AutoCompleteStringCollection myCollection = new AutoCompleteStringCollection();
             
@@ -179,7 +182,8 @@ namespace cryptoUI
 
             foreach (User o in bazadanych.Users.Where(x => x.username == UsernameText))
             {
-                usdBalance.Text += o.balance.ToString() + "$";
+                CurrentBalance = o.balance;
+                usdBalance.Text += CurrentBalance.ToString() + "$";
             }
 
             foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
@@ -216,9 +220,8 @@ namespace cryptoUI
                     DashboardCurrencyIcon.Image = Bitmap.FromStream(stream);
                 }
                 textBoxPriceInUSD.Text = o.Name+"/USD";
-                textBoxPriceInEUR.Text = o.Name + "/EUR";
                 
-                string priceAPI = "https://min-api.cryptocompare.com/data/price?fsym="+o.Name+"&tsyms=USD,EUR";
+                string priceAPI = "https://min-api.cryptocompare.com/data/price?fsym="+o.Name+"&tsyms=USD";
                 WebRequest request2 = WebRequest.Create(priceAPI);
 
                 WebResponse response2 = await request2.GetResponseAsync();
@@ -237,8 +240,8 @@ namespace cryptoUI
 
                 Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
-                labelPriceInUSD.Text = Decimal.Parse(price.USD.ToString(), System.Globalization.NumberStyles.Any).ToString(); ; //price.USD.ToString()+"$";
-                labelPriceInEUR.Text = Decimal.Parse(price.EUR.ToString(), System.Globalization.NumberStyles.Any).ToString(); ; //price.EUR.ToString() + "€";
+                CurrentPrice = price.USD;
+                labelPriceInUSD.Text = CurrentPrice.ToString() + "$";
                 CurrentCurrency = o.Name;
 
                 foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
@@ -248,43 +251,8 @@ namespace cryptoUI
 
                 amountOfCurrency();
 
-                tokenBalance.Text += amount.ToString();
-            }
-        }
-
-        private void tokenToBuy_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox tBox = (TextBox)sender;
-            double tstDbl;
-            if (!double.TryParse(tBox.Text, out tstDbl))
-            {
-                //handle bad input
-            }
-            else
-            {
-                //double value OK
-                UpdateDashboard();
-                float amount = float.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
-                float price = float.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
-                usdPaid.Text = (amount * price).ToString();
-            }
-        }
-
-        private void usdPaid_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            TextBox tBox = (TextBox)sender;
-            double tstDbl;
-            if (!double.TryParse(tBox.Text, out tstDbl))
-            {
-                //handle bad input
-            }
-            else
-            {
-                //double value OK
-                UpdateDashboard();
-                double priceToSpend = Double.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any);
-                double price = Double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
-                tokenToBuy.Text = (priceToSpend/price).ToString();
+                CurrentAmount = amount;
+                tokenBalance.Text += CurrentAmount.ToString();
             }
         }
 
@@ -297,7 +265,7 @@ namespace cryptoUI
             Price newPrice = new Price();
             newPrice.Id_Currency = id_currency;
             UpdateDashboard();
-            newPrice.Price1 = float.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+            newPrice.Price1 = (float)CurrentPrice;
             newPrice.DataTime = DateTime.Now;
             bazadanych.Prices.InsertOnSubmit(newPrice);
             bazadanych.SubmitChanges();
@@ -386,7 +354,7 @@ namespace cryptoUI
             Price newPrice = new Price();
             newPrice.Id_Currency = id_currency;
             UpdateDashboard();
-            newPrice.Price1 = float.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+            newPrice.Price1 = (float)CurrentPrice;
             newPrice.DataTime = DateTime.Now;
             bazadanych.Prices.InsertOnSubmit(newPrice);
             bazadanych.SubmitChanges();
@@ -415,7 +383,43 @@ namespace cryptoUI
             bazadanych.SubmitChanges();
         }
 
-        private void tokenToSell_KeyPress(object sender, KeyPressEventArgs e)
+        private void tokenToBuy_TextChanged(object sender, EventArgs e)
+        {
+            TextBox tBox = (TextBox)sender;
+            double tstDbl;
+            if (!double.TryParse(tBox.Text, out tstDbl))
+            {
+                //handle bad input
+            }
+            else
+            {
+                //double value OK
+                UpdateDashboard();
+                float amount = float.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
+                float price = (float)CurrentPrice;
+                usdPaid.Text = (amount * price).ToString();
+            }
+        }
+
+        private void usdPaid_TextChanged(object sender, EventArgs e)
+        {
+            TextBox tBox = (TextBox)sender;
+            double tstDbl;
+            if (!double.TryParse(tBox.Text, out tstDbl))
+            {
+                //handle bad input
+            }
+            else
+            {
+                //double value OK
+                UpdateDashboard();
+                double priceToSpend = Double.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any);
+                double price = (double)CurrentPrice;
+                tokenToBuy.Text = (priceToSpend / price).ToString();
+            }
+        }
+
+        private void tokenToSell_TextChanged(object sender, EventArgs e)
         {
             TextBox tBox = (TextBox)sender;
             double tstDbl;
@@ -428,12 +432,12 @@ namespace cryptoUI
                 //double value OK
                 UpdateDashboard();
                 double amount = double.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
-                double price = double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+                double price = (double)CurrentPrice;
                 usdEarn.Text = (amount * price).ToString();
             }
         }
 
-        private void usdEarn_KeyPress(object sender, KeyPressEventArgs e)
+        private void usdEarn_TextChanged(object sender, EventArgs e)
         {
             TextBox tBox = (TextBox)sender;
             double tstDbl;
@@ -446,9 +450,19 @@ namespace cryptoUI
                 //double value OK
                 UpdateDashboard();
                 double priceToEarn = Double.Parse(usdEarn.Text, System.Globalization.NumberStyles.Any);
-                double price = Double.Parse(labelPriceInUSD.Text, System.Globalization.NumberStyles.Any);
+                double price = (double)CurrentPrice;
                 tokenToSell.Text = (priceToEarn / price).ToString();
             }
+        }
+
+        private void usdBalance_Click(object sender, EventArgs e)
+        {
+            usdPaid.Text = CurrentBalance.ToString();
+        }
+
+        private void tokenBalance_Click(object sender, EventArgs e)
+        {
+            tokenToSell.Text = CurrentAmount.ToString();
         }
     }
 }

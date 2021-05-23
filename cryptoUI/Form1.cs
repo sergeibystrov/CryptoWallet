@@ -126,7 +126,7 @@ namespace cryptoUI
         private void tradingButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGDBCollors.color3);
-            OpenChildForm(new TradingForm());
+            OpenChildForm(new TradingForm() { UsernameText = label1.Text });
         }
 
         private void chartButton_Click(object sender, EventArgs e)

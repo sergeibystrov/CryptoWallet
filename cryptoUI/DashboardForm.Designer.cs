@@ -42,9 +42,7 @@ namespace cryptoUI
             this.tokenToBuy = new System.Windows.Forms.TextBox();
             this.usdBalance = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.labelPriceInEUR = new System.Windows.Forms.Label();
             this.labelPriceInUSD = new System.Windows.Forms.Label();
-            this.textBoxPriceInEUR = new System.Windows.Forms.Label();
             this.textBoxPriceInUSD = new System.Windows.Forms.Label();
             this.DashboardCurrencyIcon = new System.Windows.Forms.PictureBox();
             this.panelChooseCrypto = new System.Windows.Forms.Panel();
@@ -85,9 +83,7 @@ namespace cryptoUI
             this.panelDashBoard.Controls.Add(this.tokenToBuy);
             this.panelDashBoard.Controls.Add(this.usdBalance);
             this.panelDashBoard.Controls.Add(this.label3);
-            this.panelDashBoard.Controls.Add(this.labelPriceInEUR);
             this.panelDashBoard.Controls.Add(this.labelPriceInUSD);
-            this.panelDashBoard.Controls.Add(this.textBoxPriceInEUR);
             this.panelDashBoard.Controls.Add(buttonUpdate);
             this.panelDashBoard.Controls.Add(this.textBoxPriceInUSD);
             this.panelDashBoard.Controls.Add(this.DashboardCurrencyIcon);
@@ -100,7 +96,7 @@ namespace cryptoUI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(101, 407);
+            this.button3.Location = new System.Drawing.Point(125, 376);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -112,43 +108,44 @@ namespace cryptoUI
             // 
             // usdEarn
             // 
-            this.usdEarn.Location = new System.Drawing.Point(40, 368);
+            this.usdEarn.Location = new System.Drawing.Point(64, 337);
             this.usdEarn.Margin = new System.Windows.Forms.Padding(2);
             this.usdEarn.Name = "usdEarn";
             this.usdEarn.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.usdEarn.Size = new System.Drawing.Size(160, 20);
             this.usdEarn.TabIndex = 25;
-            this.usdEarn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usdEarn_KeyPress);
+            this.usdEarn.TextChanged += new System.EventHandler(this.usdEarn_TextChanged);
             // 
             // tokenToSell
             // 
-            this.tokenToSell.Location = new System.Drawing.Point(40, 334);
+            this.tokenToSell.Location = new System.Drawing.Point(64, 303);
             this.tokenToSell.Margin = new System.Windows.Forms.Padding(2);
             this.tokenToSell.Name = "tokenToSell";
             this.tokenToSell.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tokenToSell.Size = new System.Drawing.Size(160, 20);
             this.tokenToSell.TabIndex = 24;
-            this.tokenToSell.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tokenToSell_KeyPress);
+            this.tokenToSell.TextChanged += new System.EventHandler(this.tokenToSell_TextChanged);
             // 
             // tokenBalance
             // 
             this.tokenBalance.AutoSize = true;
             this.tokenBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.tokenBalance.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tokenBalance.Location = new System.Drawing.Point(149, 390);
+            this.tokenBalance.Location = new System.Drawing.Point(173, 359);
             this.tokenBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tokenBalance.Name = "tokenBalance";
             this.tokenBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tokenBalance.Size = new System.Drawing.Size(90, 15);
             this.tokenBalance.TabIndex = 23;
             this.tokenBalance.Text = "token balance: ";
+            this.tokenBalance.Click += new System.EventHandler(this.tokenBalance_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(2, 354);
+            this.label6.Location = new System.Drawing.Point(26, 323);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -158,7 +155,7 @@ namespace cryptoUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(101, 275);
+            this.button2.Location = new System.Drawing.Point(125, 244);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(44, 23);
@@ -169,58 +166,46 @@ namespace cryptoUI
             // 
             // usdPaid
             // 
-            this.usdPaid.Location = new System.Drawing.Point(47, 235);
+            this.usdPaid.Location = new System.Drawing.Point(71, 204);
             this.usdPaid.Margin = new System.Windows.Forms.Padding(2);
             this.usdPaid.Name = "usdPaid";
             this.usdPaid.Size = new System.Drawing.Size(160, 20);
             this.usdPaid.TabIndex = 20;
-            this.usdPaid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usdPaid_KeyPress);
+            this.usdPaid.TextChanged += new System.EventHandler(this.usdPaid_TextChanged);
             // 
             // tokenToBuy
             // 
-            this.tokenToBuy.Location = new System.Drawing.Point(47, 200);
+            this.tokenToBuy.Location = new System.Drawing.Point(71, 169);
             this.tokenToBuy.Margin = new System.Windows.Forms.Padding(2);
             this.tokenToBuy.Name = "tokenToBuy";
             this.tokenToBuy.Size = new System.Drawing.Size(160, 20);
             this.tokenToBuy.TabIndex = 19;
-            this.tokenToBuy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tokenToBuy_KeyPress);
+            this.tokenToBuy.TextChanged += new System.EventHandler(this.tokenToBuy_TextChanged);
             // 
             // usdBalance
             // 
             this.usdBalance.AutoSize = true;
             this.usdBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.usdBalance.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.usdBalance.Location = new System.Drawing.Point(156, 257);
+            this.usdBalance.Location = new System.Drawing.Point(180, 226);
             this.usdBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.usdBalance.Name = "usdBalance";
             this.usdBalance.Size = new System.Drawing.Size(83, 15);
             this.usdBalance.TabIndex = 18;
             this.usdBalance.Text = "USD balance:";
+            this.usdBalance.Click += new System.EventHandler(this.usdBalance_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(9, 216);
+            this.label3.Location = new System.Drawing.Point(33, 185);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "Buy";
-            // 
-            // labelPriceInEUR
-            // 
-            this.labelPriceInEUR.AutoSize = true;
-            this.labelPriceInEUR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelPriceInEUR.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelPriceInEUR.Location = new System.Drawing.Point(155, 152);
-            this.labelPriceInEUR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPriceInEUR.Name = "labelPriceInEUR";
-            this.labelPriceInEUR.Size = new System.Drawing.Size(76, 20);
-            this.labelPriceInEUR.TabIndex = 15;
-            this.labelPriceInEUR.Text = "60000.00";
-            this.labelPriceInEUR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelPriceInUSD
             // 
@@ -235,18 +220,6 @@ namespace cryptoUI
             this.labelPriceInUSD.TabIndex = 3;
             this.labelPriceInUSD.Text = "60000.00";
             this.labelPriceInUSD.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // textBoxPriceInEUR
-            // 
-            this.textBoxPriceInEUR.AutoSize = true;
-            this.textBoxPriceInEUR.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPriceInEUR.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.textBoxPriceInEUR.Location = new System.Drawing.Point(75, 152);
-            this.textBoxPriceInEUR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.textBoxPriceInEUR.Name = "textBoxPriceInEUR";
-            this.textBoxPriceInEUR.Size = new System.Drawing.Size(79, 20);
-            this.textBoxPriceInEUR.TabIndex = 13;
-            this.textBoxPriceInEUR.Text = "BTC/EUR";
             // 
             // textBoxPriceInUSD
             // 
@@ -347,8 +320,6 @@ namespace cryptoUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label textBoxPriceInEUR;
-        private System.Windows.Forms.Label labelPriceInEUR;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.TextBox usdEarn;
         public System.Windows.Forms.TextBox tokenToSell;
