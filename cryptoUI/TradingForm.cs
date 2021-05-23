@@ -15,6 +15,15 @@ namespace cryptoUI
         public TradingForm()
         {
             InitializeComponent();
+
+            /*
+            ListViewItem item = new ListViewItem(bazadanych.date); // добавит в первую колонку 
+            item.SubItems.Add(bazadanych.name)// во вторую
+            item.SubItems.Add(bazadanych.amount)// в третью и т.д
+            listView1.Items.Add(item) // закрепит в нашем листвью
+            */
+            
         }
+
     }
 }

@@ -90,3 +90,5 @@ C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.LoginForm.r
 C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Registration.resources
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.LoginForm.resources
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Registration.resources
+C:\Users\yegor\Source\Repos\ToDoTradingHistory\cryptoUI\obj\Debug\cryptoUI.exe
+C:\Users\yegor\Source\Repos\ToDoTradingHistory\cryptoUI\obj\Debug\cryptoUI.pdb
