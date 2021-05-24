@@ -119,7 +119,7 @@ namespace cryptoUI
 
             Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
             CurrentPrice = price.USD;
-            labelPriceInUSD.Text = CurrentPrice.ToString() + "$";
+            labelPriceInUSD.Text = CurrentPrice.ToString("N") + "$";
             response3.Close();
 
             foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
@@ -129,7 +129,7 @@ namespace cryptoUI
             foreach (User o in bazadanych.Users.Where(x => x.username == UsernameText))
             {
                 CurrentBalance = o.balance;
-                usdBalance.Text = "USD balance: " + CurrentBalance.ToString() + "$";
+                usdBalance.Text = "USD balance: " + Math.Round(CurrentBalance, 2).ToString() + "$";
             }
             amountOfCurrency();
             tokenBalance.Text = "Token balance: " + amount.ToString();
@@ -167,7 +167,7 @@ namespace cryptoUI
             Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
             CurrentPrice = price.USD;
-            labelPriceInUSD.Text = CurrentPrice.ToString() + "$";
+            labelPriceInUSD.Text = CurrentPrice.ToString("N") + "$";
 
             AutoCompleteStringCollection myCollection = new AutoCompleteStringCollection();
             
@@ -183,7 +183,7 @@ namespace cryptoUI
             foreach (User o in bazadanych.Users.Where(x => x.username == UsernameText))
             {
                 CurrentBalance = o.balance;
-                usdBalance.Text += CurrentBalance.ToString() + "$";
+                usdBalance.Text += Math.Round(CurrentBalance, 2).ToString() + "$";
             }
 
             foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
@@ -241,7 +241,7 @@ namespace cryptoUI
                 Coins.Price price = JsonConvert.DeserializeObject<Coins.Price>(answer);
 
                 CurrentPrice = price.USD;
-                labelPriceInUSD.Text = CurrentPrice.ToString() + "$";
+                labelPriceInUSD.Text = CurrentPrice.ToString("N") + "$";
                 CurrentCurrency = o.Name;
 
                 foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == CurrentCurrency))
@@ -252,7 +252,7 @@ namespace cryptoUI
                 amountOfCurrency();
 
                 CurrentAmount = amount;
-                tokenBalance.Text += CurrentAmount.ToString();
+                tokenBalance.Text = "Token balance: " + amount.ToString();
             }
         }
 

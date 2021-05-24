@@ -222,7 +222,7 @@ namespace cryptoUI
             this.panel1.Location = new System.Drawing.Point(165, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 65);
+            this.panel1.Size = new System.Drawing.Size(1152, 65);
             this.panel1.TabIndex = 2;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -231,7 +231,7 @@ namespace cryptoUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(465, 20);
+            this.label1.Location = new System.Drawing.Point(1064, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 37);
             this.label1.TabIndex = 0;
@@ -271,14 +271,14 @@ namespace cryptoUI
             this.childFormPanel.Location = new System.Drawing.Point(165, 65);
             this.childFormPanel.Margin = new System.Windows.Forms.Padding(2);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(571, 459);
+            this.childFormPanel.Size = new System.Drawing.Size(1152, 459);
             this.childFormPanel.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 524);
+            this.ClientSize = new System.Drawing.Size(1317, 524);
             this.Controls.Add(this.childFormPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);

@@ -16,10 +16,16 @@ namespace cryptoUI
     public partial class TradingForm : Form
     {
         bazadanychDataContext bazadanych = new bazadanychDataContext();
+        private List<string[]> list = null;
+        private List<string[]> filteredList = null;
+
         public TradingForm()
         {
             InitializeComponent();
-
+            labelFrom.Hide();
+            labelTo.Hide();
+            dateTimePickerFrom.Hide();
+            dateTimePickerTo.Hide();
         }
 
         public string Nickname;
@@ -58,7 +64,8 @@ namespace cryptoUI
 
         private async void TradingForm_Load(object sender, EventArgs e)
         {
-            List<string> list = new List<string>();
+            list = new List<string[]>();
+            string[] row = null;
             foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
             {
                 foreach (Payment p in bazadanych.Payments.Where(x => x.id_user == u.id_user))
@@ -67,21 +74,32 @@ namespace cryptoUI
                     {
                         foreach (Currency c in bazadanych.Currencies.Where(x => x.Id == pr.Id_Currency))
                         {
-                            ListViewItem item = new ListViewItem(pr.DataTime.ToString());
-                            item.SubItems.Add(c.Name);
-                            item.SubItems.Add(p.amount.ToString());
-                            item.SubItems.Add(pr.Price1.ToString());
-                            listView1.Items.Add(item);
+                            //ListViewItem item = new ListViewItem(pr.DataTime.ToString());
+                            //item.SubItems.Add(c.Name);
+                            //item.SubItems.Add(p.amount.ToString());
+                            //item.SubItems.Add(pr.Price1.ToString());
+                            //listView1.Items.Add(item);
 
-                            list.Add(c.Name);
+                            //list.Add(c.Name);
+
+                            //USDspent += p.amount * pr.Price1;
+
+                            row = new string[]
+                            {
+                                pr.DataTime.ToString(),
+                                c.Name,
+                                p.amount.ToString(),
+                                pr.Price1.ToString()
+                            };
+                            list.Add(row);
 
                             USDspent += p.amount * pr.Price1;
                         }
                     }
                 }
             }
-
-            List<string> distinct = list.Distinct().ToList();
+            RefreshList(list);
+            List<string> distinct = (List<string>)list.Select(x => x[1]).Distinct().ToList();
             Dictionary<string, double> prices = new Dictionary<string, double>();
             foreach (var el in distinct)
             {
@@ -103,26 +121,7 @@ namespace cryptoUI
                 prices.Add(el, price.USD);
                 response.Close();
             }
-            /*
-            foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
-            {
-                foreach (Payment p in bazadanych.Payments.Where(x => x.id_user == u.id_user))
-                {
-                    foreach (Price pr in bazadanych.Prices.Where(x => x.Id == p.id_price))
-                    {
-                        foreach (Currency c in bazadanych.Currencies.Where(x => x.Id == pr.Id_Currency))
-                        {
-                            USDspent += p.amount * pr.Price1;
-                            amountOfCurrency(pr.Id_Currency);
-                            foreach (var el in prices.Where(x => x.Key == c.Name))
-                            {
-                                CurrentPrice += CurrencyAmount * el.Value;
-                            }
-                        }
-                    }
-                }
-            }
-            */
+
             foreach (var el in prices)
             {
                 foreach (Currency c in bazadanych.Currencies.Where(x => x.Name == el.Key))
@@ -132,21 +131,179 @@ namespace cryptoUI
                 }
             }
 
-            Revenue = USDspent - CurrentPrice;
+            Revenue = CurrentPrice - USDspent;
 
-            if (Revenue < 0)
+            double cena = Math.Round(Revenue, 2);
+            double procent = Math.Round(((Revenue * 100) / USDspent), 2);
+
+            if (cena > 0)
             {
                 pictureBox1.Image = Properties.Resources.increase;
-                label1.Text = "+" + Math.Round((-Revenue), 3).ToString() + "$";
-                label2.Text = "+" + Math.Round((((-Revenue) * 100) / USDspent), 3).ToString() + "%";
-
+                label1.Text = "+" + cena.ToString() + "$";
+                label2.Text = "+" + procent.ToString() + "%";
+                label1.ForeColor = Color.Green;
+                label2.ForeColor = Color.Green;
             }
             else
             {
                 pictureBox1.Image = Properties.Resources.decrease;
-                label1.Text = Math.Round((-Revenue), 3).ToString() + "$";
-                label2.Text = Math.Round((((-Revenue) * 100) / USDspent), 3).ToString() + "%";
+                label1.Text = cena.ToString() + "$";
+                label2.Text = procent.ToString() + "%";
+                label1.ForeColor = Color.Red;
+                label2.ForeColor = Color.Red;
             }
+        }
+
+        private void RefreshList(List<string[]> list)
+        {
+            listView1.Items.Clear();
+
+            foreach (string[] s in list)
+            {
+                listView1.Items.Add(new ListViewItem(s));
+            }
+        }
+
+        public static int CompareByDateRecent(string[] x, string[] y)
+        {
+            return DateTime.Compare(DateTime.Parse(y[0]), DateTime.Parse(x[0]));
+        }
+        public static int CompareByDateOldest(string[] x, string[] y)
+        {
+            return DateTime.Compare(DateTime.Parse(x[0]), DateTime.Parse(y[0]));
+        }
+        public static int CompareByNameAZ(string[] x, string[] y)
+        {
+            return String.Compare(x[1], y[1]);
+        }
+        public static int CompareByNameZA(string[] x, string[] y)
+        {
+            return String.Compare(y[1], x[1]);
+        }
+        public static int CompareByAmountLowest(string[] x, string[] y)
+        {
+            return Double.Parse(x[2]).CompareTo(Double.Parse(y[2]));
+        }
+        public static int CompareByAmountHighest(string[] x, string[] y)
+        {
+            return Double.Parse(y[2]).CompareTo(Double.Parse(x[2]));
+        }
+        public static int CompareByPriceLowest(string[] x, string[] y)
+        {
+            return Double.Parse(x[3]).CompareTo(Double.Parse(y[3]));
+        }
+        public static int CompareByPriceHighest(string[] x, string[] y)
+        {
+            return Double.Parse(y[3]).CompareTo(Double.Parse(x[3]));
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.SelectedIndex)
+            {
+                case 0:
+                    list.Sort(CompareByDateRecent);
+                    break;
+                case 1:
+                    list.Sort(CompareByDateOldest);
+                    break;
+                case 2:
+                    list.Sort(CompareByNameAZ);
+                    break;
+                case 3:
+                    list.Sort(CompareByNameZA);
+                    break;
+                case 4:
+                    list.Sort(CompareByAmountHighest);
+                    break;
+                case 5:
+                    list.Sort(CompareByAmountLowest);
+                    break;
+                case 6:
+                    list.Sort(CompareByPriceHighest);
+                    break;
+                case 7:
+                    list.Sort(CompareByPriceLowest);
+                    break;
+            }
+            RefreshList(list);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox2.SelectedIndex)
+            {
+                case 0:
+                    filteredList = list;
+                    labelFrom.Hide();
+                    labelTo.Hide();
+                    dateTimePickerFrom.Hide();
+                    dateTimePickerTo.Hide();
+                    break;
+                case 1:
+                    labelFrom.Hide();
+                    labelTo.Hide();
+                    dateTimePickerFrom.Hide();
+                    dateTimePickerTo.Hide();
+                    filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]).Year == DateTime.Now.Year &&
+                                                                     DateTime.Parse(x[0]).Month == DateTime.Now.Month &&
+                                                                     DateTime.Parse(x[0]).Day == DateTime.Now.Day).ToList();
+                    break;
+                case 2:
+                    labelFrom.Hide();
+                    labelTo.Hide();
+                    dateTimePickerFrom.Hide();
+                    dateTimePickerTo.Hide();
+                    filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]).Year == DateTime.Now.Year &&
+                                                                     DateTime.Parse(x[0]).Month == DateTime.Now.Month &&
+                                                                     DateTime.Parse(x[0]).Day == DateTime.Now.AddDays(-1).Day).ToList();
+                    break;
+                case 3:
+                    labelFrom.Hide();
+                    labelTo.Hide();
+                    dateTimePickerFrom.Hide();
+                    dateTimePickerTo.Hide();
+                    filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]) >= DateTime.Now.AddDays(-7)).ToList();
+                    break;
+                case 4:
+                    labelFrom.Hide();
+                    labelTo.Hide();
+                    dateTimePickerFrom.Hide();
+                    dateTimePickerTo.Hide();
+                    filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]) >= DateTime.Now.AddDays(-30)).ToList();
+                    break;
+                case 5:
+                    labelFrom.Hide();
+                    labelTo.Hide();
+                    dateTimePickerFrom.Hide();
+                    dateTimePickerTo.Hide();
+                    filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]) >= DateTime.Now.AddYears(-1)).ToList();
+                    break;
+                case 6:
+                    labelFrom.Show();
+                    labelTo.Show();
+                    dateTimePickerFrom.Show();
+                    dateTimePickerTo.Show();
+                    filteredList = list;
+                    break;
+            }
+            RefreshList(filteredList);
+        }
+
+        private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerFrom.MaxDate = dateTimePickerTo.Value;
+            filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]) >= dateTimePickerFrom.Value &&
+                                                             DateTime.Parse(x[0]) <= dateTimePickerTo.Value).ToList();
+            RefreshList(filteredList);
+        }
+
+        private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+            filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]) >= dateTimePickerFrom.Value &&
+                                                             DateTime.Parse(x[0]) <= dateTimePickerTo.Value).ToList();
+            RefreshList(filteredList);
         }
     }
 }
