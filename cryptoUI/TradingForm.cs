@@ -74,16 +74,6 @@ namespace cryptoUI
                     {
                         foreach (Currency c in bazadanych.Currencies.Where(x => x.Id == pr.Id_Currency))
                         {
-                            //ListViewItem item = new ListViewItem(pr.DataTime.ToString());
-                            //item.SubItems.Add(c.Name);
-                            //item.SubItems.Add(p.amount.ToString());
-                            //item.SubItems.Add(pr.Price1.ToString());
-                            //listView1.Items.Add(item);
-
-                            //list.Add(c.Name);
-
-                            //USDspent += p.amount * pr.Price1;
-
                             row = new string[]
                             {
                                 pr.DataTime.ToString(),
@@ -199,34 +189,68 @@ namespace cryptoUI
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBox1.SelectedIndex)
+            if (comboBox2.SelectedItem == "All time" || comboBox2.SelectedItem == null)
             {
-                case 0:
-                    list.Sort(CompareByDateRecent);
-                    break;
-                case 1:
-                    list.Sort(CompareByDateOldest);
-                    break;
-                case 2:
-                    list.Sort(CompareByNameAZ);
-                    break;
-                case 3:
-                    list.Sort(CompareByNameZA);
-                    break;
-                case 4:
-                    list.Sort(CompareByAmountHighest);
-                    break;
-                case 5:
-                    list.Sort(CompareByAmountLowest);
-                    break;
-                case 6:
-                    list.Sort(CompareByPriceHighest);
-                    break;
-                case 7:
-                    list.Sort(CompareByPriceLowest);
-                    break;
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        list.Sort(CompareByDateRecent);
+                        break;
+                    case 1:
+                        list.Sort(CompareByDateOldest);
+                        break;
+                    case 2:
+                        list.Sort(CompareByNameAZ);
+                        break;
+                    case 3:
+                        list.Sort(CompareByNameZA);
+                        break;
+                    case 4:
+                        list.Sort(CompareByAmountHighest);
+                        break;
+                    case 5:
+                        list.Sort(CompareByAmountLowest);
+                        break;
+                    case 6:
+                        list.Sort(CompareByPriceHighest);
+                        break;
+                    case 7:
+                        list.Sort(CompareByPriceLowest);
+                        break;
+                }
+                RefreshList(list);
             }
-            RefreshList(list);
+            else
+            {
+                switch (comboBox1.SelectedIndex)
+                {
+                    case 0:
+                        filteredList.Sort(CompareByDateRecent);
+                        break;
+                    case 1:
+                        filteredList.Sort(CompareByDateOldest);
+                        break;
+                    case 2:
+                        filteredList.Sort(CompareByNameAZ);
+                        break;
+                    case 3:
+                        filteredList.Sort(CompareByNameZA);
+                        break;
+                    case 4:
+                        filteredList.Sort(CompareByAmountHighest);
+                        break;
+                    case 5:
+                        filteredList.Sort(CompareByAmountLowest);
+                        break;
+                    case 6:
+                        filteredList.Sort(CompareByPriceHighest);
+                        break;
+                    case 7:
+                        filteredList.Sort(CompareByPriceLowest);
+                        break;
+                }
+                RefreshList(filteredList);
+            }
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -284,7 +308,14 @@ namespace cryptoUI
                     labelTo.Show();
                     dateTimePickerFrom.Show();
                     dateTimePickerTo.Show();
+
                     filteredList = list;
+
+                    dateTimePickerTo.Value = DateTime.Today;
+                    dateTimePickerFrom.Value = DateTime.Today;
+                    dateTimePickerFrom.MaxDate = dateTimePickerTo.Value;
+                    dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+                    dateTimePickerTo.MaxDate = DateTime.Today;
                     break;
             }
             RefreshList(filteredList);
@@ -292,17 +323,19 @@ namespace cryptoUI
 
         private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
         {
-            dateTimePickerFrom.MaxDate = dateTimePickerTo.Value;
+            dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+
             filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]) >= dateTimePickerFrom.Value &&
-                                                             DateTime.Parse(x[0]) <= dateTimePickerTo.Value).ToList();
+                                                             DateTime.Parse(x[0]) < dateTimePickerTo.Value.AddDays(1)).ToList();
             RefreshList(filteredList);
         }
 
         private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
         {
-            dateTimePickerTo.MinDate = dateTimePickerFrom.Value;
+            dateTimePickerFrom.MaxDate = dateTimePickerTo.Value;
+
             filteredList = (List<string[]>)list.Where((x) => DateTime.Parse(x[0]) >= dateTimePickerFrom.Value &&
-                                                             DateTime.Parse(x[0]) <= dateTimePickerTo.Value).ToList();
+                                                             DateTime.Parse(x[0]) < dateTimePickerTo.Value.AddDays(1)).ToList();
             RefreshList(filteredList);
         }
     }

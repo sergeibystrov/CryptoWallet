@@ -88,7 +88,7 @@ namespace cryptoUI
             // columnHeader5
             // 
             this.columnHeader5.Text = "Price";
-            this.columnHeader5.Width = 217;
+            this.columnHeader5.Width = 212;
             // 
             // panel1
             // 
@@ -189,7 +189,6 @@ namespace cryptoUI
             // dateTimePickerFrom
             // 
             this.dateTimePickerFrom.Location = new System.Drawing.Point(763, 267);
-            this.dateTimePickerFrom.MaxDate = new System.DateTime(2021, 5, 24, 0, 0, 0, 0);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerFrom.TabIndex = 10;
@@ -199,11 +198,10 @@ namespace cryptoUI
             // dateTimePickerTo
             // 
             this.dateTimePickerTo.Location = new System.Drawing.Point(763, 293);
-            this.dateTimePickerTo.MaxDate = new System.DateTime(2021, 5, 24, 0, 0, 0, 0);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerTo.TabIndex = 11;
-            this.dateTimePickerTo.Value = new System.DateTime(2021, 5, 24, 0, 0, 0, 0);
+            this.dateTimePickerTo.Value = new System.DateTime(2021, 5, 25, 0, 0, 0, 0);
             this.dateTimePickerTo.ValueChanged += new System.EventHandler(this.dateTimePickerTo_ValueChanged);
             // 
             // labelFrom
