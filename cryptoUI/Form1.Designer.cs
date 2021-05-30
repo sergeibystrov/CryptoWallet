@@ -63,7 +63,7 @@ namespace cryptoUI
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(165, 524);
+            this.panelMenu.Size = new System.Drawing.Size(165, 682);
             this.panelMenu.TabIndex = 0;
             // 
             // settingsButton
@@ -271,14 +271,14 @@ namespace cryptoUI
             this.childFormPanel.Location = new System.Drawing.Point(165, 65);
             this.childFormPanel.Margin = new System.Windows.Forms.Padding(2);
             this.childFormPanel.Name = "childFormPanel";
-            this.childFormPanel.Size = new System.Drawing.Size(1152, 459);
+            this.childFormPanel.Size = new System.Drawing.Size(1152, 617);
             this.childFormPanel.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1317, 524);
+            this.ClientSize = new System.Drawing.Size(1317, 682);
             this.Controls.Add(this.childFormPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);

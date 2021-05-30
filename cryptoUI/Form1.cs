@@ -132,7 +132,7 @@ namespace cryptoUI
         private void chartButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGDBCollors.color4);
-            OpenChildForm(new ChartsForm());
+            OpenChildForm(new ChartsForm() { UsernameText = label1.Text });
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

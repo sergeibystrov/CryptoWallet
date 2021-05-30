@@ -79,7 +79,7 @@ namespace cryptoUI
                                 pr.DataTime.ToString(),
                                 c.Name,
                                 p.amount.ToString(),
-                                pr.Price1.ToString()
+                                pr.Price1.ToString("N")
                             };
                             list.Add(row);
 
@@ -120,16 +120,23 @@ namespace cryptoUI
                     CurrentPrice += CurrencyAmount * el.Value;
                 }
             }
-
             Revenue = CurrentPrice - USDspent;
-
+            foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
+            {
+                Revenue newRevenue = new Revenue();
+                newRevenue.Revenue1 = (float)Math.Round(Revenue, 2);
+                newRevenue.DateTime = DateTime.Now;
+                newRevenue.Id_User = u.id_user;
+                bazadanych.Revenues.InsertOnSubmit(newRevenue);
+                bazadanych.SubmitChanges();
+            }
             double cena = Math.Round(Revenue, 2);
             double procent = Math.Round(((Revenue * 100) / USDspent), 2);
 
             if (cena > 0)
             {
                 pictureBox1.Image = Properties.Resources.increase;
-                label1.Text = "+" + cena.ToString() + "$";
+                label1.Text = "+" + cena.ToString("N") + "$";
                 label2.Text = "+" + procent.ToString() + "%";
                 label1.ForeColor = Color.Green;
                 label2.ForeColor = Color.Green;
@@ -137,7 +144,7 @@ namespace cryptoUI
             else
             {
                 pictureBox1.Image = Properties.Resources.decrease;
-                label1.Text = cena.ToString() + "$";
+                label1.Text = cena.ToString("N") + "$";
                 label2.Text = procent.ToString() + "%";
                 label1.ForeColor = Color.Red;
                 label2.ForeColor = Color.Red;

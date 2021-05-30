@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
 namespace cryptoUI.Coins
 {
-    class Coins
+    class Info
     {
-        public Dictionary<string, object> Data;
-    }
-    class Price
-    {
-        public double USD;
+        public int time;    
+        public double high;
+        public double low;
+        public double open;
+        public double close;
     }
 }

@@ -38,7 +38,6 @@ C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\bin\Debug\cryptoUI.pdb
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\bin\Debug\Newtonsoft.Json.dll
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\bin\Debug\Newtonsoft.Json.xml
-C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csprojAssemblyReference.cache
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.ChartsForm.resources
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.DashboardForm.resources
 C:\Users\gameo\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Form1.resources
@@ -92,3 +91,4 @@ C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Lo
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Registration.resources
 C:\Users\yegor\Source\Repos\ToDoTradingHistory\cryptoUI\obj\Debug\cryptoUI.exe
 C:\Users\yegor\Source\Repos\ToDoTradingHistory\cryptoUI\obj\Debug\cryptoUI.pdb
+C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csproj.AssemblyReference.cache

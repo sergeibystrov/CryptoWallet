@@ -65,7 +65,7 @@ namespace cryptoUI
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Margin = new System.Windows.Forms.Padding(2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(671, 390);
+            this.listView1.Size = new System.Drawing.Size(513, 390);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -73,29 +73,32 @@ namespace cryptoUI
             // columnHeader1
             // 
             this.columnHeader1.Text = "Date";
-            this.columnHeader1.Width = 191;
+            this.columnHeader1.Width = 170;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Name";
-            this.columnHeader2.Width = 134;
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 52;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Amount";
+            this.columnHeader4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader4.Width = 128;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Price";
-            this.columnHeader5.Width = 212;
+            this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.columnHeader5.Width = 66;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.listView1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 390);
+            this.panel1.Size = new System.Drawing.Size(513, 390);
             this.panel1.TabIndex = 1;
             // 
             // comboBox1
@@ -111,7 +114,7 @@ namespace cryptoUI
             "Amount: lowest",
             "Price: highest",
             "Price: lowest"});
-            this.comboBox1.Location = new System.Drawing.Point(809, 166);
+            this.comboBox1.Location = new System.Drawing.Point(651, 166);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(154, 24);
             this.comboBox1.TabIndex = 6;
@@ -122,7 +125,7 @@ namespace cryptoUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(826, 44);
+            this.label1.Location = new System.Drawing.Point(668, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 46);
             this.label1.TabIndex = 3;
@@ -132,7 +135,7 @@ namespace cryptoUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(833, 90);
+            this.label2.Location = new System.Drawing.Point(675, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 4;
@@ -140,7 +143,7 @@ namespace cryptoUI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::cryptoUI.Properties.Resources.increase;
-            this.pictureBox1.Location = new System.Drawing.Point(689, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(531, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(131, 134);
             this.pictureBox1.TabIndex = 2;
@@ -151,7 +154,7 @@ namespace cryptoUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label3.Location = new System.Drawing.Point(683, 159);
+            this.label3.Location = new System.Drawing.Point(525, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 31);
             this.label3.TabIndex = 7;
@@ -162,7 +165,7 @@ namespace cryptoUI
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(683, 212);
+            this.label4.Location = new System.Drawing.Point(525, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 31);
             this.label4.TabIndex = 8;
@@ -180,7 +183,7 @@ namespace cryptoUI
             "Last 30 Days",
             "Last Year",
             "Custom Range"});
-            this.comboBox2.Location = new System.Drawing.Point(834, 219);
+            this.comboBox2.Location = new System.Drawing.Point(676, 219);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(129, 24);
             this.comboBox2.TabIndex = 9;
@@ -188,7 +191,7 @@ namespace cryptoUI
             // 
             // dateTimePickerFrom
             // 
-            this.dateTimePickerFrom.Location = new System.Drawing.Point(763, 267);
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(605, 267);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerFrom.TabIndex = 10;
@@ -197,7 +200,7 @@ namespace cryptoUI
             // 
             // dateTimePickerTo
             // 
-            this.dateTimePickerTo.Location = new System.Drawing.Point(763, 293);
+            this.dateTimePickerTo.Location = new System.Drawing.Point(605, 293);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerTo.TabIndex = 11;
@@ -209,7 +212,7 @@ namespace cryptoUI
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFrom.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelFrom.Location = new System.Drawing.Point(688, 258);
+            this.labelFrom.Location = new System.Drawing.Point(530, 258);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(77, 31);
             this.labelFrom.TabIndex = 12;
@@ -220,7 +223,7 @@ namespace cryptoUI
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelTo.Location = new System.Drawing.Point(689, 284);
+            this.labelTo.Location = new System.Drawing.Point(531, 284);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(46, 31);
             this.labelTo.TabIndex = 13;
@@ -231,7 +234,7 @@ namespace cryptoUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1043, 414);
+            this.ClientSize = new System.Drawing.Size(873, 414);
             this.Controls.Add(this.labelTo);
             this.Controls.Add(this.labelFrom);
             this.Controls.Add(this.dateTimePickerTo);
