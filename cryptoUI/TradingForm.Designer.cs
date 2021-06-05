@@ -35,19 +35,19 @@ namespace cryptoUI
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.comboBoxSortedBy = new System.Windows.Forms.ComboBox();
+            this.labelRevenueInDollars = new System.Windows.Forms.Label();
+            this.labelRevenueInProcent = new System.Windows.Forms.Label();
+            this.pictureBoxRevenue = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxDateRange = new System.Windows.Forms.ComboBox();
             this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.labelFrom = new System.Windows.Forms.Label();
             this.labelTo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRevenue)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -103,9 +103,9 @@ namespace cryptoUI
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxSortedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSortedBy.FormattingEnabled = true;
+            this.comboBoxSortedBy.Items.AddRange(new object[] {
             "Date: recent",
             "Date: oldest",
             "Name: A->Z",
@@ -114,40 +114,40 @@ namespace cryptoUI
             "Amount: lowest",
             "Price: highest",
             "Price: lowest"});
-            this.comboBox1.Location = new System.Drawing.Point(651, 166);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(154, 24);
-            this.comboBox1.TabIndex = 6;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBoxSortedBy.Location = new System.Drawing.Point(651, 166);
+            this.comboBoxSortedBy.Name = "comboBox1";
+            this.comboBoxSortedBy.Size = new System.Drawing.Size(154, 24);
+            this.comboBoxSortedBy.TabIndex = 6;
+            this.comboBoxSortedBy.SelectedIndexChanged += new System.EventHandler(this.comboBoxSortedBy_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(668, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 46);
-            this.label1.TabIndex = 3;
+            this.labelRevenueInDollars.AutoSize = true;
+            this.labelRevenueInDollars.Font = new System.Drawing.Font("MS Reference Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRevenueInDollars.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelRevenueInDollars.Location = new System.Drawing.Point(668, 44);
+            this.labelRevenueInDollars.Name = "label1";
+            this.labelRevenueInDollars.Size = new System.Drawing.Size(0, 46);
+            this.labelRevenueInDollars.TabIndex = 3;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label2.Location = new System.Drawing.Point(675, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 25);
-            this.label2.TabIndex = 4;
+            this.labelRevenueInProcent.AutoSize = true;
+            this.labelRevenueInProcent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRevenueInProcent.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.labelRevenueInProcent.Location = new System.Drawing.Point(675, 90);
+            this.labelRevenueInProcent.Name = "label2";
+            this.labelRevenueInProcent.Size = new System.Drawing.Size(0, 25);
+            this.labelRevenueInProcent.TabIndex = 4;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::cryptoUI.Properties.Resources.increase;
-            this.pictureBox1.Location = new System.Drawing.Point(531, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(131, 134);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxRevenue.Image = global::cryptoUI.Properties.Resources.increase;
+            this.pictureBoxRevenue.Location = new System.Drawing.Point(531, 12);
+            this.pictureBoxRevenue.Name = "pictureBox1";
+            this.pictureBoxRevenue.Size = new System.Drawing.Size(131, 134);
+            this.pictureBoxRevenue.TabIndex = 2;
+            this.pictureBoxRevenue.TabStop = false;
             // 
             // label3
             // 
@@ -173,9 +173,9 @@ namespace cryptoUI
             // 
             // comboBox2
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBoxDateRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDateRange.FormattingEnabled = true;
+            this.comboBoxDateRange.Items.AddRange(new object[] {
             "All time",
             "Today",
             "Yesterday",
@@ -183,11 +183,11 @@ namespace cryptoUI
             "Last 30 Days",
             "Last Year",
             "Custom Range"});
-            this.comboBox2.Location = new System.Drawing.Point(676, 219);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(129, 24);
-            this.comboBox2.TabIndex = 9;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBoxDateRange.Location = new System.Drawing.Point(676, 219);
+            this.comboBoxDateRange.Name = "comboBox2";
+            this.comboBoxDateRange.Size = new System.Drawing.Size(129, 24);
+            this.comboBoxDateRange.TabIndex = 9;
+            this.comboBoxDateRange.SelectedIndexChanged += new System.EventHandler(this.comboBoxDateRange_SelectedIndexChanged);
             // 
             // dateTimePickerFrom
             // 
@@ -239,20 +239,20 @@ namespace cryptoUI
             this.Controls.Add(this.labelFrom);
             this.Controls.Add(this.dateTimePickerTo);
             this.Controls.Add(this.dateTimePickerFrom);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxDateRange);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelRevenueInProcent);
+            this.Controls.Add(this.comboBoxSortedBy);
+            this.Controls.Add(this.labelRevenueInDollars);
+            this.Controls.Add(this.pictureBoxRevenue);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TradingForm";
             this.Text = "Trading";
             this.Load += new System.EventHandler(this.TradingForm_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRevenue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -266,13 +266,13 @@ namespace cryptoUI
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label labelRevenueInDollars;
+        private System.Windows.Forms.Label labelRevenueInProcent;
+        private System.Windows.Forms.PictureBox pictureBoxRevenue;
+        private System.Windows.Forms.ComboBox comboBoxSortedBy;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxDateRange;
         private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
         private System.Windows.Forms.DateTimePicker dateTimePickerTo;
         private System.Windows.Forms.Label labelFrom;

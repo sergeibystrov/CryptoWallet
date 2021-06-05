@@ -14,14 +14,14 @@ using FontAwesome.Sharp;
 
 namespace cryptoUI
 {
-    public partial class Form1 : Form
+    public partial class HomeForm : Form
     {
         //Fields
         private IconButton currentButton;
         private Panel leftBorderButton;
         private Form currentChildForm;
 
-        public Form1()
+        public HomeForm()
         {
             InitializeComponent();
             leftBorderButton = new Panel();
@@ -34,11 +34,11 @@ namespace cryptoUI
         {
             get
             {
-                return this.label1.Text;
+                return this.Username.Text;
             }
             set
             {
-                this.label1.Text = value;
+                this.Username.Text = value;
             }
         }
         //Structures
@@ -114,36 +114,33 @@ namespace cryptoUI
         private void dashboardButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGDBCollors.color1);
-            OpenChildForm(new DashboardForm() { UsernameText = label1.Text });
+            OpenChildForm(new DashboardForm() { UsernameText = Username.Text });
         }
 
         private void walletButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGDBCollors.color2);
-            OpenChildForm(new WalletForm());
+            OpenChildForm(new WalletForm() { UsernameText = Username.Text });
         }
 
         private void tradingButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGDBCollors.color3);
-            OpenChildForm(new TradingForm() { UsernameText = label1.Text });
+            OpenChildForm(new TradingForm() { UsernameText = Username.Text });
         }
 
         private void chartButton_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGDBCollors.color4);
-            OpenChildForm(new ChartsForm() { UsernameText = label1.Text });
-        }
-
-        private void settingsButton_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender, RGDBCollors.color5);
-            OpenChildForm(new SettingsForm());
+            OpenChildForm(new ChartsForm() { UsernameText = Username.Text });
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            currentChildForm.Close();
+            if (titleChildForm.Text != "Home")
+            {
+                currentChildForm.Close();
+            }   
             Reset();
         }
 

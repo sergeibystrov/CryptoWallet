@@ -41,8 +41,8 @@ namespace cryptoUI
         {
             CurrentCurrency = "BTC";
             labelNameCoin.Text = CurrentCurrency;
-            textBox1.Text = CurrentCurrency;
-            comboBox1.SelectedItem = "Day[Hourly]";
+            textBoxListOfCurrencies.Text = CurrentCurrency;
+            comboBoxListOfTimeframes.SelectedItem = "Day [Hourly]";
             ApiLink = "https://min-api.cryptocompare.com/data/v2/histohour?fsym=" + CurrentCurrency + "&tsym=USD&limit=24";
             UpdateChart();
             AutoCompleteStringCollection myCollection = new AutoCompleteStringCollection();
@@ -50,23 +50,23 @@ namespace cryptoUI
             {
                 myCollection.Add(o.Name);
             }
-            textBox1.AutoCompleteCustomSource = myCollection;
+            textBoxListOfCurrencies.AutoCompleteCustomSource = myCollection;
             foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
             {
                 foreach (Revenue r in bazadanych.Revenues.Where(x => x.Id_User == u.id_user))
                 {
-                    chart2.Series["Series"].Points.AddXY(r.DateTime, r.Revenue1);
-                    chart2.Series["Series"].BorderWidth = 5;
-                    richTextBox2.Text += "Date " + r.DateTime.ToString() + "\n";
-                    richTextBox2.Text += "Revenue " + r.Revenue1.ToString() + "$\n\n";
+                    chartRevenue.Series["Series"].Points.AddXY(r.DateTime, r.Revenue1);
+                    chartRevenue.Series["Series"].BorderWidth = 5;
+                    richTextBoxInfoFromRevenueChart.Text += "Date " + r.DateTime.ToString() + "\n";
+                    richTextBoxInfoFromRevenueChart.Text += "Revenue " + r.Revenue1.ToString() + "$\n\n";
                 }
             }
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private async void buttonShowChart_Click(object sender, EventArgs e)
         {
-            CurrentCurrency = textBox1.Text;
-            switch (comboBox1.SelectedIndex)
+            CurrentCurrency = textBoxListOfCurrencies.Text;
+            switch (comboBoxListOfTimeframes.SelectedIndex)
             {
                 case 0:
                     ApiLink = "https://min-api.cryptocompare.com/data/v2/histohour?fsym=" + CurrentCurrency + "&tsym=USD&limit=24";
@@ -89,11 +89,18 @@ namespace cryptoUI
 
         private async void UpdateChart()
         {
-            foreach (Currency o in bazadanych.Currencies.Where(x => x.Name == textBox1.Text))
+            this.chartPrice.ChartAreas["ChartArea1"].CursorX.IsUserEnabled = true;
+            this.chartPrice.ChartAreas["ChartArea1"].CursorY.IsUserEnabled = true;
+            this.chartPrice.ChartAreas["ChartArea1"].CursorX.IsUserSelectionEnabled = true;
+            this.chartPrice.ChartAreas["ChartArea1"].CursorY.IsUserSelectionEnabled = true;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoomable = true;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScaleView.Zoomable = true;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = true;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScrollBar.IsPositionedInside = true;
+
+            foreach (Currency o in bazadanych.Currencies.Where(x => x.Name == textBoxListOfCurrencies.Text))
             {
-                ////////////////////////
-                richTextBox1.Text = "";
-                ///////////////////////
+                richTextBoxInfoFromPriceChart.Text = "";
                 labelNameCoin.Text = CurrentCurrency;
                 WebRequest request = WebRequest.Create(ApiLink);
                 WebResponse response = await request.GetResponseAsync();
@@ -107,25 +114,23 @@ namespace cryptoUI
                 }
                 response.Close();
                 Coins.HistoricalData hd = JsonConvert.DeserializeObject<Coins.HistoricalData>(answer);
-                chart1.Series["Daily"].Points.Clear();
-                chart1.Series["Daily"].XValueMember = "Day";
-                chart1.Series["Daily"].YValueMembers = "High,Low,Open,Close";
-                chart1.Series["Daily"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-                chart1.Series["Daily"].CustomProperties = "PriceDownColor=Red,PriceUpColor=Green";
+                chartPrice.Series["Daily"].Points.Clear();
+                chartPrice.Series["Daily"].XValueMember = "Day";
+                chartPrice.Series["Daily"].YValueMembers = "High,Low,Open,Close";
+                chartPrice.Series["Daily"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+                chartPrice.Series["Daily"].CustomProperties = "PriceDownColor=Red,PriceUpColor=Green";
                 foreach (var d in hd.Data.Data)
                 {
                     System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc);
                     dtDateTime = dtDateTime.AddSeconds(d.time).ToLocalTime();
 
-                    ///////////////////////////
-                    richTextBox1.Text += "Date " + dtDateTime.ToString() + "\n";
-                    richTextBox1.Text += "High " + d.high.ToString("N") + "$\n";
-                    richTextBox1.Text += "Low " + d.low.ToString("N") + "$\n";
-                    richTextBox1.Text += "Open " + d.open.ToString("N") + "$\n";
-                    richTextBox1.Text += "Close " + d.close.ToString("N") + "$\n\n";
-                    ///////////////////////////
+                    richTextBoxInfoFromPriceChart.Text += "Date " + dtDateTime.ToString() + "\n";
+                    richTextBoxInfoFromPriceChart.Text += "High " + d.high.ToString("N") + "$\n";
+                    richTextBoxInfoFromPriceChart.Text += "Low " + d.low.ToString("N") + "$\n";
+                    richTextBoxInfoFromPriceChart.Text += "Open " + d.open.ToString("N") + "$\n";
+                    richTextBoxInfoFromPriceChart.Text += "Close " + d.close.ToString("N") + "$\n\n";
                     
-                    chart1.Series["Daily"].Points.AddXY(dtDateTime, d.high, d.low, d.open, d.close);
+                    chartPrice.Series["Daily"].Points.AddXY(dtDateTime, d.high, d.low, d.open, d.close);
                 }
             }
         }

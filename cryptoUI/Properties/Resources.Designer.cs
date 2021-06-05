@@ -63,9 +63,9 @@ namespace cryptoUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bitcoin {
+        internal static System.Drawing.Bitmap close {
             get {
-                object obj = ResourceManager.GetObject("bitcoin", resourceCulture);
+                object obj = ResourceManager.GetObject("close", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,16 +83,6 @@ namespace cryptoUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap etf {
-            get {
-                object obj = ResourceManager.GetObject("etf", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap increase {
             get {
                 object obj = ResourceManager.GetObject("increase", resourceCulture);
@@ -103,9 +93,19 @@ namespace cryptoUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap litecoin {
+        internal static System.Drawing.Bitmap not_enough_money {
             get {
-                object obj = ResourceManager.GetObject("litecoin", resourceCulture);
+                object obj = ResourceManager.GetObject("not_enough_money", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap not_enough_tokens {
+            get {
+                object obj = ResourceManager.GetObject("not_enough_tokens", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +116,16 @@ namespace cryptoUI.Properties {
         internal static System.Drawing.Bitmap pngegg {
             get {
                 object obj = ResourceManager.GetObject("pngegg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap transaction_completed {
+            get {
+                object obj = ResourceManager.GetObject("transaction_completed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

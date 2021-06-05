@@ -1,7 +1,7 @@
 ﻿
 namespace cryptoUI
 {
-    partial class Form1
+    partial class HomeForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@ namespace cryptoUI
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.settingsButton = new FontAwesome.Sharp.IconButton();
             this.chartButton = new FontAwesome.Sharp.IconButton();
             this.tradingButton = new FontAwesome.Sharp.IconButton();
             this.walletButton = new FontAwesome.Sharp.IconButton();
@@ -39,7 +38,7 @@ namespace cryptoUI
             this.buttonHome = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Username = new System.Windows.Forms.Label();
             this.titleChildForm = new System.Windows.Forms.Label();
             this.iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.childFormPanel = new System.Windows.Forms.Panel();
@@ -53,7 +52,6 @@ namespace cryptoUI
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panelMenu.Controls.Add(this.settingsButton);
             this.panelMenu.Controls.Add(this.chartButton);
             this.panelMenu.Controls.Add(this.tradingButton);
             this.panelMenu.Controls.Add(this.walletButton);
@@ -65,29 +63,6 @@ namespace cryptoUI
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(165, 682);
             this.panelMenu.TabIndex = 0;
-            // 
-            // settingsButton
-            // 
-            this.settingsButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settingsButton.FlatAppearance.BorderSize = 0;
-            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsButton.ForeColor = System.Drawing.Color.White;
-            this.settingsButton.IconChar = FontAwesome.Sharp.IconChar.Wrench;
-            this.settingsButton.IconColor = System.Drawing.Color.White;
-            this.settingsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.settingsButton.IconSize = 32;
-            this.settingsButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsButton.Location = new System.Drawing.Point(0, 310);
-            this.settingsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Padding = new System.Windows.Forms.Padding(8, 0, 15, 0);
-            this.settingsButton.Size = new System.Drawing.Size(165, 49);
-            this.settingsButton.TabIndex = 5;
-            this.settingsButton.Text = "Settings";
-            this.settingsButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.settingsButton.UseVisualStyleBackColor = true;
-            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
             // 
             // chartButton
             // 
@@ -215,7 +190,7 @@ namespace cryptoUI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Username);
             this.panel1.Controls.Add(this.titleChildForm);
             this.panel1.Controls.Add(this.iconCurrentChildForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -226,16 +201,16 @@ namespace cryptoUI
             this.panel1.TabIndex = 2;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
-            // label1
+            // Username
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Myanmar Text", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(1064, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.Username.AutoSize = true;
+            this.Username.Font = new System.Drawing.Font("Myanmar Text", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Username.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Username.Location = new System.Drawing.Point(1026, 17);
+            this.Username.Name = "Username";
+            this.Username.Size = new System.Drawing.Size(114, 37);
+            this.Username.TabIndex = 0;
+            this.Username.Text = "Username";
             // 
             // titleChildForm
             // 
@@ -303,7 +278,6 @@ namespace cryptoUI
         private FontAwesome.Sharp.IconButton dashboardButton;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private FontAwesome.Sharp.IconButton settingsButton;
         private FontAwesome.Sharp.IconButton chartButton;
         private FontAwesome.Sharp.IconButton tradingButton;
         private FontAwesome.Sharp.IconButton walletButton;
@@ -312,7 +286,7 @@ namespace cryptoUI
         private System.Windows.Forms.Label titleChildForm;
         private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
         private System.Windows.Forms.Panel childFormPanel;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Username;
     }
 }
 

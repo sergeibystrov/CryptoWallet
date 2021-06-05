@@ -34,50 +34,50 @@ namespace cryptoUI
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.richTextBoxInfoFromPriceChart = new System.Windows.Forms.RichTextBox();
+            this.chartPrice = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxListOfCurrencies = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelNameCoin = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxListOfTimeframes = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label4 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxInfoFromRevenueChart = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).BeginInit();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.richTextBox1.Location = new System.Drawing.Point(824, 171);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(146, 184);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
+            this.richTextBoxInfoFromPriceChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.richTextBoxInfoFromPriceChart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.richTextBoxInfoFromPriceChart.Location = new System.Drawing.Point(824, 171);
+            this.richTextBoxInfoFromPriceChart.Name = "richTextBox1";
+            this.richTextBoxInfoFromPriceChart.ReadOnly = true;
+            this.richTextBoxInfoFromPriceChart.Size = new System.Drawing.Size(180, 184);
+            this.richTextBoxInfoFromPriceChart.TabIndex = 1;
+            this.richTextBoxInfoFromPriceChart.Text = "";
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.chartPrice.BackColor = System.Drawing.SystemColors.ActiveCaption;
             chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            this.chart1.Location = new System.Drawing.Point(9, 12);
-            this.chart1.Name = "chart1";
+            this.chartPrice.ChartAreas.Add(chartArea3);
+            this.chartPrice.Location = new System.Drawing.Point(9, 12);
+            this.chartPrice.Name = "chart1";
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
             series3.Name = "Daily";
             series3.YValuesPerPoint = 4;
-            this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(805, 359);
-            this.chart1.TabIndex = 2;
-            this.chart1.Text = "chart1";
+            this.chartPrice.Series.Add(series3);
+            this.chartPrice.Size = new System.Drawing.Size(805, 359);
+            this.chartPrice.TabIndex = 2;
+            this.chartPrice.Text = "chart1";
             // 
             // button1
             // 
@@ -89,18 +89,18 @@ namespace cryptoUI
             this.button1.TabIndex = 8;
             this.button1.Text = "Show chart";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.buttonShowChart_Click);
             // 
             // textBox1
             // 
-            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(827, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxListOfCurrencies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxListOfCurrencies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxListOfCurrencies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.textBoxListOfCurrencies.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBoxListOfCurrencies.Location = new System.Drawing.Point(827, 36);
+            this.textBoxListOfCurrencies.Name = "textBox1";
+            this.textBoxListOfCurrencies.Size = new System.Drawing.Size(117, 20);
+            this.textBoxListOfCurrencies.TabIndex = 7;
             // 
             // label2
             // 
@@ -139,18 +139,18 @@ namespace cryptoUI
             // 
             // comboBox1
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Day[Hourly]",
+            this.comboBoxListOfTimeframes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.comboBoxListOfTimeframes.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.comboBoxListOfTimeframes.FormattingEnabled = true;
+            this.comboBoxListOfTimeframes.Items.AddRange(new object[] {
+            "Day [Hourly]",
             "Week [Daily]",
             "Mounth [Daily]",
             "Year [Daily]"});
-            this.comboBox1.Location = new System.Drawing.Point(827, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 21);
-            this.comboBox1.TabIndex = 12;
+            this.comboBoxListOfTimeframes.Location = new System.Drawing.Point(827, 83);
+            this.comboBoxListOfTimeframes.Name = "comboBox1";
+            this.comboBoxListOfTimeframes.Size = new System.Drawing.Size(120, 21);
+            this.comboBoxListOfTimeframes.TabIndex = 12;
             // 
             // label3
             // 
@@ -164,24 +164,24 @@ namespace cryptoUI
             // 
             // chart2
             // 
-            this.chart2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.chartRevenue.BackColor = System.Drawing.SystemColors.ActiveCaption;
             chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             chartArea4.BorderColor = System.Drawing.Color.White;
             chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
+            this.chartRevenue.ChartAreas.Add(chartArea4);
             legend2.Enabled = false;
             legend2.Name = "Legend1";
-            this.chart2.Legends.Add(legend2);
-            this.chart2.Location = new System.Drawing.Point(9, 369);
-            this.chart2.Name = "chart2";
+            this.chartRevenue.Legends.Add(legend2);
+            this.chartRevenue.Location = new System.Drawing.Point(9, 369);
+            this.chartRevenue.Name = "chart2";
             series4.ChartArea = "ChartArea1";
             series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series4.Legend = "Legend1";
             series4.Name = "Series";
-            this.chart2.Series.Add(series4);
-            this.chart2.Size = new System.Drawing.Size(805, 249);
-            this.chart2.TabIndex = 14;
-            this.chart2.Text = "chart2";
+            this.chartRevenue.Series.Add(series4);
+            this.chartRevenue.Size = new System.Drawing.Size(805, 249);
+            this.chartRevenue.TabIndex = 14;
+            this.chartRevenue.Text = "chart2";
             // 
             // label4
             // 
@@ -195,14 +195,14 @@ namespace cryptoUI
             // 
             // richTextBox2
             // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.richTextBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.richTextBox2.Location = new System.Drawing.Point(823, 418);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(151, 200);
-            this.richTextBox2.TabIndex = 15;
-            this.richTextBox2.Text = "";
+            this.richTextBoxInfoFromRevenueChart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.richTextBoxInfoFromRevenueChart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.richTextBoxInfoFromRevenueChart.Location = new System.Drawing.Point(823, 418);
+            this.richTextBoxInfoFromRevenueChart.Name = "richTextBox2";
+            this.richTextBoxInfoFromRevenueChart.ReadOnly = true;
+            this.richTextBoxInfoFromRevenueChart.Size = new System.Drawing.Size(181, 200);
+            this.richTextBoxInfoFromRevenueChart.TabIndex = 15;
+            this.richTextBoxInfoFromRevenueChart.Text = "";
             // 
             // label5
             // 
@@ -223,41 +223,41 @@ namespace cryptoUI
             this.ClientSize = new System.Drawing.Size(1176, 630);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.chart2);
+            this.Controls.Add(this.richTextBoxInfoFromRevenueChart);
+            this.Controls.Add(this.chartRevenue);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxListOfTimeframes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelNameCoin);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxListOfCurrencies);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.chart1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.chartPrice);
+            this.Controls.Add(this.richTextBoxInfoFromPriceChart);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ChartsForm";
             this.Text = "Charts";
             this.Load += new System.EventHandler(this.ChartsForm_LoadAsync);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRevenue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.RichTextBox richTextBoxInfoFromPriceChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPrice;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxListOfCurrencies;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelNameCoin;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxListOfTimeframes;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRevenue;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox richTextBoxInfoFromRevenueChart;
         private System.Windows.Forms.Label label5;
     }
 }

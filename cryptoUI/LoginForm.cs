@@ -27,7 +27,7 @@ namespace cryptoUI
             {
                 if (IfMatchPassword())
                 {
-                    Form1 form1 = new Form1();
+                    HomeForm form1 = new HomeForm();
                     textetex = this.textBoxLogin.Text;
                     form1.Show();
                     form1.UsernameText = this.textBoxLogin.Text;

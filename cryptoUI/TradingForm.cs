@@ -135,19 +135,19 @@ namespace cryptoUI
 
             if (cena > 0)
             {
-                pictureBox1.Image = Properties.Resources.increase;
-                label1.Text = "+" + cena.ToString("N") + "$";
-                label2.Text = "+" + procent.ToString() + "%";
-                label1.ForeColor = Color.Green;
-                label2.ForeColor = Color.Green;
+                pictureBoxRevenue.Image = Properties.Resources.increase;
+                labelRevenueInDollars.Text = "+" + cena.ToString("N") + "$";
+                labelRevenueInProcent.Text = "+" + procent.ToString() + "%";
+                labelRevenueInDollars.ForeColor = Color.Green;
+                labelRevenueInProcent.ForeColor = Color.Green;
             }
             else
             {
-                pictureBox1.Image = Properties.Resources.decrease;
-                label1.Text = cena.ToString("N") + "$";
-                label2.Text = procent.ToString() + "%";
-                label1.ForeColor = Color.Red;
-                label2.ForeColor = Color.Red;
+                pictureBoxRevenue.Image = Properties.Resources.decrease;
+                labelRevenueInDollars.Text = cena.ToString("N") + "$";
+                labelRevenueInProcent.Text = procent.ToString() + "%";
+                labelRevenueInDollars.ForeColor = Color.Red;
+                labelRevenueInProcent.ForeColor = Color.Red;
             }
         }
 
@@ -194,11 +194,11 @@ namespace cryptoUI
             return Double.Parse(y[3]).CompareTo(Double.Parse(x[3]));
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxSortedBy_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox2.SelectedItem == "All time" || comboBox2.SelectedItem == null)
+            if (comboBoxDateRange.SelectedItem == "All time" || comboBoxDateRange.SelectedItem == null)
             {
-                switch (comboBox1.SelectedIndex)
+                switch (comboBoxSortedBy.SelectedIndex)
                 {
                     case 0:
                         list.Sort(CompareByDateRecent);
@@ -229,7 +229,7 @@ namespace cryptoUI
             }
             else
             {
-                switch (comboBox1.SelectedIndex)
+                switch (comboBoxSortedBy.SelectedIndex)
                 {
                     case 0:
                         filteredList.Sort(CompareByDateRecent);
@@ -260,9 +260,9 @@ namespace cryptoUI
             }
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxDateRange_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBox2.SelectedIndex)
+            switch (comboBoxDateRange.SelectedIndex)
             {
                 case 0:
                     filteredList = list;
