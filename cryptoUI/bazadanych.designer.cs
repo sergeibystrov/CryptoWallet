@@ -42,9 +42,6 @@ namespace cryptoUI
     partial void InsertPrice(Price instance);
     partial void UpdatePrice(Price instance);
     partial void DeletePrice(Price instance);
-    partial void InsertRevenue(Revenue instance);
-    partial void UpdateRevenue(Revenue instance);
-    partial void DeleteRevenue(Revenue instance);
     #endregion
 		
 		public bazadanychDataContext() : 
@@ -106,14 +103,6 @@ namespace cryptoUI
 			get
 			{
 				return this.GetTable<Price>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Revenue> Revenues
-		{
-			get
-			{
-				return this.GetTable<Revenue>();
 			}
 		}
 	}
@@ -296,8 +285,6 @@ namespace cryptoUI
 		
 		private EntitySet<Payment> _Payments;
 		
-		private EntitySet<Revenue> _Revenues;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -315,7 +302,6 @@ namespace cryptoUI
 		public User()
 		{
 			this._Payments = new EntitySet<Payment>(new Action<Payment>(this.attach_Payments), new Action<Payment>(this.detach_Payments));
-			this._Revenues = new EntitySet<Revenue>(new Action<Revenue>(this.attach_Revenues), new Action<Revenue>(this.detach_Revenues));
 			OnCreated();
 		}
 		
@@ -412,19 +398,6 @@ namespace cryptoUI
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Revenue", Storage="_Revenues", ThisKey="id_user", OtherKey="Id_User")]
-		public EntitySet<Revenue> Revenues
-		{
-			get
-			{
-				return this._Revenues;
-			}
-			set
-			{
-				this._Revenues.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -452,18 +425,6 @@ namespace cryptoUI
 		}
 		
 		private void detach_Payments(Payment entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = null;
-		}
-		
-		private void attach_Revenues(Revenue entity)
-		{
-			this.SendPropertyChanging();
-			entity.User = this;
-		}
-		
-		private void detach_Revenues(Revenue entity)
 		{
 			this.SendPropertyChanging();
 			entity.User = null;
@@ -886,181 +847,6 @@ namespace cryptoUI
 		{
 			this.SendPropertyChanging();
 			entity.Price = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Revenue")]
-	public partial class Revenue : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private int _Id_User;
-		
-		private float _Revenue1;
-		
-		private System.DateTime _DateTime;
-		
-		private EntityRef<User> _User;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnId_UserChanging(int value);
-    partial void OnId_UserChanged();
-    partial void OnRevenue1Changing(float value);
-    partial void OnRevenue1Changed();
-    partial void OnDateTimeChanging(System.DateTime value);
-    partial void OnDateTimeChanged();
-    #endregion
-		
-		public Revenue()
-		{
-			this._User = default(EntityRef<User>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_User", DbType="Int NOT NULL")]
-		public int Id_User
-		{
-			get
-			{
-				return this._Id_User;
-			}
-			set
-			{
-				if ((this._Id_User != value))
-				{
-					if (this._User.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnId_UserChanging(value);
-					this.SendPropertyChanging();
-					this._Id_User = value;
-					this.SendPropertyChanged("Id_User");
-					this.OnId_UserChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="Revenue", Storage="_Revenue1", DbType="Real NOT NULL")]
-		public float Revenue1
-		{
-			get
-			{
-				return this._Revenue1;
-			}
-			set
-			{
-				if ((this._Revenue1 != value))
-				{
-					this.OnRevenue1Changing(value);
-					this.SendPropertyChanging();
-					this._Revenue1 = value;
-					this.SendPropertyChanged("Revenue1");
-					this.OnRevenue1Changed();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateTime", DbType="DateTime NOT NULL")]
-		public System.DateTime DateTime
-		{
-			get
-			{
-				return this._DateTime;
-			}
-			set
-			{
-				if ((this._DateTime != value))
-				{
-					this.OnDateTimeChanging(value);
-					this.SendPropertyChanging();
-					this._DateTime = value;
-					this.SendPropertyChanged("DateTime");
-					this.OnDateTimeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Revenue", Storage="_User", ThisKey="Id_User", OtherKey="id_user", IsForeignKey=true)]
-		public User User
-		{
-			get
-			{
-				return this._User.Entity;
-			}
-			set
-			{
-				User previousValue = this._User.Entity;
-				if (((previousValue != value) 
-							|| (this._User.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._User.Entity = null;
-						previousValue.Revenues.Remove(this);
-					}
-					this._User.Entity = value;
-					if ((value != null))
-					{
-						value.Revenues.Add(this);
-						this._Id_User = value.id_user;
-					}
-					else
-					{
-						this._Id_User = default(int);
-					}
-					this.SendPropertyChanged("User");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
 		}
 	}
 }

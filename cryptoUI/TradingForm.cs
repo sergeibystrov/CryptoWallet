@@ -121,15 +121,6 @@ namespace cryptoUI
                 }
             }
             Revenue = CurrentPrice - USDspent;
-            foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
-            {
-                Revenue newRevenue = new Revenue();
-                newRevenue.Revenue1 = (float)Math.Round(Revenue, 2);
-                newRevenue.DateTime = DateTime.Now;
-                newRevenue.Id_User = u.id_user;
-                bazadanych.Revenues.InsertOnSubmit(newRevenue);
-                bazadanych.SubmitChanges();
-            }
             double cena = Math.Round(Revenue, 2);
             double procent = Math.Round(((Revenue * 100) / USDspent), 2);
 

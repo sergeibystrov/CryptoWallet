@@ -21,6 +21,8 @@ namespace cryptoUI
         string CurrentCurrency;
         string ApiLink;
         public string Nickname;
+        double CurrencyAmount;
+        double MoneySpent;
         public string UsernameText
         {
             get
@@ -42,8 +44,8 @@ namespace cryptoUI
             CurrentCurrency = "BTC";
             labelNameCoin.Text = CurrentCurrency;
             textBoxListOfCurrencies.Text = CurrentCurrency;
-            comboBoxListOfTimeframes.SelectedItem = "Day [Hourly]";
-            ApiLink = "https://min-api.cryptocompare.com/data/v2/histohour?fsym=" + CurrentCurrency + "&tsym=USD&limit=24";
+            comboBoxListOfTimeframes.SelectedItem = "Hourly [4 days]";
+            ApiLink = "https://min-api.cryptocompare.com/data/v2/histohour?fsym=" + CurrentCurrency + "&tsym=USD&limit=96";
             UpdateChart();
             AutoCompleteStringCollection myCollection = new AutoCompleteStringCollection();
             foreach (Currency o in bazadanych.Currencies)
@@ -51,16 +53,6 @@ namespace cryptoUI
                 myCollection.Add(o.Name);
             }
             textBoxListOfCurrencies.AutoCompleteCustomSource = myCollection;
-            foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
-            {
-                foreach (Revenue r in bazadanych.Revenues.Where(x => x.Id_User == u.id_user))
-                {
-                    chartRevenue.Series["Series"].Points.AddXY(r.DateTime, r.Revenue1);
-                    chartRevenue.Series["Series"].BorderWidth = 5;
-                    richTextBoxInfoFromRevenueChart.Text += "Date " + r.DateTime.ToString() + "\n";
-                    richTextBoxInfoFromRevenueChart.Text += "Revenue " + r.Revenue1.ToString() + "$\n\n";
-                }
-            }
         }
 
         private async void buttonShowChart_Click(object sender, EventArgs e)
@@ -69,18 +61,14 @@ namespace cryptoUI
             switch (comboBoxListOfTimeframes.SelectedIndex)
             {
                 case 0:
-                    ApiLink = "https://min-api.cryptocompare.com/data/v2/histohour?fsym=" + CurrentCurrency + "&tsym=USD&limit=24";
+                    ApiLink = "https://min-api.cryptocompare.com/data/v2/histohour?fsym=" + CurrentCurrency + "&tsym=USD&limit=96";
                     UpdateChart();
                     break;
                 case 1:
-                    ApiLink = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + CurrentCurrency + "&tsym=USD&limit=7";
+                    ApiLink = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + CurrentCurrency + "&tsym=USD&limit=100";
                     UpdateChart();
                     break;
                 case 2:
-                    ApiLink = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + CurrentCurrency + "&tsym=USD&limit=30";
-                    UpdateChart();
-                    break;
-                case 3:
                     ApiLink = "https://min-api.cryptocompare.com/data/v2/histoday?fsym=" + CurrentCurrency + "&tsym=USD&limit=365";
                     UpdateChart();
                     break;
@@ -97,10 +85,24 @@ namespace cryptoUI
             this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScaleView.Zoomable = true;
             this.chartPrice.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = true;
             this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScrollBar.IsPositionedInside = true;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonColor = Color.DodgerBlue;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScrollBar.ButtonColor = Color.DodgerBlue;
+
+            this.chartRevenue.ChartAreas["ChartArea1"].CursorX.IsUserEnabled = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].CursorY.IsUserEnabled = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].CursorX.IsUserSelectionEnabled = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].CursorY.IsUserSelectionEnabled = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoomable = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisY.ScaleView.Zoomable = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisY.ScrollBar.IsPositionedInside = true;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonColor = Color.DodgerBlue;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisY.ScrollBar.ButtonColor = Color.DodgerBlue;
 
             foreach (Currency o in bazadanych.Currencies.Where(x => x.Name == textBoxListOfCurrencies.Text))
             {
                 richTextBoxInfoFromPriceChart.Text = "";
+                richTextBoxInfoFromRevenueChart.Text = "";
                 labelNameCoin.Text = CurrentCurrency;
                 WebRequest request = WebRequest.Create(ApiLink);
                 WebResponse response = await request.GetResponseAsync();
@@ -115,6 +117,7 @@ namespace cryptoUI
                 response.Close();
                 Coins.HistoricalData hd = JsonConvert.DeserializeObject<Coins.HistoricalData>(answer);
                 chartPrice.Series["Daily"].Points.Clear();
+                chartRevenue.Series["Series"].Points.Clear();
                 chartPrice.Series["Daily"].XValueMember = "Day";
                 chartPrice.Series["Daily"].YValueMembers = "High,Low,Open,Close";
                 chartPrice.Series["Daily"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
@@ -131,6 +134,28 @@ namespace cryptoUI
                     richTextBoxInfoFromPriceChart.Text += "Close " + d.close.ToString("N") + "$\n\n";
                     
                     chartPrice.Series["Daily"].Points.AddXY(dtDateTime, d.high, d.low, d.open, d.close);
+
+                    CurrencyAmount = 0;
+                    MoneySpent = 0;
+                    foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
+                    {
+                        foreach (Payment p in bazadanych.Payments.Where(x => x.id_user == u.id_user))
+                        {
+                            foreach (Price pr in bazadanych.Prices.Where(x => x.Id == p.id_price))
+                            {
+                                if (pr.Id_Currency == o.Id && pr.DataTime <= dtDateTime)
+                                {
+                                    CurrencyAmount += p.amount;
+                                    MoneySpent += Math.Round(p.amount * pr.Price1, 2);
+                                }
+                            }
+                        }
+                    }
+                    
+                    chartRevenue.Series["Series"].Points.AddXY(dtDateTime, Math.Round((CurrencyAmount * d.open) - MoneySpent, 2));
+                    chartRevenue.Series["Series"].BorderWidth = 5;
+                    richTextBoxInfoFromRevenueChart.Text += "Date " + dtDateTime.ToString() + "\n";
+                    richTextBoxInfoFromRevenueChart.Text += "Revenue " + ((CurrencyAmount * d.open) - MoneySpent).ToString("N") + "$\n\n";
                 }
             }
         }

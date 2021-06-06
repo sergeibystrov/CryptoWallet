@@ -16,7 +16,6 @@
       <Column Name="password" Type="System.String" DbType="NVarChar(32) NOT NULL" CanBeNull="false" />
       <Column Name="balance" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
       <Association Name="User_Payment" Member="Payments" ThisKey="id_user" OtherKey="id_user" Type="Payment" />
-      <Association Name="User_Revenue" Member="Revenues" ThisKey="id_user" OtherKey="Id_User" Type="Revenue" />
     </Type>
   </Table>
   <Table Name="dbo.Payments" Member="Payments">
@@ -37,15 +36,6 @@
       <Column Name="DataTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Association Name="Price_Payment" Member="Payments" ThisKey="Id" OtherKey="id_price" Type="Payment" />
       <Association Name="Currency_Price" Member="Currency" ThisKey="Id_Currency" OtherKey="Id" Type="Currency" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Revenue" Member="Revenues">
-    <Type Name="Revenue">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Id_User" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Revenue" Member="Revenue1" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
-      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="User_Revenue" Member="User" ThisKey="Id_User" OtherKey="id_user" Type="User" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
