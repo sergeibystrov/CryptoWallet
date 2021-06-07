@@ -118,6 +118,8 @@ namespace cryptoUI
                 Coins.HistoricalData hd = JsonConvert.DeserializeObject<Coins.HistoricalData>(answer);
                 chartPrice.Series["Daily"].Points.Clear();
                 chartRevenue.Series["Series"].Points.Clear();
+                chartRevenue.Series["Series"].BorderWidth = 5;
+                chartRevenue.Series["Series"].Color = Color.Gold;
                 chartPrice.Series["Daily"].XValueMember = "Day";
                 chartPrice.Series["Daily"].YValueMembers = "High,Low,Open,Close";
                 chartPrice.Series["Daily"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
@@ -153,8 +155,6 @@ namespace cryptoUI
                     }
                     
                     chartRevenue.Series["Series"].Points.AddXY(dtDateTime, Math.Round((CurrencyAmount * d.open) - MoneySpent, 2));
-                    chartRevenue.Series["Series"].BorderWidth = 5;
-                    chartRevenue.Series["Series"].BorderColor = Color.Gold;
                     richTextBoxInfoFromRevenueChart.Text += "Date " + dtDateTime.ToString() + "\n";
                     richTextBoxInfoFromRevenueChart.Text += "Revenue " + ((CurrencyAmount * d.open) - MoneySpent).ToString("N") + "$\n\n";
                 }

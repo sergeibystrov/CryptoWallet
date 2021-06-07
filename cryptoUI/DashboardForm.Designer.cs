@@ -90,7 +90,7 @@ namespace cryptoUI
             this.usdEarn.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.usdEarn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usdEarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.usdEarn.ForeColor = System.Drawing.Color.Black;
+            this.usdEarn.ForeColor = System.Drawing.Color.Gold;
             this.usdEarn.Location = new System.Drawing.Point(11, 297);
             this.usdEarn.Margin = new System.Windows.Forms.Padding(2);
             this.usdEarn.Name = "usdEarn";
@@ -104,7 +104,7 @@ namespace cryptoUI
             this.tokenToSell.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.tokenToSell.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tokenToSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tokenToSell.ForeColor = System.Drawing.Color.Black;
+            this.tokenToSell.ForeColor = System.Drawing.Color.Gold;
             this.tokenToSell.Location = new System.Drawing.Point(11, 273);
             this.tokenToSell.Margin = new System.Windows.Forms.Padding(2);
             this.tokenToSell.Name = "tokenToSell";
@@ -159,7 +159,7 @@ namespace cryptoUI
             this.usdPaid.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.usdPaid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usdPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.usdPaid.ForeColor = System.Drawing.Color.Black;
+            this.usdPaid.ForeColor = System.Drawing.Color.Gold;
             this.usdPaid.Location = new System.Drawing.Point(11, 185);
             this.usdPaid.Margin = new System.Windows.Forms.Padding(2);
             this.usdPaid.Name = "usdPaid";
@@ -172,7 +172,7 @@ namespace cryptoUI
             this.tokenToBuy.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.tokenToBuy.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tokenToBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tokenToBuy.ForeColor = System.Drawing.Color.Black;
+            this.tokenToBuy.ForeColor = System.Drawing.Color.Gold;
             this.tokenToBuy.Location = new System.Drawing.Point(11, 161);
             this.tokenToBuy.Margin = new System.Windows.Forms.Padding(2);
             this.tokenToBuy.Name = "tokenToBuy";
@@ -302,7 +302,7 @@ namespace cryptoUI
             this.textBoxListOfCurrencies.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.textBoxListOfCurrencies.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxListOfCurrencies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxListOfCurrencies.ForeColor = System.Drawing.Color.Black;
+            this.textBoxListOfCurrencies.ForeColor = System.Drawing.Color.Gold;
             this.textBoxListOfCurrencies.Location = new System.Drawing.Point(11, 44);
             this.textBoxListOfCurrencies.Name = "textBoxListOfCurrencies";
             this.textBoxListOfCurrencies.Size = new System.Drawing.Size(167, 19);

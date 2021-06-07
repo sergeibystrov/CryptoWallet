@@ -88,7 +88,7 @@ namespace cryptoUI
             this.numericUpDownAddFunds.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.numericUpDownAddFunds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownAddFunds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownAddFunds.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDownAddFunds.ForeColor = System.Drawing.Color.Gold;
             this.numericUpDownAddFunds.Location = new System.Drawing.Point(456, 38);
             this.numericUpDownAddFunds.Maximum = new decimal(new int[] {
             10000,
@@ -227,7 +227,7 @@ namespace cryptoUI
             this.comboBoxSortedBy.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.comboBoxSortedBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSortedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSortedBy.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxSortedBy.ForeColor = System.Drawing.Color.Gold;
             this.comboBoxSortedBy.FormattingEnabled = true;
             this.comboBoxSortedBy.Items.AddRange(new object[] {
             "Name: A->Z",

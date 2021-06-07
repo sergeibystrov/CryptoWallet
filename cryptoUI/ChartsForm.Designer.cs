@@ -29,11 +29,11 @@ namespace cryptoUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.richTextBoxInfoFromPriceChart = new System.Windows.Forms.RichTextBox();
             this.chartPrice = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@ namespace cryptoUI
             // richTextBoxInfoFromPriceChart
             // 
             this.richTextBoxInfoFromPriceChart.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.richTextBoxInfoFromPriceChart.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxInfoFromPriceChart.ForeColor = System.Drawing.Color.Gold;
             this.richTextBoxInfoFromPriceChart.Location = new System.Drawing.Point(824, 171);
             this.richTextBoxInfoFromPriceChart.Name = "richTextBoxInfoFromPriceChart";
             this.richTextBoxInfoFromPriceChart.ReadOnly = true;
@@ -65,16 +65,16 @@ namespace cryptoUI
             // chartPrice
             // 
             this.chartPrice.BackColor = System.Drawing.Color.DarkSlateBlue;
-            chartArea3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            chartArea3.Name = "ChartArea1";
-            this.chartPrice.ChartAreas.Add(chartArea3);
+            chartArea5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            chartArea5.Name = "ChartArea1";
+            this.chartPrice.ChartAreas.Add(chartArea5);
             this.chartPrice.Location = new System.Drawing.Point(9, 26);
             this.chartPrice.Name = "chartPrice";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
-            series3.Name = "Daily";
-            series3.YValuesPerPoint = 4;
-            this.chartPrice.Series.Add(series3);
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
+            series5.Name = "Daily";
+            series5.YValuesPerPoint = 4;
+            this.chartPrice.Series.Add(series5);
             this.chartPrice.Size = new System.Drawing.Size(805, 323);
             this.chartPrice.TabIndex = 2;
             this.chartPrice.Text = "chart1";
@@ -84,9 +84,9 @@ namespace cryptoUI
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
-            this.button1.Location = new System.Drawing.Point(827, 110);
+            this.button1.Location = new System.Drawing.Point(827, 117);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 26);
+            this.button1.Size = new System.Drawing.Size(168, 26);
             this.button1.TabIndex = 8;
             this.button1.Text = "Show chart";
             this.button1.UseVisualStyleBackColor = false;
@@ -97,10 +97,12 @@ namespace cryptoUI
             this.textBoxListOfCurrencies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.textBoxListOfCurrencies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxListOfCurrencies.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.textBoxListOfCurrencies.ForeColor = System.Drawing.Color.Black;
-            this.textBoxListOfCurrencies.Location = new System.Drawing.Point(827, 36);
+            this.textBoxListOfCurrencies.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxListOfCurrencies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxListOfCurrencies.ForeColor = System.Drawing.Color.Gold;
+            this.textBoxListOfCurrencies.Location = new System.Drawing.Point(827, 30);
             this.textBoxListOfCurrencies.Name = "textBoxListOfCurrencies";
-            this.textBoxListOfCurrencies.Size = new System.Drawing.Size(117, 20);
+            this.textBoxListOfCurrencies.Size = new System.Drawing.Size(168, 26);
             this.textBoxListOfCurrencies.TabIndex = 7;
             // 
             // label2
@@ -108,7 +110,7 @@ namespace cryptoUI
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
-            this.label2.Location = new System.Drawing.Point(819, 12);
+            this.label2.Location = new System.Drawing.Point(823, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 21);
@@ -141,7 +143,9 @@ namespace cryptoUI
             // comboBoxListOfTimeframes
             // 
             this.comboBoxListOfTimeframes.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.comboBoxListOfTimeframes.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxListOfTimeframes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxListOfTimeframes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxListOfTimeframes.ForeColor = System.Drawing.Color.Gold;
             this.comboBoxListOfTimeframes.FormattingEnabled = true;
             this.comboBoxListOfTimeframes.Items.AddRange(new object[] {
             "Hourly [4 days]",
@@ -149,7 +153,7 @@ namespace cryptoUI
             "Daily [year]"});
             this.comboBoxListOfTimeframes.Location = new System.Drawing.Point(827, 83);
             this.comboBoxListOfTimeframes.Name = "comboBoxListOfTimeframes";
-            this.comboBoxListOfTimeframes.Size = new System.Drawing.Size(120, 21);
+            this.comboBoxListOfTimeframes.Size = new System.Drawing.Size(168, 28);
             this.comboBoxListOfTimeframes.TabIndex = 12;
             // 
             // label3
@@ -165,20 +169,20 @@ namespace cryptoUI
             // chartRevenue
             // 
             this.chartRevenue.BackColor = System.Drawing.Color.DarkSlateBlue;
-            chartArea4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            chartArea4.BorderColor = System.Drawing.Color.White;
-            chartArea4.Name = "ChartArea1";
-            this.chartRevenue.ChartAreas.Add(chartArea4);
-            legend2.Enabled = false;
-            legend2.Name = "Legend1";
-            this.chartRevenue.Legends.Add(legend2);
+            chartArea6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            chartArea6.BorderColor = System.Drawing.Color.White;
+            chartArea6.Name = "ChartArea1";
+            this.chartRevenue.ChartAreas.Add(chartArea6);
+            legend3.Enabled = false;
+            legend3.Name = "Legend1";
+            this.chartRevenue.Legends.Add(legend3);
             this.chartRevenue.Location = new System.Drawing.Point(9, 371);
             this.chartRevenue.Name = "chartRevenue";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
-            series4.Legend = "Legend1";
-            series4.Name = "Series";
-            this.chartRevenue.Series.Add(series4);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.FastLine;
+            series6.Legend = "Legend1";
+            series6.Name = "Series";
+            this.chartRevenue.Series.Add(series6);
             this.chartRevenue.Size = new System.Drawing.Size(805, 249);
             this.chartRevenue.TabIndex = 14;
             this.chartRevenue.Text = "chart2";
@@ -196,7 +200,7 @@ namespace cryptoUI
             // richTextBoxInfoFromRevenueChart
             // 
             this.richTextBoxInfoFromRevenueChart.BackColor = System.Drawing.Color.DarkSlateBlue;
-            this.richTextBoxInfoFromRevenueChart.ForeColor = System.Drawing.Color.Black;
+            this.richTextBoxInfoFromRevenueChart.ForeColor = System.Drawing.Color.Gold;
             this.richTextBoxInfoFromRevenueChart.Location = new System.Drawing.Point(823, 387);
             this.richTextBoxInfoFromRevenueChart.Name = "richTextBoxInfoFromRevenueChart";
             this.richTextBoxInfoFromRevenueChart.ReadOnly = true;

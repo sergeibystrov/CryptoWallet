@@ -117,4 +117,63 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Welcome to our application.
+Your demo account has already been created and you can start buying/selling cryptocurrency.
+At the start, you have 300$ in your account, but in the future you can fund your account.
+With our application, you can check cryptocurrency prices and price charts, as well as view your transaction history and your revenue chart.</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAaZJREFUaEPtmbErhGEcx18hUjKRiWSjzAz8AUosVqP1RqvRarQamSzKYDBQRlGs
+        kkkskgjn8/v5Pd2d89697yDPT8+nPnXP8/7e+n7rrufeuyyRSCQS/5pqtdptL/1CiRk8sqU/CN+HG/iG
+        d7btC4LP4zUGfBUh8BBua/RG/BQh7LIE1tjNxF+EkGN4oHHzibcI4bqwgo+StA1xFiHYFJ5qxGLEVYRA
+        vbiOL5KuBPEUIcwsXmqs8kjxvd/SIraGwQHcxHeMEouaDzMLeKPTEWNxm+HaMO7qlAMsdg32OnAF72XA
+        Cxb/C9bjeKhXnBEKyMG2hs+y6REpMYdXunKMFJnGc105Jry1elAegF5l0yNaJMB6Ao/1ijOsQg32OlE+
+        +E8y4AWL3wzXRnBfpxxgsfNhZhUfdDpiLG5rmBvEHb0jUixqMZhfxFu9szx//zW+Hm7qxy38wDJE+6gr
+        B+mFRixG1D8+lDlI4y0SIOQknmjcfOIvIhC03UHqo0iAwKP400Hqq0iA4N8PUp9FBMLXH6R+iwQosYRn
+        tvQNRfz/9ZZIJBKJRrLsEzTCVp2b6k73AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAaZJREFUaEPtmbErhGEcx18hUjKRiWSjzAz8AUosVqP1RqvRarQamSzKYDBQRlGs
+        kkkskgjn8/v5Pd2d89697yDPT8+nPnXP8/7e+n7rrufeuyyRSCQS/5pqtdptL/1CiRk8sqU/CN+HG/iG
+        d7btC4LP4zUGfBUh8BBua/RG/BQh7LIE1tjNxF+EkGN4oHHzibcI4bqwgo+StA1xFiHYFJ5qxGLEVYRA
+        vbiOL5KuBPEUIcwsXmqs8kjxvd/SIraGwQHcxHeMEouaDzMLeKPTEWNxm+HaMO7qlAMsdg32OnAF72XA
+        Cxb/C9bjeKhXnBEKyMG2hs+y6REpMYdXunKMFJnGc105Jry1elAegF5l0yNaJMB6Ao/1ijOsQg32OlE+
+        +E8y4AWL3wzXRnBfpxxgsfNhZhUfdDpiLG5rmBvEHb0jUixqMZhfxFu9szx//zW+Hm7qxy38wDJE+6gr
+        B+mFRixG1D8+lDlI4y0SIOQknmjcfOIvIhC03UHqo0iAwKP400Hqq0iA4N8PUp9FBMLXH6R+iwQosYRn
+        tvQNRfz/9ZZIJBKJRrLsEzTCVp2b6k73AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAaZJREFUaEPtmbErhGEcx18hUjKRiWSjzAz8AUosVqP1RqvRarQamSzKYDBQRlGs
+        kkkskgjn8/v5Pd2d89697yDPT8+nPnXP8/7e+n7rrufeuyyRSCQS/5pqtdptL/1CiRk8sqU/CN+HG/iG
+        d7btC4LP4zUGfBUh8BBua/RG/BQh7LIE1tjNxF+EkGN4oHHzibcI4bqwgo+StA1xFiHYFJ5qxGLEVYRA
+        vbiOL5KuBPEUIcwsXmqs8kjxvd/SIraGwQHcxHeMEouaDzMLeKPTEWNxm+HaMO7qlAMsdg32OnAF72XA
+        Cxb/C9bjeKhXnBEKyMG2hs+y6REpMYdXunKMFJnGc105Jry1elAegF5l0yNaJMB6Ao/1ijOsQg32OlE+
+        +E8y4AWL3wzXRnBfpxxgsfNhZhUfdDpiLG5rmBvEHb0jUixqMZhfxFu9szx//zW+Hm7qxy38wDJE+6gr
+        B+mFRixG1D8+lDlI4y0SIOQknmjcfOIvIhC03UHqo0iAwKP400Hqq0iA4N8PUp9FBMLXH6R+iwQosYRn
+        tvQNRfz/9ZZIJBKJRrLsEzTCVp2b6k73AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAaZJREFUaEPtmbErhGEcx18hUjKRiWSjzAz8AUosVqP1RqvRarQamSzKYDBQRlGs
+        kkkskgjn8/v5Pd2d89697yDPT8+nPnXP8/7e+n7rrufeuyyRSCQS/5pqtdptL/1CiRk8sqU/CN+HG/iG
+        d7btC4LP4zUGfBUh8BBua/RG/BQh7LIE1tjNxF+EkGN4oHHzibcI4bqwgo+StA1xFiHYFJ5qxGLEVYRA
+        vbiOL5KuBPEUIcwsXmqs8kjxvd/SIraGwQHcxHeMEouaDzMLeKPTEWNxm+HaMO7qlAMsdg32OnAF72XA
+        Cxb/C9bjeKhXnBEKyMG2hs+y6REpMYdXunKMFJnGc105Jry1elAegF5l0yNaJMB6Ao/1ijOsQg32OlE+
+        +E8y4AWL3wzXRnBfpxxgsfNhZhUfdDpiLG5rmBvEHb0jUixqMZhfxFu9szx//zW+Hm7qxy38wDJE+6gr
+        B+mFRixG1D8+lDlI4y0SIOQknmjcfOIvIhC03UHqo0iAwKP400Hqq0iA4N8PUp9FBMLXH6R+iwQosYRn
+        tvQNRfz/9ZZIJBKJRrLsEzTCVp2b6k73AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

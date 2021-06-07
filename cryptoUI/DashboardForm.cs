@@ -146,22 +146,25 @@ namespace cryptoUI
 
             foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
             {
-                if (u.balance >= float.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any))
+                if (usdPaid.Text.Length != 0 && tokenToBuy.Text.Length != 0)
                 {
-                    u.balance -= float.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any);
-                    Payment newPayment = new Payment();
-                    u.Payments.Add(newPayment);
-                    newPayment.id_price = newPrice.Id;
-                    newPayment.amount = float.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
-                    UpdateDashboard();
-                    tokenToBuy.Text = "";
-                    usdPaid.Text = "";
+                    if (u.balance >= float.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any))
+                    {
+                        u.balance -= float.Parse(usdPaid.Text, System.Globalization.NumberStyles.Any);
+                        Payment newPayment = new Payment();
+                        u.Payments.Add(newPayment);
+                        newPayment.id_price = newPrice.Id;
+                        newPayment.amount = float.Parse(tokenToBuy.Text, System.Globalization.NumberStyles.Any);
+                        UpdateDashboard();
+                        tokenToBuy.Text = "";
+                        usdPaid.Text = "";
 
-                    this.Alert("Transaction completed", AlertForm.enmType.TransactionCompleted);
-                }
-                else
-                {
-                    this.Alert("Not enough money", AlertForm.enmType.NotEnoughMoney);
+                        this.Alert("Transaction completed", AlertForm.enmType.TransactionCompleted);
+                    }
+                    else
+                    {
+                        this.Alert("Not enough money", AlertForm.enmType.NotEnoughMoney);
+                    }
                 }
             }
             bazadanych.SubmitChanges();
@@ -203,22 +206,25 @@ namespace cryptoUI
 
             foreach (User u in bazadanych.Users.Where(x => x.username == UsernameText))
             {
-                if (amount >= float.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any))
+                if (tokenToSell.Text.Length != 0 && usdEarn.Text.Length != 0)
                 {
-                    u.balance += float.Parse(usdEarn.Text, System.Globalization.NumberStyles.Any);
-                    Payment newPayment = new Payment();
-                    u.Payments.Add(newPayment);
-                    newPayment.id_price = newPrice.Id;
-                    newPayment.amount = -float.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
-                    UpdateDashboard();
-                    tokenToSell.Text = "";
-                    usdEarn.Text = "";
+                    if (amount >= float.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any))
+                    {
+                        u.balance += float.Parse(usdEarn.Text, System.Globalization.NumberStyles.Any);
+                        Payment newPayment = new Payment();
+                        u.Payments.Add(newPayment);
+                        newPayment.id_price = newPrice.Id;
+                        newPayment.amount = -float.Parse(tokenToSell.Text, System.Globalization.NumberStyles.Any);
+                        UpdateDashboard();
+                        tokenToSell.Text = "";
+                        usdEarn.Text = "";
 
-                    this.Alert("Transaction completed", AlertForm.enmType.TransactionCompleted);
-                }
-                else
-                {
-                    this.Alert("Not enough tokens", AlertForm.enmType.NotEnoughTokens);
+                        this.Alert("Transaction completed", AlertForm.enmType.TransactionCompleted);
+                    }
+                    else
+                    {
+                        this.Alert("Not enough tokens", AlertForm.enmType.NotEnoughTokens);
+                    }
                 }
             }
             bazadanych.SubmitChanges();

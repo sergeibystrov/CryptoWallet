@@ -38,7 +38,6 @@ namespace cryptoUI
             this.comboBoxSortedBy = new System.Windows.Forms.ComboBox();
             this.labelRevenueInDollars = new System.Windows.Forms.Label();
             this.labelRevenueInProcent = new System.Windows.Forms.Label();
-            this.pictureBoxRevenue = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxDateRange = new System.Windows.Forms.ComboBox();
@@ -46,6 +45,7 @@ namespace cryptoUI
             this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
             this.labelFrom = new System.Windows.Forms.Label();
             this.labelTo = new System.Windows.Forms.Label();
+            this.pictureBoxRevenue = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRevenue)).BeginInit();
             this.SuspendLayout();
@@ -107,6 +107,7 @@ namespace cryptoUI
             this.comboBoxSortedBy.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.comboBoxSortedBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSortedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSortedBy.ForeColor = System.Drawing.Color.Gold;
             this.comboBoxSortedBy.FormattingEnabled = true;
             this.comboBoxSortedBy.Items.AddRange(new object[] {
             "Date: recent",
@@ -143,15 +144,6 @@ namespace cryptoUI
             this.labelRevenueInProcent.Size = new System.Drawing.Size(0, 25);
             this.labelRevenueInProcent.TabIndex = 4;
             // 
-            // pictureBoxRevenue
-            // 
-            this.pictureBoxRevenue.Image = global::cryptoUI.Properties.Resources.increase;
-            this.pictureBoxRevenue.Location = new System.Drawing.Point(531, 12);
-            this.pictureBoxRevenue.Name = "pictureBoxRevenue";
-            this.pictureBoxRevenue.Size = new System.Drawing.Size(131, 134);
-            this.pictureBoxRevenue.TabIndex = 2;
-            this.pictureBoxRevenue.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -179,6 +171,7 @@ namespace cryptoUI
             this.comboBoxDateRange.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.comboBoxDateRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxDateRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxDateRange.ForeColor = System.Drawing.Color.Gold;
             this.comboBoxDateRange.FormattingEnabled = true;
             this.comboBoxDateRange.Items.AddRange(new object[] {
             "All time",
@@ -235,6 +228,15 @@ namespace cryptoUI
             this.labelTo.Size = new System.Drawing.Size(46, 31);
             this.labelTo.TabIndex = 13;
             this.labelTo.Text = "To";
+            // 
+            // pictureBoxRevenue
+            // 
+            this.pictureBoxRevenue.Image = global::cryptoUI.Properties.Resources.increase;
+            this.pictureBoxRevenue.Location = new System.Drawing.Point(531, 12);
+            this.pictureBoxRevenue.Name = "pictureBoxRevenue";
+            this.pictureBoxRevenue.Size = new System.Drawing.Size(131, 134);
+            this.pictureBoxRevenue.TabIndex = 2;
+            this.pictureBoxRevenue.TabStop = false;
             // 
             // TradingForm
             // 
