@@ -52,13 +52,14 @@ namespace cryptoUI
             // 
             // listView1
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.listView1.FullRowSelect = true;
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
@@ -101,8 +102,10 @@ namespace cryptoUI
             this.panel1.Size = new System.Drawing.Size(513, 390);
             this.panel1.TabIndex = 1;
             // 
-            // comboBox1
+            // comboBoxSortedBy
             // 
+            this.comboBoxSortedBy.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.comboBoxSortedBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSortedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSortedBy.FormattingEnabled = true;
             this.comboBoxSortedBy.Items.AddRange(new object[] {
@@ -115,36 +118,36 @@ namespace cryptoUI
             "Price: highest",
             "Price: lowest"});
             this.comboBoxSortedBy.Location = new System.Drawing.Point(651, 166);
-            this.comboBoxSortedBy.Name = "comboBox1";
+            this.comboBoxSortedBy.Name = "comboBoxSortedBy";
             this.comboBoxSortedBy.Size = new System.Drawing.Size(154, 24);
             this.comboBoxSortedBy.TabIndex = 6;
             this.comboBoxSortedBy.SelectedIndexChanged += new System.EventHandler(this.comboBoxSortedBy_SelectedIndexChanged);
             // 
-            // label1
+            // labelRevenueInDollars
             // 
             this.labelRevenueInDollars.AutoSize = true;
             this.labelRevenueInDollars.Font = new System.Drawing.Font("MS Reference Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRevenueInDollars.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.labelRevenueInDollars.Location = new System.Drawing.Point(668, 44);
-            this.labelRevenueInDollars.Name = "label1";
+            this.labelRevenueInDollars.Name = "labelRevenueInDollars";
             this.labelRevenueInDollars.Size = new System.Drawing.Size(0, 46);
             this.labelRevenueInDollars.TabIndex = 3;
             // 
-            // label2
+            // labelRevenueInProcent
             // 
             this.labelRevenueInProcent.AutoSize = true;
             this.labelRevenueInProcent.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRevenueInProcent.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.labelRevenueInProcent.Location = new System.Drawing.Point(675, 90);
-            this.labelRevenueInProcent.Name = "label2";
+            this.labelRevenueInProcent.Name = "labelRevenueInProcent";
             this.labelRevenueInProcent.Size = new System.Drawing.Size(0, 25);
             this.labelRevenueInProcent.TabIndex = 4;
             // 
-            // pictureBox1
+            // pictureBoxRevenue
             // 
             this.pictureBoxRevenue.Image = global::cryptoUI.Properties.Resources.increase;
             this.pictureBoxRevenue.Location = new System.Drawing.Point(531, 12);
-            this.pictureBoxRevenue.Name = "pictureBox1";
+            this.pictureBoxRevenue.Name = "pictureBoxRevenue";
             this.pictureBoxRevenue.Size = new System.Drawing.Size(131, 134);
             this.pictureBoxRevenue.TabIndex = 2;
             this.pictureBoxRevenue.TabStop = false;
@@ -153,7 +156,7 @@ namespace cryptoUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label3.Location = new System.Drawing.Point(525, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 31);
@@ -164,15 +167,17 @@ namespace cryptoUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label4.Location = new System.Drawing.Point(525, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 31);
             this.label4.TabIndex = 8;
             this.label4.Text = "Date range";
             // 
-            // comboBox2
+            // comboBoxDateRange
             // 
+            this.comboBoxDateRange.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.comboBoxDateRange.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxDateRange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxDateRange.FormattingEnabled = true;
             this.comboBoxDateRange.Items.AddRange(new object[] {
@@ -184,13 +189,14 @@ namespace cryptoUI
             "Last Year",
             "Custom Range"});
             this.comboBoxDateRange.Location = new System.Drawing.Point(676, 219);
-            this.comboBoxDateRange.Name = "comboBox2";
+            this.comboBoxDateRange.Name = "comboBoxDateRange";
             this.comboBoxDateRange.Size = new System.Drawing.Size(129, 24);
             this.comboBoxDateRange.TabIndex = 9;
             this.comboBoxDateRange.SelectedIndexChanged += new System.EventHandler(this.comboBoxDateRange_SelectedIndexChanged);
             // 
             // dateTimePickerFrom
             // 
+            this.dateTimePickerFrom.CalendarMonthBackground = System.Drawing.Color.DarkSlateBlue;
             this.dateTimePickerFrom.Location = new System.Drawing.Point(605, 267);
             this.dateTimePickerFrom.Name = "dateTimePickerFrom";
             this.dateTimePickerFrom.Size = new System.Drawing.Size(200, 20);
@@ -200,6 +206,7 @@ namespace cryptoUI
             // 
             // dateTimePickerTo
             // 
+            this.dateTimePickerTo.CalendarMonthBackground = System.Drawing.Color.DarkSlateBlue;
             this.dateTimePickerTo.Location = new System.Drawing.Point(605, 293);
             this.dateTimePickerTo.Name = "dateTimePickerTo";
             this.dateTimePickerTo.Size = new System.Drawing.Size(200, 20);
@@ -211,8 +218,8 @@ namespace cryptoUI
             // 
             this.labelFrom.AutoSize = true;
             this.labelFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFrom.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelFrom.Location = new System.Drawing.Point(530, 258);
+            this.labelFrom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
+            this.labelFrom.Location = new System.Drawing.Point(525, 258);
             this.labelFrom.Name = "labelFrom";
             this.labelFrom.Size = new System.Drawing.Size(77, 31);
             this.labelFrom.TabIndex = 12;
@@ -222,8 +229,8 @@ namespace cryptoUI
             // 
             this.labelTo.AutoSize = true;
             this.labelTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTo.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.labelTo.Location = new System.Drawing.Point(531, 284);
+            this.labelTo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
+            this.labelTo.Location = new System.Drawing.Point(525, 284);
             this.labelTo.Name = "labelTo";
             this.labelTo.Size = new System.Drawing.Size(46, 31);
             this.labelTo.TabIndex = 13;

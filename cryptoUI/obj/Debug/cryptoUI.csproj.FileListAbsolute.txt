@@ -59,9 +59,7 @@ C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\bin\Debug\System.Data.SQLite.x
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csprojAssemblyReference.cache
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.ChartsForm.resources
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.DashboardForm.resources
-C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Form1.resources
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.Properties.Resources.resources
-C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.SettingsForm.resources
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.TradingForm.resources
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.WalletForm.resources
 C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csproj.GenerateResource.cache
@@ -92,3 +90,5 @@ C:\Users\yegor\Source\Repos\ToDoTradingHistory\cryptoUI\obj\Debug\cryptoUI.pdb
 C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.csproj.AssemblyReference.cache
 C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.AlertForm.resources
 C:\Users\gameo\source\repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.HomeForm.resources
+C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.AlertForm.resources
+C:\Users\Дмитрий\Source\Repos\CryptoWallet\cryptoUI\obj\Debug\cryptoUI.HomeForm.resources

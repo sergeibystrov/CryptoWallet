@@ -46,8 +46,8 @@ namespace cryptoUI
             this.DashboardCurrencyIcon = new System.Windows.Forms.PictureBox();
             this.panelChooseCrypto = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBoxListOfCurrencies = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBoxListOfCurrencies = new System.Windows.Forms.TextBox();
             buttonUpdate = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.DashboardCurrencyIcon)).BeginInit();
             this.panelChooseCrypto.SuspendLayout();
@@ -55,24 +55,26 @@ namespace cryptoUI
             // 
             // buttonUpdate
             // 
+            buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            buttonUpdate.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            buttonUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             buttonUpdate.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            buttonUpdate.IconColor = System.Drawing.SystemColors.ActiveCaption;
+            buttonUpdate.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             buttonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            buttonUpdate.IconSize = 45;
+            buttonUpdate.IconSize = 25;
             buttonUpdate.Location = new System.Drawing.Point(300, 11);
             buttonUpdate.Margin = new System.Windows.Forms.Padding(2);
             buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new System.Drawing.Size(51, 49);
+            buttonUpdate.Size = new System.Drawing.Size(34, 34);
             buttonUpdate.TabIndex = 12;
             buttonUpdate.UseVisualStyleBackColor = false;
             buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.button3.Location = new System.Drawing.Point(11, 319);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
@@ -80,30 +82,34 @@ namespace cryptoUI
             this.button3.Size = new System.Drawing.Size(48, 23);
             this.button3.TabIndex = 26;
             this.button3.Text = "SELL";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.buttonSell_Click);
             // 
             // usdEarn
             // 
-            this.usdEarn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.usdEarn.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.usdEarn.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.usdEarn.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usdEarn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usdEarn.ForeColor = System.Drawing.Color.Black;
             this.usdEarn.Location = new System.Drawing.Point(11, 297);
             this.usdEarn.Margin = new System.Windows.Forms.Padding(2);
             this.usdEarn.Name = "usdEarn";
             this.usdEarn.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.usdEarn.Size = new System.Drawing.Size(167, 20);
+            this.usdEarn.Size = new System.Drawing.Size(167, 19);
             this.usdEarn.TabIndex = 25;
             this.usdEarn.TextChanged += new System.EventHandler(this.usdEarn_TextChanged);
             // 
             // tokenToSell
             // 
-            this.tokenToSell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.tokenToSell.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tokenToSell.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.tokenToSell.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tokenToSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tokenToSell.ForeColor = System.Drawing.Color.Black;
             this.tokenToSell.Location = new System.Drawing.Point(11, 273);
             this.tokenToSell.Margin = new System.Windows.Forms.Padding(2);
             this.tokenToSell.Name = "tokenToSell";
             this.tokenToSell.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tokenToSell.Size = new System.Drawing.Size(167, 20);
+            this.tokenToSell.Size = new System.Drawing.Size(167, 19);
             this.tokenToSell.TabIndex = 24;
             this.tokenToSell.TextChanged += new System.EventHandler(this.tokenToSell_TextChanged);
             // 
@@ -111,7 +117,7 @@ namespace cryptoUI
             // 
             this.tokenBalance.AutoSize = true;
             this.tokenBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tokenBalance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tokenBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.tokenBalance.Location = new System.Drawing.Point(64, 322);
             this.tokenBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.tokenBalance.Name = "tokenBalance";
@@ -125,7 +131,7 @@ namespace cryptoUI
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label6.Location = new System.Drawing.Point(12, 254);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
@@ -136,36 +142,41 @@ namespace cryptoUI
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.button2.Location = new System.Drawing.Point(11, 209);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(48, 23);
             this.button2.TabIndex = 21;
             this.button2.Text = "BUY";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.buttonBuy_Click);
             // 
             // usdPaid
             // 
-            this.usdPaid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.usdPaid.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.usdPaid.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.usdPaid.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.usdPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usdPaid.ForeColor = System.Drawing.Color.Black;
             this.usdPaid.Location = new System.Drawing.Point(11, 185);
             this.usdPaid.Margin = new System.Windows.Forms.Padding(2);
             this.usdPaid.Name = "usdPaid";
-            this.usdPaid.Size = new System.Drawing.Size(167, 20);
+            this.usdPaid.Size = new System.Drawing.Size(167, 19);
             this.usdPaid.TabIndex = 20;
             this.usdPaid.TextChanged += new System.EventHandler(this.usdPaid_TextChanged);
             // 
             // tokenToBuy
             // 
-            this.tokenToBuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.tokenToBuy.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tokenToBuy.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.tokenToBuy.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tokenToBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tokenToBuy.ForeColor = System.Drawing.Color.Black;
             this.tokenToBuy.Location = new System.Drawing.Point(11, 161);
             this.tokenToBuy.Margin = new System.Windows.Forms.Padding(2);
             this.tokenToBuy.Name = "tokenToBuy";
-            this.tokenToBuy.Size = new System.Drawing.Size(167, 20);
+            this.tokenToBuy.Size = new System.Drawing.Size(167, 19);
             this.tokenToBuy.TabIndex = 19;
             this.tokenToBuy.TextChanged += new System.EventHandler(this.tokenToBuy_TextChanged);
             // 
@@ -173,7 +184,7 @@ namespace cryptoUI
             // 
             this.usdBalance.AutoSize = true;
             this.usdBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.usdBalance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.usdBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.usdBalance.Location = new System.Drawing.Point(64, 209);
             this.usdBalance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.usdBalance.Name = "usdBalance";
@@ -186,7 +197,7 @@ namespace cryptoUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label3.Location = new System.Drawing.Point(11, 142);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
@@ -198,7 +209,7 @@ namespace cryptoUI
             // 
             this.labelPriceInUSD.AutoSize = true;
             this.labelPriceInUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelPriceInUSD.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelPriceInUSD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.labelPriceInUSD.Location = new System.Drawing.Point(383, 62);
             this.labelPriceInUSD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPriceInUSD.Name = "labelPriceInUSD";
@@ -212,7 +223,7 @@ namespace cryptoUI
             // 
             this.textBoxPriceInUSD.AutoSize = true;
             this.textBoxPriceInUSD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.textBoxPriceInUSD.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBoxPriceInUSD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.textBoxPriceInUSD.Location = new System.Drawing.Point(300, 62);
             this.textBoxPriceInUSD.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.textBoxPriceInUSD.Name = "textBoxPriceInUSD";
@@ -261,38 +272,41 @@ namespace cryptoUI
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.button1.Location = new System.Drawing.Point(11, 83);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 26);
             this.button1.TabIndex = 5;
             this.button1.Text = "Check price";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.buttonCheckCoin_Click);
-            // 
-            // textBox1
-            // 
-            this.textBoxListOfCurrencies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.textBoxListOfCurrencies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxListOfCurrencies.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.textBoxListOfCurrencies.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.textBoxListOfCurrencies.Location = new System.Drawing.Point(11, 44);
-            this.textBoxListOfCurrencies.Name = "textBox1";
-            this.textBoxListOfCurrencies.Size = new System.Drawing.Size(167, 20);
-            this.textBoxListOfCurrencies.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label2.Location = new System.Drawing.Point(7, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Choose cryptocurrency";
+            // 
+            // textBoxListOfCurrencies
+            // 
+            this.textBoxListOfCurrencies.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxListOfCurrencies.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.textBoxListOfCurrencies.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.textBoxListOfCurrencies.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxListOfCurrencies.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxListOfCurrencies.ForeColor = System.Drawing.Color.Black;
+            this.textBoxListOfCurrencies.Location = new System.Drawing.Point(11, 44);
+            this.textBoxListOfCurrencies.Name = "textBoxListOfCurrencies";
+            this.textBoxListOfCurrencies.Size = new System.Drawing.Size(167, 19);
+            this.textBoxListOfCurrencies.TabIndex = 4;
             // 
             // DashboardForm
             // 

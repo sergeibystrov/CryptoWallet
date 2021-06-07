@@ -69,7 +69,7 @@ namespace cryptoUI
             this.chartButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.chartButton.FlatAppearance.BorderSize = 0;
             this.chartButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.chartButton.ForeColor = System.Drawing.Color.White;
+            this.chartButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.chartButton.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
             this.chartButton.IconColor = System.Drawing.Color.White;
             this.chartButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -92,7 +92,7 @@ namespace cryptoUI
             this.tradingButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.tradingButton.FlatAppearance.BorderSize = 0;
             this.tradingButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tradingButton.ForeColor = System.Drawing.Color.White;
+            this.tradingButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.tradingButton.IconChar = FontAwesome.Sharp.IconChar.Bitcoin;
             this.tradingButton.IconColor = System.Drawing.Color.White;
             this.tradingButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -115,7 +115,7 @@ namespace cryptoUI
             this.walletButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.walletButton.FlatAppearance.BorderSize = 0;
             this.walletButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.walletButton.ForeColor = System.Drawing.Color.White;
+            this.walletButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.walletButton.IconChar = FontAwesome.Sharp.IconChar.Wallet;
             this.walletButton.IconColor = System.Drawing.Color.White;
             this.walletButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -138,7 +138,7 @@ namespace cryptoUI
             this.dashboardButton.Dock = System.Windows.Forms.DockStyle.Top;
             this.dashboardButton.FlatAppearance.BorderSize = 0;
             this.dashboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dashboardButton.ForeColor = System.Drawing.Color.White;
+            this.dashboardButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.dashboardButton.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
             this.dashboardButton.IconColor = System.Drawing.Color.White;
             this.dashboardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -249,7 +249,7 @@ namespace cryptoUI
             this.childFormPanel.Size = new System.Drawing.Size(1152, 617);
             this.childFormPanel.TabIndex = 3;
             // 
-            // Form1
+            // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,7 +259,7 @@ namespace cryptoUI
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panelMenu);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "HomeForm";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.panelMenu.ResumeLayout(false);

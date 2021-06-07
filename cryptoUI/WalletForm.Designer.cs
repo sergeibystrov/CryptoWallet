@@ -51,7 +51,7 @@ namespace cryptoUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label1.Location = new System.Drawing.Point(7, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(336, 25);
@@ -62,7 +62,7 @@ namespace cryptoUI
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label.Location = new System.Drawing.Point(349, 9);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(152, 25);
@@ -71,24 +71,25 @@ namespace cryptoUI
             // 
             // buttonAddFunds
             // 
+            this.buttonAddFunds.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.buttonAddFunds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddFunds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddFunds.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonAddFunds.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.buttonAddFunds.Location = new System.Drawing.Point(354, 37);
             this.buttonAddFunds.Name = "buttonAddFunds";
             this.buttonAddFunds.Size = new System.Drawing.Size(96, 27);
             this.buttonAddFunds.TabIndex = 3;
             this.buttonAddFunds.Text = "Add funds";
-            this.buttonAddFunds.UseVisualStyleBackColor = true;
+            this.buttonAddFunds.UseVisualStyleBackColor = false;
             this.buttonAddFunds.Click += new System.EventHandler(this.buttonAddFunds_Click);
             // 
             // numericUpDownAddFunds
             // 
-            this.numericUpDownAddFunds.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.numericUpDownAddFunds.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.numericUpDownAddFunds.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.numericUpDownAddFunds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDownAddFunds.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.numericUpDownAddFunds.Location = new System.Drawing.Point(450, 37);
+            this.numericUpDownAddFunds.ForeColor = System.Drawing.Color.Black;
+            this.numericUpDownAddFunds.Location = new System.Drawing.Point(456, 38);
             this.numericUpDownAddFunds.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -110,61 +111,65 @@ namespace cryptoUI
             // 
             // button100
             // 
+            this.button100.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button100.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button100.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button100.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button100.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.button100.Location = new System.Drawing.Point(354, 70);
             this.button100.Name = "button100";
             this.button100.Size = new System.Drawing.Size(96, 27);
             this.button100.TabIndex = 6;
             this.button100.Text = "100$";
-            this.button100.UseVisualStyleBackColor = true;
+            this.button100.UseVisualStyleBackColor = false;
             this.button100.Click += new System.EventHandler(this.button100_Click);
             // 
             // button1000
             // 
+            this.button1000.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button1000.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1000.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1000.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1000.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.button1000.Location = new System.Drawing.Point(475, 70);
             this.button1000.Name = "button1000";
             this.button1000.Size = new System.Drawing.Size(96, 27);
             this.button1000.TabIndex = 7;
             this.button1000.Text = "1.000$";
-            this.button1000.UseVisualStyleBackColor = true;
+            this.button1000.UseVisualStyleBackColor = false;
             this.button1000.Click += new System.EventHandler(this.button1000_Click);
             // 
             // button5000
             // 
+            this.button5000.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button5000.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5000.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5000.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5000.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.button5000.Location = new System.Drawing.Point(354, 103);
             this.button5000.Name = "button5000";
             this.button5000.Size = new System.Drawing.Size(96, 27);
             this.button5000.TabIndex = 8;
             this.button5000.Text = "5.000$";
-            this.button5000.UseVisualStyleBackColor = true;
+            this.button5000.UseVisualStyleBackColor = false;
             this.button5000.Click += new System.EventHandler(this.button5000_Click);
             // 
             // button10000
             // 
+            this.button10000.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.button10000.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10000.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10000.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button10000.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.button10000.Location = new System.Drawing.Point(475, 103);
             this.button10000.Name = "button10000";
             this.button10000.Size = new System.Drawing.Size(96, 27);
             this.button10000.TabIndex = 9;
             this.button10000.Text = "10.000$";
-            this.button10000.UseVisualStyleBackColor = true;
+            this.button10000.UseVisualStyleBackColor = false;
             this.button10000.Click += new System.EventHandler(this.button10000_Click);
             // 
             // labelBalance
             // 
             this.labelBalance.AutoSize = true;
             this.labelBalance.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBalance.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.labelBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.labelBalance.Location = new System.Drawing.Point(491, 9);
             this.labelBalance.Name = "labelBalance";
             this.labelBalance.Size = new System.Drawing.Size(60, 25);
@@ -173,11 +178,12 @@ namespace cryptoUI
             // 
             // listView
             // 
-            this.listView.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.listView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(51)))));
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader4});
+            this.listView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
             this.listView.HideSelection = false;
@@ -209,7 +215,7 @@ namespace cryptoUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(175)))), ((int)(((byte)(4)))));
             this.label3.Location = new System.Drawing.Point(349, 145);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(130, 31);
@@ -218,7 +224,10 @@ namespace cryptoUI
             // 
             // comboBoxSortedBy
             // 
+            this.comboBoxSortedBy.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.comboBoxSortedBy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSortedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSortedBy.ForeColor = System.Drawing.Color.Black;
             this.comboBoxSortedBy.FormattingEnabled = true;
             this.comboBoxSortedBy.Items.AddRange(new object[] {
             "Name: A->Z",

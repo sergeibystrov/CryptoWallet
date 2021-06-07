@@ -85,8 +85,8 @@ namespace cryptoUI
             this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScaleView.Zoomable = true;
             this.chartPrice.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = true;
             this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScrollBar.IsPositionedInside = true;
-            this.chartPrice.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonColor = Color.DodgerBlue;
-            this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScrollBar.ButtonColor = Color.DodgerBlue;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonColor = Color.Gold;
+            this.chartPrice.ChartAreas["ChartArea1"].AxisY.ScrollBar.ButtonColor = Color.Gold;
 
             this.chartRevenue.ChartAreas["ChartArea1"].CursorX.IsUserEnabled = true;
             this.chartRevenue.ChartAreas["ChartArea1"].CursorY.IsUserEnabled = true;
@@ -96,8 +96,8 @@ namespace cryptoUI
             this.chartRevenue.ChartAreas["ChartArea1"].AxisY.ScaleView.Zoomable = true;
             this.chartRevenue.ChartAreas["ChartArea1"].AxisX.ScrollBar.IsPositionedInside = true;
             this.chartRevenue.ChartAreas["ChartArea1"].AxisY.ScrollBar.IsPositionedInside = true;
-            this.chartRevenue.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonColor = Color.DodgerBlue;
-            this.chartRevenue.ChartAreas["ChartArea1"].AxisY.ScrollBar.ButtonColor = Color.DodgerBlue;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisX.ScrollBar.ButtonColor = Color.Gold;
+            this.chartRevenue.ChartAreas["ChartArea1"].AxisY.ScrollBar.ButtonColor = Color.Gold;
 
             foreach (Currency o in bazadanych.Currencies.Where(x => x.Name == textBoxListOfCurrencies.Text))
             {
@@ -154,6 +154,7 @@ namespace cryptoUI
                     
                     chartRevenue.Series["Series"].Points.AddXY(dtDateTime, Math.Round((CurrencyAmount * d.open) - MoneySpent, 2));
                     chartRevenue.Series["Series"].BorderWidth = 5;
+                    chartRevenue.Series["Series"].BorderColor = Color.Gold;
                     richTextBoxInfoFromRevenueChart.Text += "Date " + dtDateTime.ToString() + "\n";
                     richTextBoxInfoFromRevenueChart.Text += "Revenue " + ((CurrencyAmount * d.open) - MoneySpent).ToString("N") + "$\n\n";
                 }

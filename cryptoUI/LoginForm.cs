@@ -100,6 +100,24 @@ namespace cryptoUI
             buttonEye.Hide();
             buttonOpenEyes.Show();
         }
+
+        private void textBoxLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode.Equals(Keys.Down))
+            {
+                e.Handled = true;
+                textBoxPassword.Focus();
+            }
+        }
+
+        private void textBoxPassword_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Up))
+            {
+                e.Handled = true;
+                textBoxLogin.Focus();
+            }
+        }
     }
 
 }
