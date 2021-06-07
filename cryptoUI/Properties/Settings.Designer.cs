@@ -12,7 +12,7 @@ namespace cryptoUI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -37,22 +37,22 @@ namespace cryptoUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Дмитрий\\source\\repos" +
-            "\\bazadanych.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string bazadanychConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gameo\\source\\repos\\B" +
+            "D_here\\bazadanych.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string bazadanychConnectionString2 {
             get {
-                return ((string)(this["bazadanychConnectionString1"]));
+                return ((string)(this["bazadanychConnectionString2"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\gameo\\source\\repos\\B" +
-            "D_here\\bazadanych.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string bazadanychConnectionString2 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Дмитрий\\source\\repos" +
+            "\\bazadanych.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string bazadanychConnectionString1 {
             get {
-                return ((string)(this["bazadanychConnectionString2"]));
+                return ((string)(this["bazadanychConnectionString1"]));
             }
         }
     }

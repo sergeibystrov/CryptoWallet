@@ -25,6 +25,7 @@ namespace cryptoUI
         {
             if (IfMatchLogin())
             {
+                textBoxLogin.BackColor = Color.DarkSlateBlue;
                 if (IfMatchPassword())
                 {
                     HomeForm form1 = new HomeForm();
@@ -37,15 +38,13 @@ namespace cryptoUI
                 {
                     labelLogCom.Show();
                     labelLogCom.Text = "Incorrect password!";
-                    labelLogCom.BackColor = Color.Red;
                     textBoxPassword.BackColor = Color.Red;
                 }
             }
             else
             {
                 labelLogCom.Show();
-                labelLogCom.Text = "Incorrect login!";
-                labelLogCom.BackColor = Color.Red;
+                labelLogCom.Text = "Incorrect login!";   
                 textBoxLogin.BackColor = Color.Red;
             }
         }

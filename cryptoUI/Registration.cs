@@ -28,8 +28,7 @@ namespace cryptoUI
             {
                 labelReg.Show();
                 textBoxLogin.BackColor = Color.Red;
-                labelReg.Text = "Login too short!";
-                labelReg.BackColor = Color.Red; 
+                labelReg.Text = "Login too short!"; 
                 return;
             }
             else
@@ -39,25 +38,24 @@ namespace cryptoUI
                     labelReg.Show();
                     textBoxLogin.BackColor = Color.Red;
                     labelReg.Text = "Login is already taken!";
-                    labelReg.BackColor = Color.Red;
                     return;
                 }
             }
+            textBoxLogin.BackColor = Color.DarkSlateBlue;
             if (textBoxPassword.TextLength < 4)
             {
                 labelReg.Show();
                 textBoxPassword.BackColor = Color.Red;
                 labelReg.Text = "Password too short!";
-                labelReg.BackColor = Color.Red;
                 return;
             }
             else if (textBoxRepeatPassword.Text != textBoxPassword.Text)
             {
+                textBoxPassword.BackColor = Color.DarkSlateBlue;
                 labelReg.Show();
                 textBoxPassword.BackColor = Color.Red;
                 textBoxRepeatPassword.BackColor = Color.Red;
                 labelReg.Text = "Passwords do not match!";
-                labelReg.BackColor = Color.Red;
                 return;
             }
             User newUser = new User();
